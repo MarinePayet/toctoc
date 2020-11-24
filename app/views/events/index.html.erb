@@ -1,12 +1,12 @@
+
 <h1>Events#index</h1>
 <p>Find me in app/views/events/index.html.erb</p>
 
-<p>
-
+<p> <%  @events.each do |event| %>
+  <%= event.title %>
+</p>
+<% end %>
 
 <% if policy(Event).create? %>
 <%= link_to "New Event", new_event_path %>
 <% end %>
-
-</p>
-
