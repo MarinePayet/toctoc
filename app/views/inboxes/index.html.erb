@@ -1,13 +1,2 @@
 <h1>Inboxes#index</h1>
 <p>Find me in app/views/inboxes/index.html.erb</p>
-
-
-<% if policy(Inbox).create? %>
-<%= link_to "new Conversation", new_inbox_path  %>
-<% end %>
-
-<% if policy(Message).create? %>
-<%= link_to "New Message", new_message_path %>
-<% end %>
-
-<!-- for each index display participant -->
