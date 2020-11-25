@@ -181,6 +181,11 @@
   margin-bottom: 0;
 }
 
+.profile-card-elements .small-font {
+  color:grey;
+  font-size:10px;
+}
+
 .profile-info-card {
   width: 400px;
   border-radius: 5px;
@@ -238,6 +243,14 @@
   color: white;
 }
 
+.service-card-body-elements-header h2 {
+  font-size: 20px;
+  background-color: #389393;
+  padding: 10px;
+  border-radius: 5px 5px 0px 0px;
+  color: white;
+}
+
 .service-card-body-elements p {
   font-size: 14px;
   padding: 10px;
@@ -248,4 +261,38 @@
 
 .service-card-labels {
   display:flex;
+}
+
+.service-card-with-user {
+  display:flex;
+}
+
+.service-card-with-user .large-version {
+  width: 318px;
+}
+
+.service-card-avatars-user {
+  margin-top: 27px;
+}
+
+.service-card-body-elements-header {
+  background-color: #389393;
+  padding: 10px;
+  color:white;
+  border-radius: 5px 5px 0 0;
+}
+
+.service-card-body-elements-header h2 {
+  font-size: 20px;
+  margin: 0px;
+  padding: 0;
+}
+
+.service-card-body-elements-header p {
+  margin-bottom: 0;
+  padding: 0;
+}
+
+.service-card-body-elements-body p {
+  padding:10px;
 }
