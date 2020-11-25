@@ -1,0 +1,28 @@
+.btn-radius {
+  padding: 8px 20px;
+  border-radius: 50px;
+}
+
+.btn-radius:hover {
+  text-decoration:none;
+}
+
+.btn-white {
+  color: #389393;
+  background-color:white;
+}
+
+.btn-white:hover {
+  background-color: #389393;
+  color:white;
+}
+
+.btn-green {
+  color: white;
+  background-color: #389393;
+}
+
+.btn-green:hover {
+  color:white;
+  background-color: #000D83;
+}
