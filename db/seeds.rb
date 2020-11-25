@@ -99,7 +99,7 @@ puts "start services "
 10.times do
   service_new = Service.create!(
   available: [true, false].sample,
-  name: [Service::NAMES].sample,
+  name: [Service::NAMES.sample],
   description: Faker::TvShows::Friends.quotes,
   price: rand(0..200),
   user: users.sample
@@ -112,8 +112,8 @@ puts "start posts"
 
 10.times do
   post_new = Post.create!(
-  title: Faker::TvShows::HowIMetYourMother.quote,
-  category: [Post::CATEGORIES].sample,
+  title: Faker::Movie.title,
+  category: [Post::CATEGORIES.sample],
   content: Faker::TvShows::TheFreshPrinceOfBelAir.quote,
   user: users.sample
   )
