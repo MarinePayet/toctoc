@@ -1,6 +1,9 @@
 class PostsController < ApplicationController
   def index
-     @posts = policy_scope(Post).order(created_at: :desc)
+      @posts = policy_scope(Post).order(created_at: :desc)
+      if params[:category]
+        @posts = Post.where(:category=> params[:category])
+      end
   end
 
   def new

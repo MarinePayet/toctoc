@@ -1,8 +1,6 @@
-<h1>All posts</h1>
-
 <div class="container">
   <div>
-    <% @posts.each do |post| %>
+    <% Post.first(3).each do |post| %>
       <div class="post-card">
         <div class="post-card-header">
           <div class="post-card-header-avatar">
@@ -19,22 +17,9 @@
         <div class="post-card-bottom">
           <p>11</p><i class="fas fa-thumbs-up card-bottom-icon"></i>
           <p>18</p><i class="fas fa-comment card-bottom-icon"></i>
-          <p class= "label-base label-post-type">
-            <%if post.category == "SOS"%>
-              <%= link_to "SOS", posts_path(:category=>"SOS")%>
-            <% elsif post.category == "FYI" %>
-              <%= link_to "FYI", posts_path(:category=>"FYI")%>
-            <% elsif post.category == "Tips" %>
-              <%= link_to "Tips", posts_path(:category=>"Tips")%>
-            <% elsif post.category == "Lost & Founds" %>
-              <%= link_to "Lost & Founds", posts_path(:category=>"Lost & Founds")%>
-            <% elsif post.category == "Issues" %>
-              <%= link_to "Issues", posts_path(:category=>"Issues")%>
-            </p>
-            <% end %>
+          <p class= "label-base label-post-type"><%= post.category%></p>
         </div>
       </div>
-        <% end %>
+    <% end %>
     </div>
   </div>
-</div>
