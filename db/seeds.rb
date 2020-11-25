@@ -114,8 +114,7 @@ puts "start posts"
   post_new = Post.create!(
 
   title: Faker::Movie.title,
-  category: [Post::CATEGORIES.sample],
-
+  category: Post::CATEGORIES.sample,
   content: Faker::TvShows::TheFreshPrinceOfBelAir.quote,
   user: users.sample
   )
