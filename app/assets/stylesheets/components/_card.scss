@@ -30,12 +30,16 @@
   margin: 0px;
 }
 
+.margin-left {
+  margin-left: 10px;
+}
 .post-card-header-title p {
   margin-bottom: 0;
 }
 
 .post-card-body {
   padding: 10px;
+  background-color: white;
 }
 
 .post-card-body p {
@@ -46,6 +50,8 @@
   display: flex;
   justify-content: left;
   align-items: baseline;
+  background-color: white;
+  border-radius: 0 0 5px 5px;
 }
 
 .post-card-bottom p {
@@ -66,6 +72,7 @@
 
 .event-card-avatars {
   margin-right: 10px;
+  width: 68px;
 }
 
 .event-card-avatars-date {
@@ -97,7 +104,8 @@
   border-style: solid;
   border-color: #389393;
   border-width: thin;
-  width: 335px;
+  width: 318px;
+  background-color: white;
 }
 
 .event-card-text-header {
@@ -210,4 +218,34 @@
 
 .profile-info-card-text-details p {
   margin-bottom: 8px;
+}
+
+.service-card {
+  width: 190px;
+}
+
+.service-card-body {
+  border-radius: 5px;
+  box-shadow: -1px 1px 7px 0px #00000024;
+  background-color:white;
+}
+
+.service-card-body-elements h2 {
+  font-size: 20px;
+  background-color: #389393;
+  padding: 10px;
+  border-radius: 5px 5px 0px 0px;
+  color: white;
+}
+
+.service-card-body-elements p {
+  font-size: 14px;
+  padding: 10px;
+  padding-top: 0px;
+  margin-bottom: 0;
+  line-height: 18px;
+}
+
+.service-card-labels {
+  display:flex;
 }
