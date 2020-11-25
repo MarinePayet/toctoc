@@ -54,8 +54,11 @@ puts "start events"
     location: Event::LOCATIONS.sample,
     title: Event::TITLES.sample,
     description: Faker::Movie.quote,
-    user: users.sample
+    user: users.sample,
     )
+  file = URI.open("https://source.unsplash.com/collection/1649209/300x300")
+  @event_new.photo.attach(io: file, filename: "some-image.jpg", content_type: 'image/jpg')
+  @event_new.save
 end
 puts "end events"
 
