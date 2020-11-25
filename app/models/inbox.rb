@@ -1,4 +1,4 @@
 class Inbox < ApplicationRecord
-  belongs_to :messages
-  belongs_to :participants
+  has_many :messages
+  has_many :participants
 end
