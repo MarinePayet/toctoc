@@ -17,28 +17,18 @@
     <path fill="#389393" fill-opacity="1" d="M0,288L48,245.3C96,203,192,117,288,80C384,43,480,53,576,96C672,139,768,213,864,208C960,203,1056,117,1152,90.7C1248,64,1344,96,1392,112L1440,128L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
     </svg>
 
-  <div class="d-flex">
-    <form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
-    <div class="search-form-control form-group">
-      <input class="form-control string required" type="text" name="search[query]" id="search_query" />
-      <button name="button" type="submit" class="btn btn-flat">
-        <i class="fas fa-search"></i> Search
-      </button>
-  </div>
-</form>
-  </div>
+  <div><%= render "shared/searchbar" %> </div>
 
   <div>
     <h2> Latest post 💬 </h2>
     <div><%= render "shared/post" %></div>
-    <div> btn See all</div>
+   <div class="text-center">  <%= link_to "See all", posts_path, class:"btn-green btn-radius" %> </div>
   </div>
-
+<br>
   <div>
     <h2> Upcoming Event 📅</h2>
-    <div>event 1</div>
-    <div>event 2</div>
-    <div>event 3</div>
-    <div> btn See all</div>
+    <div><%= render "shared/event" %></div>
+    <div class="text-center"><%= link_to "See all", events_path, class:"btn-green btn-radius" %> </div>
   </div>
+  <br>
 </div>
