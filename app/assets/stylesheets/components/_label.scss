@@ -15,8 +15,13 @@
   color: #389393;
   width: 64px;
   text-align: center;
-  margin-bottom: 5px;
+  margin-bottom: 13px;
   font-size: 13px;
+  padding: 0px;
+  border-width: thin;
+  border-style: solid;
+  border-radius: 50px;
+  margin-left: 10px;
 }
 
 .label-price {
@@ -26,7 +31,7 @@
   text-align: center;
   font-size: 13px;
   margin-left: 5px;
-  margin-bottom: 5px;
+  margin-bottom: 13px;
 }
 
 .label-available {
@@ -36,7 +41,7 @@
   text-align: center;
   font-size: 13px;
   margin-left: 5px;
-  margin-bottom: 5px;
+  margin-bottom: 13px;
 }
 
 .label-not-available {
@@ -46,5 +51,5 @@
   text-align: center;
   font-size: 13px;
   margin-left: 5px;
-  margin-bottom: 5px;
+  margin-bottom: 13px;
 }

@@ -16,19 +16,6 @@
         </div>
       </div>
       <div>
-        <div class="service-card-labels">
-          <p class= "label-base label-service-type"><%= service.typology %></p>
-          <% if service.price %>
-            <p class= "label-base label-price"><%=service.price%>€</p>
-          <% else %>
-            <p class= "label-base label-price">Free</p>
-          <% end %>
-          <% if service.available %>
-            <p class= "label-base label-available">available now</p>
-          <% else %>
-            <p class= "label-base label-not-available">not available</p>
-          <% end %>
-        </div>
         <div class="service-card-body">
           <div class="service-card-body-elements">
             <div class="service-card-body-elements-header">
@@ -38,6 +25,19 @@
             </div>
             <div class="service-card-body-elements-body">
               <p><%= service.description %> </p>
+            </div>
+            <div class="service-card-labels">
+              <p class= "label-service-type"><%= service.typology %></p>
+              <% if service.price %>
+                <p class= "label-base label-price"><%=service.price%>€</p>
+              <% else %>
+                <p class= "label-base label-price">Free</p>
+              <% end %>
+              <% if service.available %>
+                <p class= "label-base label-available">available now</p>
+              <% else %>
+                <p class= "label-base label-not-available">not available</p>
+              <% end %>
             </div>
           </div>
         </div>
