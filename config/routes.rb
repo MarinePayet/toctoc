@@ -13,4 +13,5 @@ Rails.application.routes.draw do
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   get "profile", to: "profiles#me", as: :profile
+  get "choice", to: "pages#choice"
 end
