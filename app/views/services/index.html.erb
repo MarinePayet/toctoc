@@ -1,10 +1,10 @@
 
 <div class="app-header">
   <h1 class="header-icon">🛒</h1>
-  <h1>All services</h1>
+  <h1>Services</h1>
 </div>
 
-<div class="service-container">
+<div class="body-container">
 
 
   <% @services.each do |service| %>
@@ -12,7 +12,7 @@
     <div class="service-card-with-user">
       <div class="event-card-avatars">
         <div class="service-card-avatars-user">
-          <img src="https://images.unsplash.com/photo-1479936343636-73cdc5aae0c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80" alt="image" class="avatar-large">
+          <%= image_tag service.user.photo, class:"avatar-large" %>
         </div>
       </div>
       <div>

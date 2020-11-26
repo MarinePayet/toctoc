@@ -1,0 +1,122 @@
+<div class="app-header d-flex align-items-center justify-content-center">
+  <h1>Your profile</h1>
+</div>
+
+<div class="body-container">
+  <div class="d-flex align-items-center">
+    <div>
+      <% if current_user.photo.attached? %>
+        <%= image_tag current_user.photo, class:"avatar-extra-large" %>
+      <% else %>
+        <%= image_tag "avatar-standard.png", class:"avatar-extra-large" %>
+      <% end %>
+    </div>
+    <div>
+      <% if current_user.photo.attached? %>
+        <a href="" class="btn-radius btn-green ml-3">Change picture</a>
+      <% else %>
+        <a href="" class="btn-radius btn-green ml-3">Upload picture</a>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="event-card-text mt-4 p-3">
+    <h3>Personal info</h3>
+    <ul class="list-unstyled">
+      <% if current_user.first_name %>
+        <li>First name: <%= current_user.first_name %></li>
+      <% else %>
+        <li>First name: -</li>
+      <% end %>
+      <% if current_user.last_name %>
+        <li>Last name: <%= current_user.last_name %></li>
+      <% else %>
+        <li>Last name: -</li>
+      <% end %>
+      <% if current_user.stairs %>
+        <li>Floor: <%= current_user.floor %></li>
+      <% else %>
+        <li>Floor: -</li>
+      <% end %>
+      <% if current_user.email %>
+        <li>Email address: <%= current_user.email %></li>
+      <% else %>
+        <li>Email address: -</li>
+      <% end %>
+      <% if current_user.birthday %>
+        <li>Birthday: <%= current_user.birthday %></li>
+      <% else %>
+        <li>Birthday: -</li>
+      <% end %>
+      <% if current_user.job %>
+        <li>Job: <%= current_user.job %></li>
+      <% else %>
+        <li>Job: -</li>
+      <% end %>
+      <% if current_user.hobbies %>
+        <li>Hobbies: <%= current_user.hobbies %></li>
+      <% else %>
+        <li>Hobbies: -</li>
+      <% end %>
+      <% if current_user.phone_number %>
+        <li>Phone number: <%= current_user.phone_number %></li>
+      <% else %>
+        <li>Phone number: -</li>
+      <% end %>
+    </ul>
+    <a href="" class="btn-radius btn-green ml-3 ">Edit</a>
+  </div>
+
+    <div class="event-card-text mt-4 p-3">
+    <h3>Little intro to your neighbours</h1>
+    <% if current_user.catch_phrase %>
+      <p class="text-center"><%= current_user.catch_phrase %></p>
+    <% else %>
+     <p class="text-center">-</p>
+    <% end %>
+    <a href="" class="btn-radius btn-green ml-3 ">Edit</a>
+  </div>
+
+
+  <div class="event-card-text mt-4 p-3 d-flex align-items-center">
+    <div class="w-75">
+      <h3>Your services</h3>
+    </div>
+    <div class="m-auto pl-7">
+      <div class="mb-3">
+        <a href="" class="btn-radius btn-green">View</a>
+      </div>
+      <div class="display-grid mt-1">
+        <a href="" class="btn-radius btn-green">Add</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="event-card-text mt-4 p-3 d-flex align-items-center">
+    <div class="w-75">
+      <h3>Your posts</h3>
+    </div>
+    <div class="m-auto pl-7">
+      <div class="mb-3">
+        <a href="" class="btn-radius btn-green">View</a>
+      </div>
+      <div class="display-grid mt-1">
+        <a href="" class="btn-radius btn-green">Add</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="event-card-text mt-4 p-3 d-flex align-items-center">
+    <div class="w-75">
+      <h3>Your events</h3>
+    </div>
+    <div class="m-auto pl-7">
+      <div class="mb-3">
+        <a href="" class="btn-radius btn-green">View</a>
+      </div>
+      <div class="display-grid mt-1">
+        <a href="" class="btn-radius btn-green">Add</a>
+      </div>
+    </div>
+  </div>
+</div>
