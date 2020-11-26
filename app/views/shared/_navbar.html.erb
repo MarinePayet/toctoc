@@ -4,21 +4,21 @@
   </div>
   <div class="background">
     <div class="corner-left">
-      <div class="nav-button">
+      <div class="nav-button-navbar">
         <i class="fas fa-building"></i>
-        <p>Home</p>
+        <p> <%= link_to "Home", root_path%></p>
       </div>
-      <div class="nav-button">
+      <div class="nav-button-navbar">
         <i class="fas fa-users"></i>
-        <p>Neighbours</p>
+        <p> <%= link_to "Neighbours", users_path%></p>
       </div>
     </div>
     <div class="corner-right">
-      <div class="nav-button">
+      <div class="nav-button-navbar">
         <i class="fas fa-hands-helping"></i>
-        <p>Services</p>
+        <p> <%= link_to "Services", services_path%></p>
       </div>
-      <div class="nav-button">
+      <div class="nav-button-navbar">
         <i class="fas fa-info"></i>
         <p>Building info</p>
       </div>
