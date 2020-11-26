@@ -7,6 +7,32 @@
   margin: 20px 0px;
 }
 
+.post-card-choice {
+    border-radius: 5px;
+    box-shadow: -1px 1px 7px 0px #00000024;
+    border-style: solid;
+    border-color: #389393;
+    border-width: thin;
+    margin: 9px;
+    width: 100px;
+    height: 79px;
+    justify-content: space-between;
+    text-align: center;
+    color: black;
+    font-size: 20px;
+    margin-top: 100px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.deco-non {
+  text-decoration: none;
+}
+
+.deco-non:hover {
+  text-decoration: none;
+}
+
 .post-card-header {
   display:flex;
   justify-content: left;
@@ -318,6 +344,3 @@
   padding:10px;
 }
 
-.header-info {
-
-}
