@@ -1,15 +1,13 @@
 
- <div class="text-center head-green "> <%= image_tag "calendrier", alt: "calendrier", class:"event-emo mt-3 mb-3" %>
-  <h1>Events</h1>
-  </div>
+ <div class="app-header">
+  <h1 class="header-icon" > 📅 </h1>
+  <h1>All events</h1>
+</div>
+
 
   <br>
 <div class="container">
-  <div>
-    <% if policy(Event).create? %>
-    <%= link_to "New Event", new_event_path, class:"btn-radius btn-green " %>
-    <% end %>
-  </div>
+
 <br>
   <div>
     <%  @events.each do |event| %>
@@ -18,14 +16,22 @@
         <div class="event-card-text-header-title">
           <h3> <%= event.title %> </h3>
           <p>By <%= event.user.first_name %> <%= event.user.last_name %> </p>
-          <% if event.photo.attached? %>
-          <%= cl_image_tag event.photo.key, height: 30, width: 40 , crop: :fill %>
-          <% end %>
+          <%# if event.photo.attached? %>
+          <%#= cl_image_tag event.photo.key, height: 30, width: 40 , crop: :fill %>
+          <%# end %>
         </div>
         <div class="event-card-avatars">
           <div class="event-card-avatars-date">
             <p class="month"><%= event.starting_at.strftime("%b.") %></p>
-            <p class="day"><%= event.starting_at.strftime("%dth") %></p>
+             <% if event.starting_at.strftime("%d") == "01" %>
+              <p class="day"><%= event.starting_at.strftime("%dst") %></p>
+            <% elsif event.starting_at.strftime("%d") == "02"  %>
+              <p class="day"><%= event.starting_at.strftime("%dnd") %></p>
+            <% elsif event.starting_at.strftime("%d") == "03"  %>
+              <p class="day"><%= event.starting_at.strftime("%drd") %></p>
+            <% else %>
+              <p class="day"><%= event.starting_at.strftime("%dth") %></p>
+            <% end %>
           </div>
         </div>
       </div>
