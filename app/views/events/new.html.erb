@@ -16,7 +16,7 @@
       <%= f.input :ending_at, label: 'Ending', as: :string, input_html: {class: "datepicker"} %>
       <%= f.input :photo, as: :file, label: 'Add a photo', input_html: { class: 'd-none', id: 'photo-input'}, label_html: { class: 'upload-photo'}, label: '📷 Upload a photo'  %>
       <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
-      <%= f.button :submit, "Go", class: "btn-radius btn-green" %>
+      <%= f.button :submit, "Create", class: "btn-radius btn-green" %>
     <% end %>
   </div>
 </div>

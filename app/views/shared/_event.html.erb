@@ -12,7 +12,19 @@
         <div class="event-card-avatars">
           <div class="event-card-avatars-date">
             <p class="month"><%= event.starting_at.strftime("%b.") %></p>
-            <p class="day"><%= event.starting_at.strftime("%dth") %></p>
+
+            <% if event.starting_at.strftime("%d") == "01" %>
+              <p class="day"><%= event.starting_at.strftime("%dst") %></p>
+            <% elsif event.starting_at.strftime("%d") == "02"  %>
+              <p class="day"><%= event.starting_at.strftime("%dnd") %></p>
+            <% elsif event.starting_at.strftime("%d") == "03"  %>
+              <p class="day"><%= event.starting_at.strftime("%drd") %></p>
+            <% else %>
+              <p class="day"><%= event.starting_at.strftime("%dth") %></p>
+            <% end %>
+
+
+
           </div>
         </div>
       </div>
