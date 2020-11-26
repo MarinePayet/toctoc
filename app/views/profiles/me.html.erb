@@ -3,19 +3,12 @@
 </div>
 
 <div class="body-container">
-  <div class="d-flex align-items-center">
+  <div class="d-flex align-items-center justify-content-center profile-avatar-margin">
     <div>
       <% if current_user.photo.attached? %>
         <%= image_tag current_user.photo, class:"avatar-extra-large" %>
       <% else %>
         <%= image_tag "avatar-standard.png", class:"avatar-extra-large" %>
-      <% end %>
-    </div>
-    <div>
-      <% if current_user.photo.attached? %>
-        <a href="" class="btn-radius btn-green ml-3">Change picture</a>
-      <% else %>
-        <a href="" class="btn-radius btn-green ml-3">Upload picture</a>
       <% end %>
     </div>
   </div>
@@ -64,7 +57,6 @@
         <li>Phone number: -</li>
       <% end %>
     </ul>
-    <a href="" class="btn-radius btn-green ml-3 ">Edit</a>
   </div>
 
     <div class="event-card-text mt-4 p-3">
@@ -74,9 +66,10 @@
     <% else %>
      <p class="text-center">-</p>
     <% end %>
-    <a href="" class="btn-radius btn-green ml-3 ">Edit</a>
   </div>
-
+  <div class="text-center mt-4">
+    <%= link_to "Edit info", edit_profile_path, class: "btn-radius btn-green ml-3" %>
+  </div>
 
   <div class="event-card-text mt-4 p-3 d-flex align-items-center">
     <div class="w-75">

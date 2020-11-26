@@ -1,0 +1,19 @@
+<div class="app-header d-flex align-items-center justify-content-center">
+  <h1>Update your profile</h1>
+</div>
+
+<div class="body-container">
+
+  <%= simple_form_for(@user, url: update_profile_path) do |f| %>
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>
+    <%= f.input :email %>
+    <%= f.input :birthday %>
+    <%= f.input :job %>
+    <%= f.input :hobbies %>
+    <%= f.input :phone_number %>
+    <%= f.input :catch_phrase, :label=> "A few words to introduce yourself" %>
+    <div class="text-center"><%= f.input :photo, as: :file, label: 'Add a profile picture', input_html: { class: 'd-none', id: 'photo-input'}, label_html: { class: 'upload-photo'}, label: '📷 Upload a photo' %></div>
+    <div class="text-center"><%= f.submit "Update your profile", class: "btn-radius btn-green" %></div>
+  <% end %>
+</div>

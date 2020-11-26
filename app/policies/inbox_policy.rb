@@ -12,6 +12,4 @@ def create?
   def show?
     return true
   end
-
-
 end

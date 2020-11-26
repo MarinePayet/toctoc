@@ -8,4 +8,12 @@ class ProfilePolicy < ApplicationPolicy
   def me?
     return true
   end
+
+  def edit?
+    return true
+  end
+
+  def update?
+    return true
+  end
 end
