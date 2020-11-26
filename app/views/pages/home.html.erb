@@ -1,8 +1,10 @@
 
 <div class="app-header">
   <div class="flexbox">
-    <i class="fas fa-comments mr-3"></i>
-    <%= image_tag src="https://source.unsplash.com/300x300/?headshot", class:"avatar pt-1"  %>
+    <i class="fas fa-comments mr-3 fas-avatar"></i>
+    <%= link_to profile_path, class:"deco-non-navbar" do %>
+      <%= image_tag src="https://source.unsplash.com/300x300/?headshot", class:"avatar pt-1"  %>
+    <% end %>
   </div>
   <h1> <%= cl_image_tag "https://res.cloudinary.com/dk85eoleo/image/upload/c_scale,w_350/v1606401573/Stuck_at_Home_-_Alone_Time_1_ekozdk.png", class:"main-image mb-0" %> </h1>
   <h2 class="text-center pt-0 test2">Welcome Home Vannessa !</h2>
@@ -15,15 +17,15 @@
     <div><%= render "shared/searchbar" %> </div>
 
     <div>
-      <h2 class="text-center" style="color:#000D83"> Latest post 💬 </h2>
+      <h2 class="text-center mt-4" style="color:#000D83"> Latest post 💬 </h2>
       <div><%= render "shared/post", posts: @posts %></div>
-     <div class="text-center">  <%= link_to "See all", posts_path, class:"btn-green btn-radius" %> </div>
+     <div class="text-center">  <%= link_to "See all posts", posts_path, class:"btn-green btn-radius" %> </div>
     </div>
   <br>
     <div>
-      <h2 class="text-center" style="color:#000D83"> Upcoming Event 📅</h2>
+      <h2 class="text-center mb-4" style="color:#000D83"> Upcoming Event 📅</h2>
       <div><%= render "shared/event", events: @events %></div>
-      <div class="text-center"><%= link_to "See all", events_path, class:"btn-green btn-radius" %> </div>
+      <div class="text-center"><%= link_to "See all events", events_path, class:"btn-green btn-radius" %> </div>
     </div>
     <br>
 </div>
