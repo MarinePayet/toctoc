@@ -8,7 +8,7 @@
           </div>
           <div class="post-card-header-title">
               <h3><%= post.title %></h3>
-              <p> By <%= post.user.first_name %>, posted on <%= post.created_at %></p>
+              <p> By <%= post.user.first_name %>, posted on <%= post.created_at.strftime("%b %e at %H:%M") %></p>
           </div>
         </div>
         <div class="post-card-body">
