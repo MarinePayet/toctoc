@@ -1,7 +1,9 @@
 
- <div class="text-center head-green "> <%= image_tag "calendrier", alt: "calendrier", class:"event-emo mt-3 mb-3" %>
-  <h1>Events</h1>
-  </div>
+ <div class="app-header">
+  <h1 class="header-icon" ></h1>
+  <h1>All events</h1>
+</div>
+
 
   <br>
 <div class="container">
@@ -18,9 +20,9 @@
         <div class="event-card-text-header-title">
           <h3> <%= event.title %> </h3>
           <p>By <%= event.user.first_name %> <%= event.user.last_name %> </p>
-          <% if event.photo.attached? %>
-          <%= cl_image_tag event.photo.key, height: 30, width: 40 , crop: :fill %>
-          <% end %>
+          <%# if event.photo.attached? %>
+          <%#= cl_image_tag event.photo.key, height: 30, width: 40 , crop: :fill %>
+          <%# end %>
         </div>
         <div class="event-card-avatars">
           <div class="event-card-avatars-date">
