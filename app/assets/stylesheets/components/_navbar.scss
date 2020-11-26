@@ -52,13 +52,19 @@
 
 .nav-button {
   text-align: center;
+  color: white;
 }
 
 .nav-button p {
   margin-bottom: 0px;
 }
 
-.nav-button-navbar a {
-  text-decoration: none;
+.deco-non-navbar{
   color: white;
+  text-decoration: none;
+}
+
+.deco-non-navbar:hover{
+  color: white;
+  text-decoration: none;
 }

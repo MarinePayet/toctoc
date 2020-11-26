@@ -1,27 +1,48 @@
 <div class="fixed-bottom">
-  <div class="plus-sign">
-    <i class="fas fa-plus-circle"></i>
-  </div>
+  <%= link_to services_path, class:"deco-non-navbar" do %>
+    <div class="plus-sign">
+      <%= link_to choice_path, class:"deco-non-navbar" do %>
+        <i class="fas fa-plus-circle"></i>
+      <% end %>
+    </div>
+  <% end %>
+
   <div class="background">
-    <div class="corner-left">
-      <div class="nav-button-navbar">
-        <i class="fas fa-building"></i>
-        <p> <%= link_to "Home", root_path%></p>
-      </div>
-      <div class="nav-button-navbar">
-        <i class="fas fa-users"></i>
-        <p> <%= link_to "Neighbours", users_path%></p>
+
+      <div class="corner-left">
+        <div class="nav-button">
+          <%= link_to root_path, class:"deco-non-navbar" do %>
+            <i class="fas fa-building deco-non"></i>
+            <p>Home</p>
+          <% end %>
+        </div>
+
+      <div class="nav-button">
+        <%= link_to posts_path, class:"deco-non-navbar" do %>
+          <i class="fas fa-users"></i>
+          <p>Neighbours</p>
+        <% end %>
+
       </div>
     </div>
+
+
     <div class="corner-right">
-      <div class="nav-button-navbar">
-        <i class="fas fa-hands-helping"></i>
-        <p> <%= link_to "Services", services_path%></p>
+
+      <div class="nav-button">
+        <%= link_to services_path, class:"deco-non-navbar" do %>
+          <i class="fas fa-hands-helping"></i>
+          <p>Services</p>
+        <% end %>
       </div>
-      <div class="nav-button-navbar">
-        <i class="fas fa-info"></i>
-        <p>Building info</p>
+
+      <div class="nav-button">
+        <%= link_to root_path, class:"deco-non-navbar" do %>
+          <i class="fas fa-info"></i>
+          <p>Building info</p>
+        <% end %>
       </div>
+
     </div>
   </div>
 </div>
