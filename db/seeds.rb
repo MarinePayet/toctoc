@@ -105,7 +105,8 @@ puts "start services "
   name: Service::NAMES.sample,
   description: Faker::TvShows::Friends.quotes,
   price: rand(0..200),
-  user: users.sample
+  user: users.sample,
+  typology: Service::TYPOLOGIES.sample
   )
 end
 

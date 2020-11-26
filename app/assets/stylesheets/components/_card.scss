@@ -255,6 +255,10 @@
   background-color:white;
 }
 
+.service-card-body-elements {
+  width: 270.75px;
+}
+
 .service-card-body-elements h2 {
   font-size: 20px;
   background-color: #389393;
@@ -285,6 +289,7 @@
 
 .service-card-with-user {
   display:flex;
+  margin-bottom: 20px;
 }
 
 .service-card-avatars-user {
