@@ -5,7 +5,7 @@ class ServicePolicy < ApplicationPolicy
     end
   end
 
-    def show?
-      return true
-    end
+  def show?
+    return true
+  end
 end

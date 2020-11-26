@@ -27,7 +27,7 @@ puts "start user"
 users = []
 
 10.times do
-  user_new = User.create!(
+  @user_new = User.create!(
     email: Faker::Internet.email,
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
@@ -39,9 +39,12 @@ users = []
     job: Faker::Job.title,
     phone_number: Faker::PhoneNumber
     )
-
-  users << user_new
+  file = URI.open("https://source.unsplash.com/collection/419323/300x300")
+  @user_new.photo.attach(io: file, filename: "some-image.jpg", content_type: 'image/jpg')
+  @user_new.save
+  users << @user_new
 end
+
 puts "user finish"
 
 puts "start events"
