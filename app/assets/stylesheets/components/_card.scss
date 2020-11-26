@@ -4,6 +4,7 @@
   border-style: solid;
   border-color: #389393;
   border-width: thin;
+  margin: 20px 0px;
 }
 
 .post-card-header {
@@ -67,7 +68,7 @@
 
 .social-icons {
   display:flex;
-  width:50%;
+  width:42%;
   justify-content:left;
 }
 
@@ -159,6 +160,7 @@
   display: flex;
   justify-content: left;
   align-items: baseline;
+  width: 104px;
 }
 
 .event-card-text-bottom p {

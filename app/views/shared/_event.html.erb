@@ -1,18 +1,5 @@
-
- <div class="text-center head-green "> <%= image_tag "calendrier", alt: "calendrier", class:"event-emo mt-3 mb-3" %>
-  <h1>Events</h1>
-  </div>
-
-  <br>
-<div class="container">
-  <div>
-    <% if policy(Event).create? %>
-    <%= link_to "New Event", new_event_path, class:"btn-radius btn-green " %>
-    <% end %>
-  </div>
-<br>
-  <div>
-    <%  @events.each do |event| %>
+ <div>
+     <% Event.first(3).each do |event| %>
     <div class="event-card-text">
       <div class="event-card-text-header">
         <div class="event-card-text-header-title">
@@ -52,6 +39,3 @@
     <% end %>
 
   </div>
-
-
-</div>
