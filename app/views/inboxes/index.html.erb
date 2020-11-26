@@ -1,2 +1,12 @@
 <h1>Inboxes#index</h1>
-<p>Find me in app/views/inboxes/index.html.erb</p>
+
+<div>
+  <% @inboxes.each do |inbox| %>
+    <h1>#<%= inbox.topic %></h1>
+  <% end %>
+    <%# @inboxes.messages.each do |message| %>
+          <span>By <%# message.user.first_name %></span>
+          <small>At <%# message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+        <p><%#message.content %></p>
+    <%# end %>
+</div>
