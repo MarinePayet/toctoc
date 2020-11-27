@@ -1,0 +1,24 @@
+.inbox-container {
+  border-radius: 5px;
+  box-shadow: -1px 1px 7px 0px #00000024;
+  border-style: solid;
+  border-color: #389393;
+  border-width: thin;
+  margin: 20px 5px;
+  display: flex;
+}
+
+.inbox-title{
+  align-items: center;
+  background-color: #389393;
+  color: white;
+}
+
+.inbox-title h1{
+  color: white;
+  font-size: 25px;
+}
+
+.inbox-participants{
+  justify-content: left;
+}
