@@ -1,9 +1,18 @@
 .btn-radius {
-  padding: 8px 20px;
+  padding: 15px 23px;
   border-radius: 50px;
 }
 
 .btn-radius:hover {
+  text-decoration:none;
+}
+
+.btn-radius-small {
+  padding: 8px 16px;
+  border-radius: 50px;
+}
+
+.btn-radius-small:hover{
   text-decoration:none;
 }
 
