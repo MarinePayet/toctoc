@@ -1,0 +1,30 @@
+.inbox-container {
+  border-radius: 5px;
+  box-shadow: -1px 1px 7px 0px #00000024;
+  border-style: solid;
+  border-color: #389393;
+  border-width: thin;
+  margin: 20px 5px;
+  display: flex;
+}
+
+.inbox-sender{
+  margin: 1Opx;
+  font-weight: bold;
+  text-align: center;
+}
+
+.inbox-title h1{
+  color: black;
+  font-size: 20px;
+  align-items: center;
+}
+
+.inbox-participants{
+  justify-content: left;
+  align-items: center;
+}
+
+.inbox-date{
+  align-items: center;
+}

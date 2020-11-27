@@ -2,6 +2,7 @@ class MessagesController < ApplicationController
 
   def index
      @messages = policy_scope(Message).order(created_at: :desc)
+     # @messages = Message.all
   end
 
   def show
