@@ -1,7 +1,11 @@
 <div class="app-header">
   <%= render "shared/header" %>
   <h1> <%= cl_image_tag "https://res.cloudinary.com/dk85eoleo/image/upload/c_scale,w_350/v1606401573/Stuck_at_Home_-_Alone_Time_1_ekozdk.png", class:"main-image mb-0" %> </h1>
-  <h2 class="text-center pt-0 test2">Welcome Home <br> Vanessa !</h2>
+  <% if current_user.first_name %>
+    <h2 class="text-center pt-0 test2">Welcome home <br> <%= current_user.first_name %> !</h2>
+  <% else %>
+    <h2 class="text-center pt-0 test2">Welcome home!</h2>
+  <% end %>
 </div>
 
 
