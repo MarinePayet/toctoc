@@ -3,12 +3,17 @@
     <div class="inbox-title">
     <h1><%= inbox.topic %></h1>
     </div>
-    <a> Created by <%= inbox.participants.first.user.first_name %> on the <%= inbox.created_at.strftime("%a %b %e at %l:%M%p") %> </a>
+    <div class="inbox-sender">
+      <a> Created by <%= inbox.participants.first.user.first_name %> on the <%= inbox.created_at.strftime("%a %b %e at %l:%M%p") %> </a>
+    </div>
     <div class="inbox-participants">
     <p> Participants <% inbox.participants.each do |participant|  %>
       <%= participant.user.first_name %>
       <%= participant.user == current_user ? "(you)" : "" %>
     <% end %></p>
+    <% inbox.messages.each do |message| %>
+    <p> <%= message.last.content %> </p>
+    <% end %>
   <% end %>
   </div>
 </div>
