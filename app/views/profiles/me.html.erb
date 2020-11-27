@@ -1,5 +1,5 @@
 <div class="app-header d-flex align-items-center justify-content-center">
-  <h1>Your profile</h1>
+  <h1 class="profile-title">Your profile</h1>
 </div>
 
 <div class="body-container">
@@ -8,72 +8,72 @@
       <% if current_user.photo.attached? %>
         <%= image_tag current_user.photo, class:"avatar-xxl profile-avatar-position"%>
       <% else %>
-        <%= image_tag "avatar-standard.png", class:"avatar-xxl" %>
+        <%= image_tag "avatar-standard.png", class:"avatar-xxl profile-avatar-position" %>
       <% end %>
     </div>
   </div>
 
-  <div class="event-card-text mt-4 p-3">
-    <h3>Personal info</h3>
+  <div class="profile-info-card mt-4 p-3">
+    <h4 class="mb-2">Personal info</h4>
     <ul class="list-unstyled">
       <% if current_user.first_name %>
-        <li>First name: <%= current_user.first_name %></li>
+        <li><strong>First name:</strong> <%= current_user.first_name %></li>
       <% else %>
-        <li>First name: -</li>
+        <li><strong>First name:</strong> -</li>
       <% end %>
       <% if current_user.last_name %>
-        <li>Last name: <%= current_user.last_name %></li>
+        <li><strong>Last name:</strong> <%= current_user.last_name %></li>
       <% else %>
-        <li>Last name: -</li>
+        <li><strong>Last name:</strong> -</li>
       <% end %>
       <% if current_user.stairs %>
-        <li>Floor: <%= current_user.stairs %></li>
+        <li><strong>Floor:</strong> <%= current_user.stairs %></li>
       <% else %>
-        <li>Floor: -</li>
+        <li><strong>Floor:</strong> -</li>
       <% end %>
       <% if current_user.email %>
-        <li>Email address: <%= current_user.email %></li>
+        <li><strong>Email address:</strong> <%= current_user.email %></li>
       <% else %>
-        <li>Email address: -</li>
+        <li><strong>Email address:</strong> -</li>
       <% end %>
       <% if current_user.birthday %>
-        <li>Birthday: <%= current_user.birthday %></li>
+        <li><strong>Birthday:</strong> <%= current_user.birthday %></li>
       <% else %>
-        <li>Birthday: -</li>
+        <li><strong>Birthday:</strong> -</li>
       <% end %>
       <% if current_user.job %>
-        <li>Job: <%= current_user.job %></li>
+        <li><strong>Job:</strong> <%= current_user.job %></li>
       <% else %>
-        <li>Job: -</li>
+        <li><strong>Job:</strong> -</li>
       <% end %>
       <% if current_user.hobbies %>
-        <li>Hobbies: <%= current_user.hobbies %></li>
+        <li><strong>Hobbies:</strong> <%= current_user.hobbies %></li>
       <% else %>
-        <li>Hobbies: -</li>
+        <li><strong>Hobbies:</strong> -</li>
       <% end %>
       <% if current_user.phone_number %>
-        <li>Phone number: 0<%= current_user.phone_number %></li>
+        <li><strong>Phone number:</strong> 0<%= current_user.phone_number %></li>
       <% else %>
-        <li>Phone number: -</li>
+        <li><strong>Phone number:</strong> -</li>
       <% end %>
     </ul>
   </div>
 
-    <div class="event-card-text mt-4 p-3">
-    <h3>Little intro to your neighbours</h1>
+    <div class="profile-info-card mt-4 p-3">
+    <h4 class="mb-2">Intro to your neighbours</h4>
     <% if current_user.catch_phrase %>
-      <p class="text-center"><%= current_user.catch_phrase %></p>
+      <p class="text-center">"<%= current_user.catch_phrase %>"</p>
     <% else %>
-     <p class="text-center">-</p>
+     <p class="text-center"><em>Nothing written yet</em></p>
     <% end %>
   </div>
   <div class="text-center mt-4">
     <%= link_to "Edit info", edit_profile_path, class: "btn-radius btn-green ml-3" %>
   </div>
 
-  <div class="event-card-text mt-4 p-3 d-flex align-items-center">
+  <div class="profile-info-card mt-4 p-3 d-flex align-items-center">
     <div class="w-75">
-      <h3>Your services</h3>
+      <h4>Your services</h4>
     </div>
     <div class="m-auto pl-7">
       <div class="mb-3">
@@ -85,9 +85,9 @@
     </div>
   </div>
 
-  <div class="event-card-text mt-4 p-3 d-flex align-items-center">
+  <div class="profile-info-card mt-4 p-3 d-flex align-items-center">
     <div class="w-75">
-      <h3>Your posts</h3>
+      <h4>Your posts</h4>
     </div>
     <div class="m-auto pl-7">
       <div class="mb-3">
@@ -99,9 +99,9 @@
     </div>
   </div>
 
-  <div class="event-card-text mt-4 p-3 d-flex align-items-center">
+  <div class="profile-info-card mt-4 p-3 d-flex align-items-center">
     <div class="w-75">
-      <h3>Your events</h3>
+      <h4>Your events</h4>
     </div>
     <div class="m-auto pl-7">
       <div class="mb-3">
