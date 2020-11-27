@@ -1,3 +1,6 @@
+// graym: #989aad;
+
+
 .post-card {
   border-radius: 5px;
   box-shadow: -1px 1px 7px 0px #00000024;
@@ -5,6 +8,32 @@
   border-color: #389393;
   border-width: thin;
   margin: 20px 0px;
+}
+
+.post-card-choice {
+    border-radius: 5px;
+    box-shadow: -1px 1px 7px 0px #00000024;
+    border-style: solid;
+    border-color: #389393;
+    border-width: thin;
+    margin: 9px;
+    width: 100px;
+    height: 79px;
+    justify-content: space-between;
+    text-align: center;
+    color: black;
+    font-size: 20px;
+    margin-top: 100px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.deco-non {
+  text-decoration: none;
+}
+
+.deco-non:hover {
+  text-decoration: none;
 }
 
 .post-card-header {
@@ -33,6 +62,7 @@
 .margin-left {
   margin-left: 10px;
 }
+
 .post-card-header-title p {
   margin-bottom: 0;
 }
@@ -88,22 +118,29 @@
 }
 
 .event-card-avatars-date {
-  background:#389393;
+  background:white;
   border-radius: 50px;
 }
 
-.event-card-avatars-date .month {
+.event-card-avatars-date p {
+  color: #389393;
+}
+
+
+.event-card-text-header .month {
   padding-top: 10px;
   margin: auto;
   text-align: center;
+  color:#000D83;
 }
 
-.event-card-avatars-date .day {
+.event-card-text-header .day {
   padding-bottom: 6px;
   margin: auto;
   text-align: center;
   font-size: 17px;
   font-weight: 600;
+  color:#000D83;
 }
 
 .event-card-avatars-user {
@@ -113,7 +150,6 @@
 .event-card-text {
   border-radius: 5px;
   box-shadow: -1px 1px 7px 0px #00000024;
-  background-color: white;
 }
 
 .event-card-text-header {
@@ -121,30 +157,36 @@
   display:flex;
   justify-content: space-between;
   align-items: center;
-  background-color: white;
+  background-color: #000D83;
   padding: 10px;
-  color:black;
+  color:white;
   border-bottom-style: solid;
   border-bottom-width: thin;
-  border-bottom-color: #389393;
+  border-bottom-color: white;
 }
 
+.card-opacity {
+  // border-radius: 5px 5px 0 0;
+  // display:flex;
+  // justify-content: space-between;
+  // align-items: center;
+  // background-color: #000D83;
+  // padding: 10px;
+  // color:white;
+  // border-bottom-style: solid;
+  // border-bottom-width: thin;
+  // border-bottom-color: white;
+  opacity: 0.3;
+}
 
 .event-card-text-header h3 {
   font-size: 20px;
   margin: 0px;
 }
 
+
 .event-card-text-header p {
   margin-bottom: 0;
-}
-
-.event-card-text-header .month {
-  color:white;
-}
-
-.event-card-text-header .day {
-  color:white;
 }
 
 .event-card-text-body {
@@ -153,6 +195,21 @@
 
 .event-card-text-body p {
   margin-bottom: 0;
+  color: black;
+}
+
+.event-card-bottom {
+  display: flex;
+  justify-content: left;
+  align-items: baseline;
+  border-radius: 0 0 5px 5px;
+}
+
+.event-card-bottom p {
+  color:#000D83;
+  margin-left: 10px;
+  margin-right: 6px;
+  margin-bottom: 5px;
 }
 
 
@@ -160,14 +217,31 @@
   display: flex;
   justify-content: left;
   align-items: baseline;
-  width: 104px;
+}
+
+.event-card-text-bottom .hour-width {
+  width: 87px;
+}
+
+.event-card-text-bottom .location-width {
+  width: 93px;
 }
 
 .event-card-text-bottom p {
+  color:black;
   margin-right: 6px;
   margin-bottom: 5px;
 }
 
+.event-card-bottom .info-icons {
+  width:302px;
+  justify-content:space-around;
+}
+
+.event-card-bottom .fas {
+  color:#000D83;
+  font-size: 15px;
+}
 
 .event-card-bottom-icon {
   margin-left: 10px;
@@ -255,6 +329,10 @@
   background-color:white;
 }
 
+.service-card-body-elements {
+  width: 270.75px;
+}
+
 .service-card-body-elements h2 {
   font-size: 20px;
   background-color: #389393;
@@ -273,18 +351,18 @@
 
 .service-card-body-elements p {
   font-size: 14px;
-  padding: 10px;
-  padding-top: 0px;
-  margin-bottom: 0;
+  padding: 5px;
   line-height: 18px;
 }
 
 .service-card-labels {
   display:flex;
+  margin-bottom: 5px;
 }
 
 .service-card-with-user {
   display:flex;
+  margin-bottom: 20px;
 }
 
 .service-card-avatars-user {
@@ -310,9 +388,24 @@
 }
 
 .service-card-body-elements-body p {
-  padding:10px;
+  padding: 10px 10px 0px 10px;
 }
 
-.header-info {
-
+.color-white {
+  color:white;
 }
+
+.profile-info-card {
+  border-radius: 5px;
+  box-shadow: -1px 1px 7px 0px #00000024;
+  background-color: white;
+}
+
+.green-background {
+   background-color: #389393;
+}
+
+.green-background h4 {
+  color:white;
+}
+

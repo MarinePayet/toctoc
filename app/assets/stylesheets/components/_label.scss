@@ -5,9 +5,9 @@
 }
 
 .label-post-type {
-  border-color: #389393;
+  border-color: #000D83;
   padding: 3px 10PX;
-  color: #389393;
+  color: #000D83;
 }
 
 .label-service-type {
@@ -15,8 +15,13 @@
   color: #389393;
   width: 64px;
   text-align: center;
-  margin-bottom: 5px;
+  margin-bottom: 13px;
   font-size: 13px;
+  padding: 0px;
+  border-width: thin;
+  border-style: solid;
+  border-radius: 50px;
+  margin-left: 10px;
 }
 
 .label-price {
@@ -26,7 +31,7 @@
   text-align: center;
   font-size: 13px;
   margin-left: 5px;
-  margin-bottom: 5px;
+  margin-bottom: 13px;
 }
 
 .label-available {
@@ -34,9 +39,9 @@
   color: #19c219;;
   width: 100px;
   text-align: center;
-  margin-bottom: 5px;
   font-size: 13px;
-  margin-top: 5px;
+  margin-left: 5px;
+  margin-bottom: 13px;
 }
 
 .label-not-available {
@@ -44,7 +49,7 @@
   color: #f10909;
   width: 100px;
   text-align: center;
-  margin-bottom: 5px;
   font-size: 13px;
-  margin-top: 5px;
+  margin-left: 5px;
+  margin-bottom: 13px;
 }

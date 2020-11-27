@@ -1,0 +1,37 @@
+<div class="app-header justify-content-center">
+  <div>
+    <%= link_to profile_path do %>
+      <i class="fas fa-chevron-left"></i>
+    <% end %>
+  </div>
+  <div>
+    <h1> <%= cl_image_tag "https://res.cloudinary.com/dk85eoleo/image/upload/v1606482857/Edit_rizf3p.png", class:"profile-edit-image" %> </h1>
+    <h1 class="profile-title-center">Edit your profile</h1>
+  </div>
+</div>
+
+<div class="body-container">
+
+  <%= simple_form_for(@user, url: update_profile_path) do |f| %>
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>
+    <%= f.input :email %>
+    <%= f.input :phone_number %>
+    <%= f.input :stairs, :label=> "Floor" %>
+    <%= f.input :birthday, start_year: Date.today.year - 110, end_year: Date.today.year %>
+    <%= f.input :job %>
+    <%= f.input :hobbies %>
+    <%= f.input :catch_phrase, :label=> "A few words to introduce yourself" %>
+    <div class ="d-flex align-items-baseline mb-2">
+      <div>
+        <% if current_user.photo.attached? %>
+          <%= image_tag current_user.photo, class:"avatar-large"%>
+        <% else %>
+          <%= image_tag "avatar-standard.png", class:"avatar-large" %>
+        <% end %>
+      </div>
+      <div class="profile-photo-btn-position"><%= f.input :photo, as: :file, label: 'Add a profile picture', input_html: { class: 'd-none', id: 'photo-input'}, label_html: { class: 'upload-photo'}, label: '📷 Change photo' %></div>
+    </div>
+      <%= f.button :submit, "Edit profile", class: "btn-radius btn-green" %>
+  <% end %>
+</div>

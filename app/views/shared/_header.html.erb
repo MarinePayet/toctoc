@@ -1,0 +1,12 @@
+<div class="flexbox pt-2 pr-1">
+  <i class="fas fa-comments mr-3 fas-avatar"></i>
+  <%= link_to profile_path, class:"deco-non-navbar" do %>
+    <div>
+    <% if current_user.photo.attached? %>
+      <%= image_tag current_user.photo, class:"avatar pt-1" %>
+    <% else %>
+      <%= image_tag "avatar-standard.png", class:"avatar pt-1" %>
+    <% end %>
+  </div>
+  <% end %>
+</div>

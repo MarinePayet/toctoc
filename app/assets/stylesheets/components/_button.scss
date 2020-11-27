@@ -1,9 +1,18 @@
 .btn-radius {
-  padding: 8px 20px;
+  padding: 15px 23px;
   border-radius: 50px;
 }
 
 .btn-radius:hover {
+  text-decoration:none;
+}
+
+.btn-radius-small {
+  padding: 8px 16px;
+  border-radius: 50px;
+}
+
+.btn-radius-small:hover{
   text-decoration:none;
 }
 
@@ -13,8 +22,8 @@
 }
 
 .btn-white:hover {
-  background-color: #389393;
-  color:white;
+  color: #389393;
+  background-color:white;
 }
 
 .btn-green {
@@ -23,6 +32,11 @@
 }
 
 .btn-green:hover {
-  color:white;
-  background-color: #000D83;
+  color: white;
+  background-color: #389393;
+}
+
+
+.btn-flat{
+  color: #000D83;
 }

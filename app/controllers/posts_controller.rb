@@ -1,9 +1,24 @@
 class PostsController < ApplicationController
   def index
-      @posts = policy_scope(Post).order(created_at: :desc)
-      if params[:category]
-        @posts = Post.where(:category=> params[:category])
+      @posts = Post.none
+      if params[:sos] == "true"
+        @posts = @posts.or(Post.where(:category=> "SOS"))
       end
+      if params[:fyi] == "true"
+        @posts = @posts.or(Post.where(:category=> "FYI"))
+      end
+      if params[:tips] == "true"
+        @posts = @posts.or(Post.where(:category=> "Tips"))
+      end
+      if params[:issues] == "true"
+        @posts = @posts.or(Post.where(:category=> "Issues"))
+      end
+      if params[:lost_founds] == "true"
+        @posts = @posts.or(Post.where(:category=> "Lost & Founds"))
+      end
+
+     @posts = Post.all if @posts.empty?
+     @posts = policy_scope(@posts).order(created_at: :desc)
   end
 
   def new
