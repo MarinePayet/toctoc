@@ -1,12 +1,5 @@
-
-
 <div class="app-header">
-  <div class="flexbox">
-    <i class="fas fa-comments mr-3 fas-avatar"></i>
-    <%= link_to profile_path, class:"deco-non-navbar" do %>
-      <%= image_tag src="https://source.unsplash.com/300x300/?headshot", class:"avatar pt-1"  %>
-    <% end %>
-  </div>
+  <%= render "shared/header" %>
   <h1> <%= cl_image_tag "https://res.cloudinary.com/dk85eoleo/image/upload/c_scale,w_350/v1606401573/Stuck_at_Home_-_Alone_Time_1_ekozdk.png", class:"main-image mb-0" %> </h1>
   <h2 class="text-center pt-0 test2">Welcome Home <br> Vanessa !</h2>
 </div>
