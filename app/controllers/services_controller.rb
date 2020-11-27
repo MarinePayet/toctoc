@@ -1,5 +1,6 @@
 class ServicesController < ApplicationController
 
+
   def index
     @services = Service.none
       if params[:loan] == "true"
