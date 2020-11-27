@@ -18,28 +18,28 @@ lost_founds = params[:lost_founds] == "true"
 <div class= "filter-container">
   <div class="filter-container-content">
     <div class="list-inline">
-      <a><%= link_to "SOS", posts_path(filters.merge(sos: !sos)), class: "btn-radius #{if params[:sos] == "true"
+      <a><%= link_to "SOS", posts_path(filters.merge(sos: !sos)), class: "btn-radius-small #{if params[:sos] == "true"
         "btn-green"
       else
         "btn-white"
       end}" %></a>
 
-      <a><%= link_to "FYI", posts_path(filters.merge(fyi: !fyi)), class: "btn-radius #{if params[:fyi] == "true"
+      <a><%= link_to "FYI", posts_path(filters.merge(fyi: !fyi)), class: "btn-radius-small #{if params[:fyi] == "true"
         "btn-green"
       else
         "btn-white"
       end}" %></a>
-      <a><%= link_to "Lost & Founds", posts_path(filters.merge(lost_founds: !lost_founds)), class: "btn-radius #{if params[:lost_founds] == "true"
+      <a><%= link_to "Lost & Founds", posts_path(filters.merge(lost_founds: !lost_founds)), class: "btn-radius-small #{if params[:lost_founds] == "true"
         "btn-green"
       else
         "btn-white"
       end}" %></a>
-      <a><%= link_to "Tips", posts_path(filters.merge(tips: !tips)), class: "btn-radius #{if params[:tips] == "true"
+      <a><%= link_to "Tips", posts_path(filters.merge(tips: !tips)), class: "btn-radius-small #{if params[:tips] == "true"
         "btn-green"
       else
         "btn-white"
       end}" %></a>
-      <a><%= link_to "Issues", posts_path(filters.merge(issues: !issues)), class: "btn-radius #{if params[:issues] == "true"
+      <a><%= link_to "Issues", posts_path(filters.merge(issues: !issues)), class: "btn-radius-small #{if params[:issues] == "true"
         "btn-green"
       else
         "btn-white"

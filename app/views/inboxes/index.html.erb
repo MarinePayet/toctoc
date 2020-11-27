@@ -1,2 +1,31 @@
-<h1>Inboxes#index</h1>
-<p>Find me in app/views/inboxes/index.html.erb</p>
+<% @inboxes.each do |inbox| %>
+  <div class="inbox-container">
+    <div class="inbox-header">
+      <div class="inbox-sender">
+      <a> From :  <%= inbox.participants.first.user.first_name %>
+        <% inbox.participants #addavatar %>
+      </a>
+      </div>
+    </div>
+    <div class="inbox-body">
+      <div class="inbox-title">
+        <h1><%= inbox.topic %></h1>
+      </div>
+      <div class="inbox-participants">
+        <p> Participants <% inbox.participants.each do |participant|  %>
+          <%= participant.user.first_name %>
+          <%= participant.user == current_user ? "(you)" : "" %>
+        <% end %></p>
+      </div>
+      <div class="inbox-message">
+        <% inbox.messages.each do |message| %>
+          <p> <% message %> </p>
+        <% end %>
+      </div>
+    </div>
+    <div class="inbox-date">
+      <a> On : <%= inbox.created_at.strftime("%b %e") %> </a>
+    </div>
+<% end %>
+  </div>
+
