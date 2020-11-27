@@ -1,3 +1,6 @@
+// graym: #989aad;
+
+
 .post-card {
   border-radius: 5px;
   box-shadow: -1px 1px 7px 0px #00000024;
@@ -162,11 +165,25 @@
   border-bottom-color: white;
 }
 
+.card-opacity {
+  // border-radius: 5px 5px 0 0;
+  // display:flex;
+  // justify-content: space-between;
+  // align-items: center;
+  // background-color: #000D83;
+  // padding: 10px;
+  // color:white;
+  // border-bottom-style: solid;
+  // border-bottom-width: thin;
+  // border-bottom-color: white;
+  opacity: 0.3;
+}
 
 .event-card-text-header h3 {
   font-size: 20px;
   margin: 0px;
 }
+
 
 .event-card-text-header p {
   margin-bottom: 0;
