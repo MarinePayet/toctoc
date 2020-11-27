@@ -59,6 +59,7 @@
 .margin-left {
   margin-left: 10px;
 }
+
 .post-card-header-title p {
   margin-bottom: 0;
 }
@@ -114,22 +115,29 @@
 }
 
 .event-card-avatars-date {
-  background:#389393;
+  background:white;
   border-radius: 50px;
 }
 
-.event-card-avatars-date .month {
+.event-card-avatars-date p {
+  color: #389393;
+}
+
+
+.event-card-text-header .month {
   padding-top: 10px;
   margin: auto;
   text-align: center;
+  color:#000D83;
 }
 
-.event-card-avatars-date .day {
+.event-card-text-header .day {
   padding-bottom: 6px;
   margin: auto;
   text-align: center;
   font-size: 17px;
   font-weight: 600;
+  color:#000D83;
 }
 
 .event-card-avatars-user {
@@ -139,7 +147,6 @@
 .event-card-text {
   border-radius: 5px;
   box-shadow: -1px 1px 7px 0px #00000024;
-  background-color: white;
 }
 
 .event-card-text-header {
@@ -147,12 +154,12 @@
   display:flex;
   justify-content: space-between;
   align-items: center;
-  background-color: white;
+  background-color: #000D83;
   padding: 10px;
-  color:black;
+  color:white;
   border-bottom-style: solid;
   border-bottom-width: thin;
-  border-bottom-color: #389393;
+  border-bottom-color: white;
 }
 
 
@@ -165,20 +172,27 @@
   margin-bottom: 0;
 }
 
-.event-card-text-header .month {
-  color:white;
-}
-
-.event-card-text-header .day {
-  color:white;
-}
-
 .event-card-text-body {
   padding: 10px 10px 15px 10px;
 }
 
 .event-card-text-body p {
   margin-bottom: 0;
+  color: black;
+}
+
+.event-card-bottom {
+  display: flex;
+  justify-content: left;
+  align-items: baseline;
+  border-radius: 0 0 5px 5px;
+}
+
+.event-card-bottom p {
+  color:#000D83;
+  margin-left: 10px;
+  margin-right: 6px;
+  margin-bottom: 5px;
 }
 
 
@@ -186,14 +200,31 @@
   display: flex;
   justify-content: left;
   align-items: baseline;
-  width: 104px;
+}
+
+.event-card-text-bottom .hour-width {
+  width: 87px;
+}
+
+.event-card-text-bottom .location-width {
+  width: 93px;
 }
 
 .event-card-text-bottom p {
+  color:black;
   margin-right: 6px;
   margin-bottom: 5px;
 }
 
+.event-card-bottom .info-icons {
+  width:302px;
+  justify-content:space-around;
+}
+
+.event-card-bottom .fas {
+  color:#000D83;
+  font-size: 15px;
+}
 
 .event-card-bottom-icon {
   margin-left: 10px;
@@ -343,3 +374,6 @@
   padding: 10px 10px 0px 10px;
 }
 
+.color-white {
+  color:white;
+}
