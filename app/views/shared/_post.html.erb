@@ -4,7 +4,7 @@
       <div class="post-card">
         <div class="post-card-header">
           <div class="post-card-header-avatar">
-            <img src="https://images.unsplash.com/photo-1479936343636-73cdc5aae0c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80" alt="image" class="avatar-large">
+            <%= image_tag post.user.photo, class:"avatar-large" %>
           </div>
           <div class="post-card-header-title">
               <h3><%= post.title %></h3>
