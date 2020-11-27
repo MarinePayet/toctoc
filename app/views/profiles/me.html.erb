@@ -6,9 +6,9 @@
   <div class="d-flex align-items-center justify-content-center profile-avatar-margin">
     <div>
       <% if current_user.photo.attached? %>
-        <%= image_tag current_user.photo, class:"avatar-extra-large" %>
+        <%= image_tag current_user.photo, class:"avatar-xxl profile-avatar-position"%>
       <% else %>
-        <%= image_tag "avatar-standard.png", class:"avatar-extra-large" %>
+        <%= image_tag "avatar-standard.png", class:"avatar-xxl" %>
       <% end %>
     </div>
   </div>
@@ -27,7 +27,7 @@
         <li>Last name: -</li>
       <% end %>
       <% if current_user.stairs %>
-        <li>Floor: <%= current_user.floor %></li>
+        <li>Floor: <%= current_user.stairs %></li>
       <% else %>
         <li>Floor: -</li>
       <% end %>
@@ -52,7 +52,7 @@
         <li>Hobbies: -</li>
       <% end %>
       <% if current_user.phone_number %>
-        <li>Phone number: <%= current_user.phone_number %></li>
+        <li>Phone number: 0<%= current_user.phone_number %></li>
       <% else %>
         <li>Phone number: -</li>
       <% end %>
