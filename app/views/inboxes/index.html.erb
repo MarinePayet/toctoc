@@ -1,12 +1,15 @@
-<h1>Inboxes#index</h1>
-
-<div>
-  <% @inboxes.each do |inbox| %>
-    <h1>#<%= inbox.topic %></h1>
+<% @inboxes.each do |inbox| %>
+  <div class="inbox-container">
+    <div class="inbox-title">
+    <h1><%= inbox.topic %></h1>
+    </div>
+    <a> Created by <%= inbox.participants.first.user.first_name %> on the <%= inbox.created_at.strftime("%a %b %e at %l:%M%p") %> </a>
+    <div class="inbox-participants">
+    <p> Participants <% inbox.participants.each do |participant|  %>
+      <%= participant.user.first_name %>
+      <%= participant.user == current_user ? "(you)" : "" %>
+    <% end %></p>
   <% end %>
-    <%# @inboxes.messages.each do |message| %>
-          <span>By <%# message.user.first_name %></span>
-          <small>At <%# message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
-        <p><%#message.content %></p>
-    <%# end %>
+  </div>
 </div>
+

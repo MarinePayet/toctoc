@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :events
   has_many :posts
   has_many :messages
+  has_many :inboxes
 
   HOBBIES = [ "Working out", "Museums", "Reading", "Shopping", "Gardening", "Adding Wikipedia content", "Programming", "Drinking with friends"]
 
