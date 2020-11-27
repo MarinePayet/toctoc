@@ -5,12 +5,16 @@
   border-color: #389393;
   border-width: thin;
   margin: 20px 5px;
+  display: flex;
+}
+
+.inbox-sender{
+  align-items: center;
+  margin: 1Opx;
+  font-weight: bold;
 }
 
 .inbox-title{
-  display: flex;
-  justify-content: left;
-  align-items: center;
   background-color: #389393;
   color: white;
 }
@@ -21,5 +25,6 @@
 }
 
 .inbox-participants{
-
+  justify-content: left;
+  align-items: center;
 }

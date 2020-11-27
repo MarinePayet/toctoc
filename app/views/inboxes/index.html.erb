@@ -1,20 +1,27 @@
 <% @inboxes.each do |inbox| %>
   <div class="inbox-container">
-    <div class="inbox-title">
-    <h1><%= inbox.topic %></h1>
+    <div class="inbox-header">
+      <div class="inbox-sender">
+      <a> From <%= inbox.participants.first.user.first_name %></a>
+      </div>
     </div>
-    <div class="inbox-sender">
-      <a> Created by <%= inbox.participants.first.user.first_name %> on the <%= inbox.created_at.strftime("%a %b %e at %l:%M%p") %> </a>
-    </div>
-    <div class="inbox-participants">
-    <p> Participants <% inbox.participants.each do |participant|  %>
-      <%= participant.user.first_name %>
-      <%= participant.user == current_user ? "(you)" : "" %>
-    <% end %></p>
-    <% inbox.messages.each do |message| %>
-    <p> <%= message.last.content %> </p>
-    <% end %>
-  <% end %>
+        <div class="inbox-title">
+        <h1><%= inbox.topic %></h1>
+      </div>
+      <a> On <%= inbox.created_at.strftime("%a %b %e") %> </a>
+      <div class="inbox-participants">
+        <p> Participants <% inbox.participants.each do |participant|  %>
+          <%= participant.user.first_name %>
+          <%= participant.user == current_user ? "(you)" : "" %>
+        <% end %></p>
+      </div>
+      <div class="inbox-body">
+        <div class="inbox-message">
+          <% inbox.messages.each do |message| %>
+          <p> <%= message %> </p>
+          <% end %>
+        </div>
+        <% end %>
+      </div>
   </div>
-</div>
 
