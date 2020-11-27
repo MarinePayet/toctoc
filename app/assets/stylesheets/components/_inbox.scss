@@ -9,22 +9,22 @@
 }
 
 .inbox-sender{
-  align-items: center;
   margin: 1Opx;
   font-weight: bold;
-}
-
-.inbox-title{
-  background-color: #389393;
-  color: white;
+  text-align: center;
 }
 
 .inbox-title h1{
-  color: white;
-  font-size: 25px;
+  color: black;
+  font-size: 20px;
+  align-items: center;
 }
 
 .inbox-participants{
   justify-content: left;
+  align-items: center;
+}
+
+.inbox-date{
   align-items: center;
 }
