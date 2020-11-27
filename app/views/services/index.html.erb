@@ -1,3 +1,10 @@
+<%
+filters = params.permit(:available, :loan, :service)
+available = params[:available] == "true"
+loan = params[:loan] == "true"
+service = params[:service] == "true"
+%>
+
 
 <div class="app-header">
   <%= render "shared/header" %>
@@ -7,7 +14,28 @@
 
 <div class="body-container">
 
+<div class= "filter-container">
+  <div class="filter-container-content">
+    <div class="list-inline">
+      <a><%= link_to "Loan", services_path(filters.merge(loan: !loan)), class: "btn-radius #{if params[:loan] == "true"
+        "btn-green"
+      else
+        "btn-white"
+      end}" %></a>
 
+      <a><%= link_to "Service", services_path(filters.merge(service: !service)), class: "btn-radius #{if params[:service] == "true"
+        "btn-green"
+      else
+        "btn-white"
+      end}" %></a>
+      <a><%= link_to "Available", services_path(filters.merge(available: !available)), class: "btn-radius #{if params[:available] == "true"
+        "btn-green"
+      else
+        "btn-white"
+      end}" %></a>
+    </div>
+  </div>
+</div>
   <% @services.each do |service| %>
 
     <div class="service-card-with-user">
