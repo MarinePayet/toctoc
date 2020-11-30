@@ -16,4 +16,5 @@ Rails.application.routes.draw do
   get "profile/edit", to: "profiles#edit", as: :edit_profile
   patch "profile", to: "profiles#update", as: :update_profile
   get "choice", to: "pages#choice"
+  get "component", to: "pages#component"
 end
