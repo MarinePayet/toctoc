@@ -253,7 +253,7 @@
   background-color:white;
   border-radius: 5px;
   box-shadow: -1px 1px 7px 0px #00000024;
-  width: 116px;
+  width: 100px;
 }
 
 .profile-card-elements {
@@ -409,6 +409,32 @@
   color:white;
 }
 
-.cards{
-
+#flexbox {
+  display: flex;
+  flex-wrap: wrap;
+  width: 331px;
+  gap: 20px 5px;
+  justify-content:center;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
