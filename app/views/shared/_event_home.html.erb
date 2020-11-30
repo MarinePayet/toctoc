@@ -1,0 +1,58 @@
+
+<div class="body-container">
+  <% @events.each do |event| %>
+    <% @i = 3 %>
+    <%  if Date.today < event.starting_at %>
+      <div class="event-card-text <%= 'card-opacity' if Date.today > event.starting_at  %>">
+        <div class="event-card-text-header">
+          <div class="event-card-text-header-title">
+            <h3> <%= event.title %> </h3>
+            <p>By <%= event.user.first_name %> <%= event.user.last_name %> </p>
+            <%# if event.photo.attached? %>
+            <%#= cl_image_tag event.photo.key, height: 30, width: 40 , crop: :fill %>
+            <%# end %>
+          </div>
+          <div class="event-card-avatars">
+            <div class="event-card-avatars-date">
+              <p class="month"><%= event.starting_at.strftime("%b.") %></p>
+              <% if event.starting_at.strftime("%d") == "01" %>
+                <p class="day"><%= event.starting_at.strftime("%dst") %></p>
+              <% elsif event.starting_at.strftime("%d") == "02"  %>
+                <p class="day"><%= event.starting_at.strftime("%dnd") %></p>
+              <% elsif event.starting_at.strftime("%d") == "03"  %>
+                <p class="day"><%= event.starting_at.strftime("%drd") %></p>
+              <% else %>
+                <p class="day"><%= event.starting_at.strftime("%dth") %></p>
+              <% end %>
+            </div>
+          </div>
+        </div>
+
+    <div class="event-card-text-body color-white">
+      <p><%= event.description %> </p>
+    </div>
+    <div class="event-card-bottom">
+      <div class="social-icons">
+        <p>11</p><i class="fas fa-thumbs-up card-bottom-icon"></i>
+        <p>18</p><i class="fas fa-comment card-bottom-icon"></i>
+      </div>
+      <div class="info-icons">
+        <div class="event-card-text-bottom location-width">
+          <i class="fas fa-map-marker-alt card-bottom-icon event-card-bottom-icon color-white"></i><p class="location"><%= event.location %></p>
+        </div>
+        <div class="event-card-text-bottom hour-width">
+          <i class="fas fa-clock card-bottom-icon event-card-bottom-icon color-white"></i><p class="hour"><%= event.starting_at.strftime("%H:%M") %></p>
+        </div>
+      </div>
+    </div>
+
+    <% else %>
+      <% @i -= 1 %>
+    <% end %>
+  <% end %>
+  <% if @i == 0 %>
+    <p class="text-center"><em>Nothing planned yet</em></p>
+  <% end %>
+  </div>
+</div>
+<br>

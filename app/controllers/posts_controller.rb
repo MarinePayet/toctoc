@@ -1,4 +1,8 @@
 class PostsController < ApplicationController
+
+skip_before_action :verify_authenticity_token, only: :like
+
+
   def index
       @posts = Post.none
       if params[:sos] == "true"
@@ -34,14 +38,23 @@ class PostsController < ApplicationController
     else
       render :new
     end
-
   end
 
+  def like
+    @post = Post.find(params[:id])
+    authorize @post
+    if @post.liked_by current_user
+      @post.unliked_by current_user
+    else
+      @post.liked_by current_user
+    end
+    render json: {count: @post.get_likes.size}
+  end
 
   private
 
   def post_params
-    params.require(:post).permit(:title, :content, :category)
+    params.require(:post).permit(:title, :content, :category, :format)
 
   end
 end
