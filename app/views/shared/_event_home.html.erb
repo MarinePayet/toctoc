@@ -2,7 +2,7 @@
 <% @events.each do |event|  %>
       <% @i = 3 %>
       <%  if Date.today < event.starting_at %>
-        <div class="event-card-text mb-4<%= 'card-opacity' if Date.today > event.starting_at  %>">
+        <div class="event-card-text mb-4 <%= 'card-opacity' if Date.today > event.starting_at  %>">
           <div class="event-card-text-header">
             <div class="event-card-text-header-title">
               <h3> <%= event.title %> </h3>
