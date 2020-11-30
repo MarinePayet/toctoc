@@ -1,0 +1,9 @@
+<h1>create an inbox</h1>
+
+<%= simple_form_for(@inbox) do |f| %>
+  <%= f.input :topic %>
+  <%= f.input :participants, as: :check_boxes, collection: User.all.map { |user| [user.first_name, user.id ]} %>
+  <%= f.input :message %>
+  <%= f.submit %>
+<% end %>
+
