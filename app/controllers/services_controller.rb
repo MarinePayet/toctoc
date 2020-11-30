@@ -14,6 +14,21 @@ class ServicesController < ApplicationController
         @services = @services.where(:available=> true)
       end
     @services = policy_scope(@services).order(created_at: :desc)
+
+
+if params[:query].present?
+      sql_query = " \
+        service.name @@ :query \
+        OR service.description @@ :query \
+        OR service.price @@ :query \
+        OR service.available @@ :query \
+      "
+      @services = Service.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @services = Service.all
+    end
+
+
   end
 
   def show
