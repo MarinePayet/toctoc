@@ -3,11 +3,6 @@
   font-size: 22px;
 }
 
-.fa-comment{
-  color: #000D83;
-  font-size: 22px;
-}
-
 .post-card-bottom p{
   color: #000D83;
   margin-bottom: 12px;
@@ -16,3 +11,39 @@
 .post-card-bottom{
   font-size: 13px;
 }
+
+.fas-avatar{
+  font-size: 25px;
+}
+
+.fa-search {
+  font-size: 30px;
+  color: white;
+  justify-content: flex-end;
+  padding: 10px 10px;
+}
+
+.fa-comments {
+  font-size: 30px;
+  text-decoration: none;
+  color: white;
+  padding: 10px 10px;
+}
+
+.fa-comment{
+  color: #000D83;
+  font-size: 22px;
+}
+
+.fa-info{
+  font-size: 30px;
+  color: white;
+  justify-content: flex-end;
+  padding: 10px 10px;
+}
+
+// .alert-notification {
+//   position: absolute;
+//   top: 18px;
+//   right: 50px;
+// }

@@ -1,18 +1,38 @@
 <div class="flexbox pt-2 pr-1">
-  <%= link_to inboxes_path, class:"deco-non" do %>
-    <div class="alert-notification" data-user-id="<%= current_user.id if user_signed_in? %>">
-      <i class="fas fa-comments mr-3 fas-avatar"></i>
-      <div id="message"></div>
-    <% end %>
+  <div class="row">
+
+    <div style= "background-color: purple;">
+      <%= link_to root_path, class:"deco-non" do %>
+        <i class="fas fa-info"></i>
+      <% end %>
     </div>
 
-  <%= link_to profile_path, class:"deco-non-navbar" do %>
-    <div>
-    <% if current_user.photo.attached? %>
-      <%= image_tag current_user.photo, class:"avatar pt-1" %>
-    <% else %>
-      <%= image_tag "avatar-standard.png", class:"avatar pt-1" %>
-    <% end %>
+    <div style= "background-color: red;">
+      <%= link_to services_path, class:"deco-non" do %>
+        <i class="fas fa-search"></i>
+      <% end %>
+    </div>
+
+    <div style= "background-color: blue;">
+      <%= link_to inboxes_path, class:"deco-non" do %>
+         <div class="alert-notification" data-user-id="<%= current_user.id if user_signed_in? %>">
+          <i class="fas fa-comments "></i>
+          <div id="message"></div>
+      <% end %>
+        </div>
+    </div>
+
+    <div style="background-color: green;">
+      <%= link_to profile_path, class:"deco-non-navbar" do %>
+        <div>
+          <% if current_user.photo.attached? %>
+            <%= image_tag current_user.photo, class:"avatar pt-1" %>
+          <% else %>
+            <%= image_tag "avatar-standard.png", class:"avatar pt-1" %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+
   </div>
-  <% end %>
 </div>
