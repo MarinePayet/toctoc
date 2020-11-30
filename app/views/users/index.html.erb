@@ -3,24 +3,28 @@
   <h2 class="text-center">All Neighboors</h2>
 </div>
 
-
-
 <div class= "body-container">
-
+<div class="searchbar ">
+  <div>
   <%= form_tag users_path, method: :get do %>
     <%= text_field_tag :query,
       params[:query],
-      class: "form-control",
+      class: "form-control string required search_query simple_form",
       placeholder: "Who are you looking for ?"
     %>
-    <%= submit_tag "Search", class: "btn btn-primary" %>
-  <% end %>
+    </div>
+  <div>
+    <%= submit_tag "Search", class: "btn btn-green btn-radius-search" %>
+  </div>
+    <% end %>
+
+</div>
 
   <br>
   <br>
   <br>
   <!-- <div class="container"> -->
-    <div id="flexbox">
+    <div id="flexbox" class="text-center">
       <% @users.each do |user|  %>
         <div class="profile-card">
           <div class="profile-card-elements">
