@@ -82,6 +82,16 @@
   align-items: baseline;
   background-color: white;
   border-radius: 0 0 5px 5px;
+  padding-left: 10px;
+}
+
+.post-card-bottom .post-likes {
+  display: flex;
+  align-items: baseline;
+}
+
+.post-card-bottom .post-likes .fas {
+  margin-left: 6px;
 }
 
 .post-card-bottom p {

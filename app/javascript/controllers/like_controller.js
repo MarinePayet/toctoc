@@ -10,6 +10,8 @@ export default class extends Controller {
     fetch(link.href, {
       method: "put"
     }).then(response => response.json())
-      .then(data => console.log(data.count))
-  }
+      .then(data => {
+        this.countTarget.innerText = data.count;
+  });
+}
 }
