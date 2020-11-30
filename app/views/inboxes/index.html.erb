@@ -1,2 +1,44 @@
-<h1>Inboxes#index</h1>
-<p>Find me in app/views/inboxes/index.html.erb</p>
+ <div class="app-header">
+    <%= render "shared/header" %>
+  <h1 class="header-icon" > 📨 </h1>
+  <h1>Inbox</h1>
+</div>
+
+
+<div class="container">
+  <div class="new-inbox">
+     <%= link_to "Create a new inbox", new_inbox_path %>
+  </div>
+
+<% @inboxes.each do |inbox| %>
+  <div class="inbox-container">
+      <div class="inbox-sender">
+      <a> From :  <%= inbox.participants.first.user.first_name %>
+        <%# if inbox.participants.user.photo.attached?%>
+           <%#cl_image_tag inbox.participants.user.photo.key %>
+          <%# end %>
+      </a>
+      </div>
+    <div class="inbox-body">
+      <div class="inbox-title">
+        <h1> <%= inbox.topic %></h1>
+
+      </div>
+      <div class="inbox-participants">
+        <p> Participants <% inbox.participants.each do |participant|  %>
+          <%= participant.user.first_name %>
+          <%= participant.user == current_user ? "(you)" : "" %>
+        <% end %></p>
+      </div>
+      <div class="inbox-message">
+        <p><%= link_to "See all messages", inbox_path(inbox) %>  </p>
+        <%= inbox.messages.present? ? inbox.messages.last.content : " " %>
+      </div>
+    </div>
+    <div class="inbox-date">
+      <a> On : <%= inbox.created_at.strftime("%b %e") %> </a>
+    </div>
+  </div>
+<% end %>
+</div>
+

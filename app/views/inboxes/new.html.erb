@@ -1,0 +1,14 @@
+<div class="app-header">
+  <h1 class="header-icon" > 📅 </h1>
+  <h1>New inbox</h1>
+</div>
+<div class="container">
+
+<%= simple_form_for(@inbox) do |f| %>
+  <%= f.input :topic %>
+  <%= f.input :participants, as: :check_boxes, collection: User.all.map { |user| [user.first_name, user.id ]} %>
+  <%= f.input :message %>
+  <%= f.submit %>
+<% end %>
+</div>
+
