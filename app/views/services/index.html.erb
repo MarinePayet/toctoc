@@ -25,7 +25,7 @@ service = params[:service] == "true"
 </div>
   <% @services.each do |service| %>
 
-    <div class="service-card-with-user">
+    <div class="service-card-with-user mb-3">
       <div class="event-card-avatars">
         <div class="service-card-avatars-user">
           <%= image_tag service.user.photo, class:"avatar-large" %>
@@ -33,7 +33,7 @@ service = params[:service] == "true"
       </div>
       <div>
         <div class="service-card-body">
-          <div class="service-card-body-elements">
+          <div class="service-card-body-elements ">
             <div class="service-card-body-elements-header">
               <h2><%= service.name %></h2>
               <% @user = User.find(service.user_id) %>
