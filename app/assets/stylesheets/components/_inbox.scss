@@ -8,9 +8,8 @@
   display: flex;
 }
 
-.inbox-sender{
+.inbox-sender a {
   align-items: center;
-  margin: 1Opx;
   font-weight: bold;
 }
 
@@ -26,5 +25,10 @@
 }
 
 .inbox-date{
-  align-items: center;
+  justify-content: right;
+}
+
+.new-inbox h1 {
+  text-decoration: none;
+  color: #389393;
 }
