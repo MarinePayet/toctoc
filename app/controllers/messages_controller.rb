@@ -23,8 +23,16 @@ class MessagesController < ApplicationController
     @message.inbox = @inbox
     @message.user = current_user
     authorize @message
+
     if @message.save
-      redirect_to inbox_path(@inbox, anchor: "message-#{@message.id}")
+      @inbox.participants.map(&:user).each do |user|
+        InboxChannel.broadcast_to(
+          user,
+          render_to_string(partial: '/inboxes/notification', locals: { message: @message })
+        )
+      end
+
+      # redirect_to inbox_path(@inbox)
     else
       render "inbox/show"
     end

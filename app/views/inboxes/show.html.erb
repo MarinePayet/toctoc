@@ -1,4 +1,5 @@
  <div class="app-header">
+  <%= render "shared/header" %>
   <h1 class="header-icon" > 📝 </h1>
   <h1>All messages from "<%= @inbox.topic  %>"</h1>
 </div>
@@ -21,7 +22,7 @@
   <% end %>
 
   <div class="new-message">
-    <%= simple_form_for([ @inbox, Message.new ]) do |f| %>
+    <%= simple_form_for [ @inbox, Message.new ], remote: true do |f| %>
       <%= f.input :content %>
       <%= f.button :submit %>
     <% end %>
