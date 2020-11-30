@@ -1,6 +1,7 @@
-<h1>Messages#index</h1>
-<p>Find me in app/views/messages/index.html.erb</p>
-
+ <div class="app-header">
+  <h1 class="header-icon" > 📝 </h1>
+  <h1>All messages</h1>
+</div>
 
     <% @inbox.messages.each do |message| %>
           <span>By <% message.user.first_name %></span>

@@ -1,6 +1,11 @@
+ <div class="app-header">
+  <h1 class="header-icon" > 📝 </h1>
+  <h1>All messages from "<%= @inbox.topic  %>"</h1>
+</div>
+
 <div class="container">
 <div class="inbox-title">
-    <h1> <%= @inbox.topic %></h1>
+    <h1> <%= %></h1>
   </div>
 
   <% @inbox.messages.each do |message| %>
@@ -14,7 +19,10 @@
   </div>
 </div>
   <% end %>
+
+  <div class="new-message">
+  <% simple_form_for [ @inbox, @message ], remote: true do |f| %>
+    <% f.input :content, label: false, placeholder: "Message ##{@inbox.topic}" %>
+  <% end %>
+  </div>
 </div>
-<%# simple_form_for [ @inbox, @message ], remote: true do |f| %>
-  <%# f.input :content, label: false, placeholder: "Message ##{@inbox.topic}" %>
-<%# end %>
