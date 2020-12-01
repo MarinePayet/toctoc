@@ -36,7 +36,13 @@
   <% else %>
     <% @post.comments.order(created_at: :desc).each do |comment| %>
     <div class="comment-card">
+
+      <% if comment.user.photo.attached? %>
       <%= image_tag comment.user.photo, class:"avatar"%>
+      <% else %>
+        <%= image_tag "avatar-standard.png", class:"avatar" %>
+      <% end %>
+
       <div class="comment-card-body">
         <p class="comment-user-name"><%= comment.user.first_name %> <%= comment.user.last_name %></p>
         <p class="comment-date"><%= comment.created_at.strftime("%b %e at %H:%M") %></p>

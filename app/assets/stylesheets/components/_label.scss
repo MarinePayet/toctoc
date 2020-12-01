@@ -24,6 +24,22 @@
   margin-left: 10px;
 }
 
+.label-service-type-user {
+  border-color: #389393;
+  color: #389393;
+  width: 64px;
+  text-align: center;
+  margin-bottom: 13px;
+  font-size: 13px;
+  padding: 04px;
+  border-width: thin;
+  border-style: solid;
+  border-radius: 50px;
+  margin-left: 10px;
+  height:30px;
+}
+
+
 .label-price {
   border-color: grey;
   color: grey;
@@ -53,4 +69,40 @@
   font-size: 13px;
   margin-left: 5px;
   margin-bottom: 13px;
+}
+.label-available-user {
+  border-color: #19c219;
+  border-color: #19c219;
+  color: #19c219;
+  width: 100px;
+  text-align: center;
+  font-size: 13px;
+  margin-left: 5px;
+  margin-bottom: 13px;
+  height: 30px;
+  padding: 4px;
+}
+
+.label-not-available-user {
+  border-color: #f10909;
+  color: #f10909;
+  width: 100px;
+  text-align: center;
+  font-size: 13px;
+  margin-left: 5px;
+  margin-bottom: 13px;
+  height: 30px;
+  padding: 4px;
+}
+
+.label-price-user {
+  border-color: grey;
+  color: grey;
+  width: 65px;
+  text-align: center;
+  font-size: 13px;
+  margin-left: 5px;
+  margin-bottom: 13px;
+  height: 30px;
+  padding: 4px;
 }

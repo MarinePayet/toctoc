@@ -306,6 +306,10 @@
 .profile-info-card-avatar img {
   margin-top: -91px;
 }
+.profile-info-card-avatar-user img {
+  margin-top: -132px;
+  margin-left: 94px;
+}
 
 
 .profile-info-card-text-intro {
@@ -342,6 +346,9 @@
 .service-card-body-elements {
   width: 270.75px;
 }
+.service-card-body-elements-user {
+  width: 344px;
+}
 
 .service-card-body-elements h2 {
   font-size: 20px;
@@ -363,6 +370,12 @@
   font-size: 14px;
   padding: 5px;
   line-height: 18px;
+}
+
+.service-card-labels-user {
+  display:flex;
+  margin-bottom: 5px;
+  justify-content: space-evenly
 }
 
 .service-card-labels {
