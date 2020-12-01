@@ -1,0 +1,191 @@
+<div class="app-header">
+  <div classe="flexbox-user" style="background-color: pink;">
+
+    <div style="background-color: red; "class="row">
+      <div class="test">
+      <%= link_to users_path do %>
+        <i class="fas fa-chevron-left"></i>
+      <% end %>
+      </div>
+    </div>
+
+    <div style= "background-color: yellow;">
+    <%= render "shared/header" %>
+    </div>
+  </div>
+
+  <h2 class="text-center pt-0 test2 mt-15">Your Neighbour</h2>
+</div>
+
+
+  <div class="profile-info-card">
+    <div class="profile-info-card-avatar-user">
+      <% if current_user.photo.attached? %>
+        <%= image_tag current_user.photo, class:"avatar-xxl profile-avatar-position-user"%>
+      <% else %>
+        <%= image_tag "avatar-standard.png", class:"avatar-xxl profile-avatar-position-user" %>
+      <% end %>
+    </div>
+<br>
+    <div class="profile-info-card-text">
+      <div class="profile-info-card-text-intro">
+        <strong><%= @user.first_name %> <%= @user.last_name %></strong>
+        <br>
+        <i class="fas fa-envelope"></i>
+        <p><em><%=  @user.catch_phrase %></em></p>
+      </div>
+
+      <div class="profile-info-card-text-details">
+        <% if @user.job %>
+          <p>💼: <%= @user.job %> </p>
+        <% else %>
+          <p>💼: <em>unknow</em> </p>
+        <% end %>
+
+        <% if @user.hobbies %>
+          <p>❤️: <%= @user.hobbies %></p>
+        <% else %>
+          <p>❤️: <em>unknow</em> </p>
+        <% end %>
+
+        <% if @user.phone_number %>
+          <p>☎️: @user.phone_number </p>
+        <% else %>
+          <p>☎️: <em>Dm me</em> </p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+<br>
+
+<div class="ml-3">
+  <h4 class="mb-3 user-show">Services</h4>
+  <% if @user.services.blank? %>
+    <p> <em> nothing to show </em></p>
+  <% else %>
+    <% @user.services.each do |service| %>
+      <div class="service-card-with-user mb-3">
+        <div class="service-card-body">
+          <div class="service-card-body-elements-user ">
+            <div class="service-card-body-elements-header">
+              <h2><%= service.name %></h2>
+            </div>
+            <div class="service-card-body-elements-body">
+              <p><%= service.description %> </p>
+            </div>
+            <div class="service-card-labels-user">
+              <p class= "label-service-type-user"><%= service.typology %></p>
+              <% if service.price %>
+                <p class= "label-base label-price-user"><%=service.price%>€</p>
+              <% else %>
+                <p class= "label-base label-price-user">Free</p>
+              <% end %>
+              <% if service.available %>
+                <p class= "label-base label-available-user" >available now</p>
+              <% else %>
+                <p class= "label-base label-not-available-user">not available</p>
+              <% end %>
+              <p>
+                <%= link_to new_direct_message_path(query: params[:query], user_id: @user.id) do %>
+                   <i class="fas fa-comments fa-comments-user"></i>
+                <% end %>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+
+
+<div class="ml-3">
+  <h4 class="mb-3 user-show">Posts</h4>
+  <% if @user.posts.blank? %>
+    <p> <em> nothing to show </em></p>
+  <% else %>
+    <% @user.posts.each do |post| %>
+
+    <div class="post-card">
+      <div class="post-card-header">
+        <div class="post-card-header-title margin-left">
+          <h3><%= post.title %></h3>
+        </div>
+      </div>
+
+      <div class="post-card-body">
+        <p><%= post.content %></p>
+      </div>
+
+      <div class="post-card-bottom">
+        <p>11</p><i class="fas fa-thumbs-up card-bottom-icon"></i>
+        <p>18</p><i class="fas fa-comment card-bottom-icon"></i>
+        <p class= "label-base label-post-type"><%= post.category %></p>
+      </div>
+    </div>
+    <% end %>
+  <% end %>
+</div>
+
+
+<div class="ml-3">
+
+  <h4 class="mb-3 user-show">Events</h4>
+
+  <% if @user.events.blank? %>
+    <p> nothing to show </p>
+  <% else %>
+    <% @user.events.each do |event| %>
+      <div class="event-card-text">
+        <div class="event-card-text-header">
+          <div class="event-card-text-header-title">
+            <h3><%= event.title %></h3>
+          </div>
+
+          <div class="event-card-avatars">
+            <div class="event-card-avatars-date">
+              <p class="month"><%= event.starting_at.strftime("%b.") %></p>
+              <% if event.starting_at.strftime("%d") == "01" %>
+                <p class="day"><%= event.starting_at.strftime("%dst") %></p>
+              <% elsif event.starting_at.strftime("%d") == "02"  %>
+                <p class="day"><%= event.starting_at.strftime("%dnd") %></p>
+              <% elsif event.starting_at.strftime("%d") == "03"  %>
+                <p class="day"><%= event.starting_at.strftime("%drd") %></p>
+              <% else %>
+                <p class="day"><%= event.starting_at.strftime("%dth") %></p>
+              <% end %>
+            </div>
+          </div>
+        </div>
+
+        <div class="event-card-text-body">
+          <p><%= event.description %></p>
+        </div>
+
+        <div class="post-card-bottom">
+          <div class="social-icons">
+            <p>11</p><i class="fas fa-thumbs-up card-bottom-icon"></i>
+            <p>18</p><i class="fas fa-comment card-bottom-icon"></i>
+          </div>
+
+          <div class="info-icons">
+            <div class="event-card-text-bottom">
+              <i class="fas fa-map-marker-alt card-bottom-icon event-card-bottom-icon "></i><p>My flat</p>
+            </div>
+
+            <div class="event-card-text-bottom">
+              <i class="fas fa-clock card-bottom-icon event-card-bottom-icon"></i><p>5PM</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    <br>
+    <% end %>
+  </div>
+
+<% end %>
+</div>
+
+

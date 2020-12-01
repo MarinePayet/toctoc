@@ -35,7 +35,7 @@ users = []
     stairs: Faker::Number.between(from: 1, to: 10),
     birthday: Faker::Date.birthday,
     catch_phrase: Faker::TvShows::HowIMetYourMother.catch_phrase,
-    hobbies: [User::HOBBIES.sample],
+    hobbies: User::HOBBIES.sample,
     job: Faker::Job.title,
     phone_number: Faker::PhoneNumber
     )

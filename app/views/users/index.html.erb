@@ -25,32 +25,32 @@
   <!-- <div class="container"> -->
     <div id="flexbox-users" class="text-center">
       <% @users.each do |user|  %>
-        <div class="profile-card">
+        <div class="profile-card mb-2 mr-2">
           <div class="profile-card-elements">
-            <img src="https://images.unsplash.com/photo-1479936343636-73cdc5aae0c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80" alt="image" class="avatar-large">
-            <% if user.first_name && user.last_name %>
-              <h2><%= user.first_name %> <%= user.last_name %></h2>
-            <% else %>
-              <p><em> Unknow </em></p>
-            <% end %>
+            <%= link_to user_path(user), class:"deco-non" do %>
+              <img src="https://images.unsplash.com/photo-1479936343636-73cdc5aae0c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80" alt="image" class="avatar-large">
+              <% if user.first_name && user.last_name %>
+                <h2><%= user.first_name %> <%= user.last_name %></h2>
+              <% else %>
+                <p><em> Unknow </em></p>
+              <% end %>
 
-            <% if user.stairs == 1 %>
-              <p><%= user.stairs %>st floor</p>
-            <% elsif user.stairs == 2 %>
-              <p><%= user.stairs %>nd floor</p>
-            <% elsif user.stairs == 3 %>
-              <p><%= user.stairs %>rd floor</p>
-            <% elsif user.stairs.to_i > 4 %>
-              <p><%= user.stairs %>th floor</p>
-            <% else %>
-              <p><em> Unknow </em></p>
+              <% if user.stairs == 1 %>
+                <p><%= user.stairs %>st floor</p>
+              <% elsif user.stairs == 2 %>
+                <p><%= user.stairs %>nd floor</p>
+              <% elsif user.stairs == 3 %>
+                <p><%= user.stairs %>rd floor</p>
+              <% elsif user.stairs.to_i > 4 %>
+                <p><%= user.stairs %>th floor</p>
+              <% else %>
+                <p><em> Unknow </em></p>
+              <% end %>
             <% end %>
           </div>
         </div>
-      <br>
-
-      <% end %>
+     <% end %>
     </div>
-  <!-- </div> -->
+  </div>
 
 </div>
