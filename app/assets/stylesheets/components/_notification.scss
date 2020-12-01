@@ -1,13 +1,24 @@
-.notification-design{
-  border-width: thin;
-  border-radius: 50px;
-  border-style: solid;
-  border-color: red;
-  position: absolute;
-  color: white;
-  top: 32px;
+#notif_icon.active{
+  color: #000D83;
 }
 
-#notif_icon.active{
-  color: red;
+.alert-notification {
+  position: relative;
+  span#notif_count {
+    position: absolute;
+
+    border-radius: 50%;
+    top: 0px;
+    right: 0px;
+    background-color: #000D83;
+    color: white;
+    &.active{
+    height: 20px;
+    width: 20px;
+    font-size: 12px;
+    display: flex;
+    place-content: center;
+    line-height: 20px;
+    }
+  }
 }
