@@ -10,18 +10,28 @@
 
 
 <div class="body-container">
-    <div><%= render "shared/searchbar" %> </div>
-
+    <div class="mt-5 mb-5"><%= render "shared/searchbar" %> </div>
     <div>
-      <h2 class="text-center mt-4" style="color:#000D83"> Latest posts 💬 </h2>
-      <div class="text-center mt-4">  <%= link_to "See all posts", posts_path, class:"btn-green btn-radius" %> </div>
+      <h2 class="text-center mt-4 home-title"> Lastest posts 💬 </h2>
       <div><%= render "shared/post", posts: @posts %></div>
+      <div class="text-center mt-4">  <%= link_to "See all posts", posts_path, class:"btn-green btn-radius" %> </div>
     </div>
   <br>
     <div>
-      <h2 class="text-center mb-4" style="color:#000D83"> Upcoming Events 📅</h2>
-      <div class="text-center"><%= link_to "See all events", events_path, class:"btn-green btn-radius" %> </div>
-      <div><%= render "shared/event_home", events: @events %></div>
+      <h2 class="text-center mt-4 mb-2 home-title"> Upcoming events 📅</h2>
+      <div><%= render "shared/event_home", events: @events %>
+      <% @events.each do |event|  %>
+        <% @i = 0 %>
+        <% if Date.today < event.starting_at %>
+          <% @i +=1 %>
+        <% end %>
+      <% end %>
+      <% if i = 0 %>
+        <div class="text-center mt-3"><%= link_to "See passed events", events_path, class:"btn-green btn-radius" %> </div>
+      <% else %>
+        <div class="text-center mt-3"><%= link_to "See all events", events_path, class:"btn-green btn-radius" %> </div>
+      <% end %>
+      </div>
     </div>
 </div>
 

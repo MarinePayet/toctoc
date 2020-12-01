@@ -1,8 +1,8 @@
 <div class="link-back-to">
-    <%= link_to posts_path do %>
+    <%= link_to :back do %>
     <div class="back-to-page d-flex">
       <i class="fas fa-chevron-left fas-post"></i>
-      <h5>See all posts</h5>
+      <h5>Back</h5>
     </div>
     <% end %>
   </div>
@@ -24,7 +24,11 @@
   <div class="post-card-bottom d-flex">
     <span data-controller="like" class="post-likes">
         <span data-target="like.count"><%= @post.get_likes.size %></span>
-          <div><%= link_to "", like_post_path(@post), class:"fas fa-thumbs-up", data: {action:"click->like#post"}, method: :put, remote: :true %></div>
+        <% if current_user.voted_for? @post %>
+          <%= link_to "", like_post_path(@post), class:"fas fa-thumbs-up liked", data: {action:"click->like#post"}, method: :put, remote: :true %>
+        <% else %>
+          <%= link_to "", like_post_path(@post), class:"fas fa-thumbs-up", data: {action:"click->like#post"}, method: :put, remote: :true %>
+        <% end %>
     </span>
     <p><%= @post.comments.size %></p><div><%= link_to "", post_path(@post), class:"fas fa-comment card-bottom-icon"%></div>
     <p class= "label-base label-post-type"> <%= @post.category%></p>

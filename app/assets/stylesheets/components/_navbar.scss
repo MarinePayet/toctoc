@@ -14,6 +14,7 @@
 .background {
   background-color: #389393;
   color: white;
+  border-top-style: solid;
   display: flex;
   justify-content: space-around;
   padding-top: 10px;
@@ -40,6 +41,20 @@
   color: white;
   font-size: 56px;
   margin-bottom: -67px;
+  position:relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    height: 95px;
+    width: 95px;
+    background: white;
+    z-index: -1;
+    border-radius: 50%;
+    top: -3px;
+    left: 50%;
+    transform: translateX(-50%);
+}
 }
 
 .fa-plus-circle {
