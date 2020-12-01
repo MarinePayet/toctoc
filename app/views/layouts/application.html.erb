@@ -13,6 +13,12 @@
 
     <meta property= "og:image" content="https://res.cloudinary.com/dk85eoleo/image/upload/c_scale,h_630,w_1200/v1606401573/Stuck_at_Home_-_Alone_Time_1_ekozdk.png" >
 
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="manifest" href="<%= asset_path 'manifest.json' %>">
+      <%= render 'shared/ios_pwa_links' %>
+
+
   </head>
 
   <body>
