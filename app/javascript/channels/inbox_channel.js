@@ -9,6 +9,7 @@ const initInboxCable = () => {
 
     consumer.subscriptions.create({ channel: "InboxChannel", id: id }, {
       received(data) {
+        console.log("hello", data)
         alert.querySelector('#message').innerHTML = data
       },
     });
