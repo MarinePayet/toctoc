@@ -35,3 +35,41 @@
   font-weight: bold;
   font-size: 20px;
 }
+
+.message-container{
+  border-radius: 5px;
+  box-shadow: -1px 1px 7px 0px #00000024;
+  border-style: solid;
+  border-color: #389393;
+  border-width: thin;
+  margin: 20px 5px;
+  display: flex;
+  background-color: white;
+  position: relative;
+}
+
+.message-container.current_user{
+  border-radius: 5px;
+  box-shadow: -1px 1px 7px 0px #00000024;
+  border-style: solid;
+  border-width: thin;
+  margin: 20px 5px;
+  display: flex;
+  color: white;
+  background-color: #389393;
+  position: relative;
+}
+
+// .message-container.inbox-message{
+//   position: absolute;
+//   top: 8px;
+//   bottom: 8px;
+//   right: 8px;
+// }
+
+// .message-container.inbox-message.current_user{
+//   position: absolute;
+//   top: 8px;
+//   bottom: 8px;
+//   right: 8px;
+// }

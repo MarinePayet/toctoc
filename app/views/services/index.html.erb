@@ -57,6 +57,9 @@ service = params[:service] == "true"
               <% else %>
                 <p class= "label-base label-not-available">not available</p>
               <% end %>
+              <div>
+                <%= link_to "contact", new_direct_message_path(query: params[:query], user_id: @user.id)  %>
+              </div>
             </div>
           </div>
         </div>

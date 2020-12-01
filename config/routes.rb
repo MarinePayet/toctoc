@@ -15,6 +15,8 @@ Rails.application.routes.draw do
     resources :messages, only: [:index, :new, :create, :show]
     resources :participants, only: [:new, :create]
   end
+  get "newdirectmessage", to: "inboxes#new_direct_message", as: :new_direct_message
+  post "createdirectmessage", to: "inboxes#create_direct_message", as: :create_direct_message
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   get "profile", to: "profiles#me", as: :profile
