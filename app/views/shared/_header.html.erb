@@ -1,19 +1,19 @@
 <div class="flexbox pt-2 pr-1">
   <div class="row">
 
-    <div style= "background-color: purple;">
+    <div>
       <%= link_to root_path, class:"deco-non" do %>
         <i class="fas fa-info"></i>
       <% end %>
     </div>
 
-    <div style= "background-color: red;">
+    <div>
       <%= link_to services_path, class:"deco-non" do %>
         <i class="fas fa-search"></i>
       <% end %>
     </div>
 
-    <div style= "background-color: blue;">
+    <div>
       <%= link_to inboxes_path, class:"deco-non" do %>
          <div class="alert-notification" data-user-id="<%= current_user.id if user_signed_in? %>">
           <i class="fas fa-comments "></i>
@@ -22,7 +22,7 @@
         </div>
     </div>
 
-    <div style="background-color: green;">
+    <div>
       <%= link_to profile_path, class:"deco-non-navbar" do %>
         <div>
           <% if current_user.photo.attached? %>

@@ -12,4 +12,12 @@ class InboxPolicy < ApplicationPolicy
   def show?
     return true
   end
+
+  def new_direct_message?
+    return true
+  end
+
+  def create_direct_message?
+    return true
+  end
 end
