@@ -1,7 +1,13 @@
 .notification-design{
-  border-width: 10px;
+  border-width: thin;
   border-radius: 50px;
+  border-style: solid;
   border-color: red;
+  position: absolute;
   color: white;
+  top: 32px;
 }
 
+#notif_icon.active{
+  color: red;
+}

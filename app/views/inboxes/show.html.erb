@@ -10,6 +10,7 @@
     <div class="inbox-message">
       <i class="author">
       <span><%= message.user.first_name %></span>
+      <span><%= message.user.photo %></span>
       <small><%= message.created_at.strftime("at %k:%M on the %m/%e") %></small>
       </i>
       <p><%= message.content %></p>

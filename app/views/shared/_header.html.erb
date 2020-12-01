@@ -16,7 +16,8 @@
     <div>
       <%= link_to inboxes_path, class:"deco-non" do %>
          <div class="alert-notification" data-user-id="<%= current_user.id if user_signed_in? %>">
-          <i class="fas fa-comments "></i>
+          <span id="notif_count"></span>
+          <i class="fas fa-comments" id="notif_icon"></i>
           <div id="message"></div>
       <% end %>
         </div>
