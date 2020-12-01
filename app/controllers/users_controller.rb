@@ -7,7 +7,7 @@ class UsersController < ApplicationController
       @users = User.all
     end
 
-  @users = policy_scope(@users).order(created_at: :desc)
+  @users = policy_scope(@users).order(stairs: :asc)
   end
 
   def show
