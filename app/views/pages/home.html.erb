@@ -1,6 +1,6 @@
 <div class="app-header">
   <%= render "shared/header" %>
-  <h1> <%= cl_image_tag "https://res.cloudinary.com/dk85eoleo/image/upload/c_scale,w_350/v1606401573/Stuck_at_Home_-_Alone_Time_1_ekozdk.png", class:"main-image mb-0" %> </h1>
+  <h1> <%= cl_image_tag "https://res.cloudinary.com/dk85eoleo/image/upload/c_scale,w_250/v1606401573/Stuck_at_Home_-_Alone_Time_1_ekozdk.png", alt: "alttext" %> </h1>
   <% if current_user.first_name %>
     <h2 class="text-center pt-0 test2">Welcome home <br> <%= current_user.first_name %> !</h2>
   <% else %>
@@ -14,14 +14,15 @@
 
     <div>
       <h2 class="text-center mt-4" style="color:#000D83"> Latest posts 💬 </h2>
+      <div class="text-center mt-4">  <%= link_to "See all posts", posts_path, class:"btn-green btn-radius" %> </div>
       <div><%= render "shared/post", posts: @posts %></div>
-     <div class="text-center">  <%= link_to "See all posts", posts_path, class:"btn-green btn-radius" %> </div>
     </div>
   <br>
     <div>
       <h2 class="text-center mb-4" style="color:#000D83"> Upcoming Events 📅</h2>
-      <div><%= render "shared/event_home", events: @events %></div>
       <div class="text-center"><%= link_to "See all events", events_path, class:"btn-green btn-radius" %> </div>
+      <div><%= render "shared/event_home", events: @events %></div>
     </div>
-    <br>
 </div>
+
+

@@ -3,7 +3,7 @@
   <h1 class="header-icon" > 📅 </h1>
   <h1>New event</h1>
 </div>
-<div class="container">
+<div class="body-container">
 
 
   <div >
@@ -11,17 +11,19 @@
     <%= simple_form_for @event do |f| %>
       <%= f.input :title, label: "Event name : ",placeholder: "(max 250 caracters)", input_html: { maxlength: 50 }, require: true %>
       <%= f.input :description, label: "Event description :", placeholder: "(max 250 caracters)"  %>
-      <%= f.input :location %>
+      <%= f.input :location, label: "Where is it ?", placeholder: " patio, my flat, 1st flor..." %>
       <%= f.input :starting_at, label: 'Starting', as: :string, input_html: {class: "datepicker d-none"} %>
       <%= f.input :ending_at, label: 'Ending', as: :string, input_html: {class: "datepicker d-none"} %>
       <%= f.input :photo, as: :file, label: 'Add a photo', input_html: { class: 'd-none', id: 'photo-input'}, label_html: { class: 'upload-photo'}, label: '📷 Upload a photo'  %>
       <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
-      <%= f.button :submit, "Create", class: "btn-radius btn-green" %>
+      <%= f.button :submit, "Create", class: "btn-radius btn-green mb-10" %>
     <% end %>
   </div>
+  <br>
+  <br>
+  <br>
 </div>
  
 
-</div>
 
     

@@ -1,1 +1,56 @@
-<h1> index profil : trombinoscope</h1>
+<div class="app-header">
+  <%= render "shared/header" %>
+  <h1 class="header-icon pt-0" > <%= image_tag "https://res.cloudinary.com/dk85eoleo/image/upload/c_scale,w_150/v1606734186/Stuck_at_Home_-_Searching_uwcxkm.png", alt: "alttext" %> </h1>
+  <h2 class="text-center pt-0 test2">All Neighboors</h2>
+</div>
+
+<div class= "body-container">
+<div class="searchbar ">
+  <div>
+  <%= form_tag users_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control-search string required search_query simple_form",
+      placeholder: "Who are you looking for ?"
+    %>
+    </div>
+  <div>
+    <%= submit_tag "Search", class: "btn btn-green btn-radius-search" %>
+  </div>
+    <% end %>
+
+</div>
+
+  <br>
+  <!-- <div class="container"> -->
+    <div id="flexbox-users" class="text-center">
+      <% @users.each do |user|  %>
+        <div class="profile-card">
+          <div class="profile-card-elements">
+            <img src="https://images.unsplash.com/photo-1479936343636-73cdc5aae0c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80" alt="image" class="avatar-large">
+            <% if user.first_name && user.last_name %>
+              <h2><%= user.first_name %> <%= user.last_name %></h2>
+            <% else %>
+              <p><em> Unknow </em></p>
+            <% end %>
+
+            <% if user.stairs == 1 %>
+              <p><%= user.stairs %>st floor</p>
+            <% elsif user.stairs == 2 %>
+              <p><%= user.stairs %>nd floor</p>
+            <% elsif user.stairs == 3 %>
+              <p><%= user.stairs %>rd floor</p>
+            <% elsif user.stairs.to_i > 4 %>
+              <p><%= user.stairs %>th floor</p>
+            <% else %>
+              <p><em> Unknow </em></p>
+            <% end %>
+          </div>
+        </div>
+      <br>
+
+      <% end %>
+    </div>
+  <!-- </div> -->
+
+</div>

@@ -49,7 +49,7 @@ skip_before_action :verify_authenticity_token, only: :like
   def like
     @post = Post.find(params[:id])
     authorize @post
-    if @post.liked_by current_user
+    if current_user.voted_for? @post
       @post.unliked_by current_user
     else
       @post.liked_by current_user

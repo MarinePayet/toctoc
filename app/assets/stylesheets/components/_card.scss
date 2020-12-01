@@ -82,6 +82,16 @@
   align-items: baseline;
   background-color: white;
   border-radius: 0 0 5px 5px;
+  padding-left: 10px;
+}
+
+.post-card-bottom .post-likes {
+  display: flex;
+  align-items: baseline;
+}
+
+.post-card-bottom .post-likes .fas {
+  margin-left: 6px;
 }
 
 .post-card-bottom p {
@@ -235,7 +245,7 @@
 
 .event-card-bottom .info-icons {
   width:302px;
-  justify-content:space-around;
+  justify-content: space-around;
 }
 
 .event-card-bottom .fas {
@@ -253,7 +263,7 @@
   background-color:white;
   border-radius: 5px;
   box-shadow: -1px 1px 7px 0px #00000024;
-  width: 116px;
+  width: 100px;
 }
 
 .profile-card-elements {
@@ -408,4 +418,32 @@
 .green-background h4 {
   color:white;
 }
+
+#flexbox-users {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 5px;
+  justify-content:center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

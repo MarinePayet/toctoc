@@ -71,7 +71,7 @@ inboxes = []
 
 
 inbox_new = Inbox.create!(
-  topic: Faker::ChuckNorris.fact
+  topic: Faker::TvShows::Buffy.episode
 )
 
 inboxes << inbox_new

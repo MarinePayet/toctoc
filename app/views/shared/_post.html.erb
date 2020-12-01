@@ -1,4 +1,4 @@
-<div class="container">
+
   <div>
     <% posts.each do |post| %>
       <div class="post-card">
@@ -8,18 +8,26 @@
           </div>
           <div class="post-card-header-title">
               <h3><%= post.title %></h3>
-              <p> By <%= post.user.first_name %>, posted on <%= post.created_at.strftime("%b %e at %H:%M") %></p>
+              <p> By <%= post.user.first_name %>, </p>
+                <p> posted on <%= post.created_at.strftime("%b %e at %H:%M") %></p>
           </div>
         </div>
         <div class="post-card-body">
           <p><%= post.content %></p>
         </div>
-        <div class="post-card-bottom">
-          <p>11</p><i class="fas fa-thumbs-up card-bottom-icon"></i>
+        <div class="post-card-bottom d-flex">
+          <span data-controller="like" class="post-likes">
+              <span data-target="like.count"><%= post.get_likes.size %></span>
+                <div><%= link_to "", like_post_path(post), class:"fas fa-thumbs-up", data: {action:"click->like#post"}, method: :put, remote: :true %></div>
+          </span>
           <p>18</p><i class="fas fa-comment card-bottom-icon"></i>
-          <p class= "label-base label-post-type"><%= post.category%></p>
+          <p class= "label-base label-post-type"> <%= post.category%></p>
         </div>
       </div>
     <% end %>
     </div>
+
+
   </div>
+
+
