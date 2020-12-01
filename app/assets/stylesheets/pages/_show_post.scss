@@ -1,0 +1,55 @@
+.fas-post {
+  color:#399393;
+}
+
+.comment-container {
+  background-color:white;
+  padding: 8px;
+  padding-top: 20px;
+  margin-top: 0px;
+  border-radius: 0px 0px 5px 5px;
+  border-top-style: solid;
+  border-top-width: thin;
+  border-top-color: #e2dddd;
+}
+
+.post-card-comment {
+  margin-bottom:0px;
+  border-style:none;
+  box-shadow:none;
+}
+
+.post-card-comment .post-card-header {
+  border-radius: 5px 5px 0px 0px;
+}
+
+.back-to-page {
+  align-items: center;
+}
+
+.back-to-page:hover {
+  text-decoration:none;
+  color:#399393;
+}
+
+.back-to-page h5 {
+  margin-bottom: 0px;
+  margin-top: 24px;
+  margin-left: 13px;
+  color:#399393;
+}
+
+.back-to-page h5:hover {
+  text-decoration:none;
+  color:#399393;
+}
+
+.link-back-to {
+  margin-bottom: 33px;
+}
+
+.no-comment {
+  color: #767373;
+  font-style: italic;
+  font-size: 16px;
+}
