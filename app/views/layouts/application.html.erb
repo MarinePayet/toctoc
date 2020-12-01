@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Toctoc- Turn your building into a little community
-
-</title>
+    <title>Toctoc - Turn your building into a little community</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= favicon_link_tag %>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
 
+    <meta property="og:title" content="Toctoc">
+    <meta property="og:description" content="Turn your building into a little community">
+    <meta property="og:type" content="WebApp">
+    <meta property="og:url" content="http://www.toctoc.xyz/">
     <meta property= "og:image" content="https://res.cloudinary.com/dk85eoleo/image/upload/c_scale,h_630,w_1200/v1606401573/Stuck_at_Home_-_Alone_Time_1_ekozdk.png" >
 
     <meta name="apple-mobile-web-app-capable" content="yes">
