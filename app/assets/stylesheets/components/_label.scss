@@ -48,10 +48,10 @@
   font-size: 13px;
   margin-left: 5px;
   margin-bottom: 13px;
+
 }
 
 .label-available {
-  border-color: #19c219;
   border-color: #19c219;
   color: #19c219;
   width: 100px;
@@ -59,6 +59,8 @@
   font-size: 13px;
   margin-left: 5px;
   margin-bottom: 13px;
+  height:43px;
+  padding: 4px !important;
 }
 
 .label-not-available {
@@ -69,6 +71,8 @@
   font-size: 13px;
   margin-left: 5px;
   margin-bottom: 13px;
+  height:43px;
+  padding: 4px !important;
 }
 .label-available-user {
   border-color: #19c219;
