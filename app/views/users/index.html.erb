@@ -10,7 +10,7 @@
   <%= form_tag users_path, method: :get do %>
     <%= text_field_tag :query,
       params[:query],
-      class: "form-control string required search_query simple_form",
+      class: "form-control-search string required search_query simple_form",
       placeholder: "Who are you looking for ?"
     %>
     </div>
@@ -22,10 +22,8 @@
 </div>
 
   <br>
-  <br>
-  <br>
   <!-- <div class="container"> -->
-    <div id="flexbox" class="text-center">
+    <div id="flexbox-users" class="text-center">
       <% @users.each do |user|  %>
         <div class="profile-card">
           <div class="profile-card-elements">

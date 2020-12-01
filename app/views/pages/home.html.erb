@@ -14,14 +14,14 @@
 
     <div>
       <h2 class="text-center mt-4" style="color:#000D83"> Latest posts 💬 </h2>
+      <div class="text-center mt-4">  <%= link_to "See all posts", posts_path, class:"btn-green btn-radius" %> </div>
       <div><%= render "shared/post", posts: @posts %></div>
-     <div class="text-center">  <%= link_to "See all posts", posts_path, class:"btn-green btn-radius" %> </div>
     </div>
   <br>
     <div>
       <h2 class="text-center mb-4" style="color:#000D83"> Upcoming Events 📅</h2>
-      <div><%= render "shared/event_home", events: @events %></div>
       <div class="text-center"><%= link_to "See all events", events_path, class:"btn-green btn-radius" %> </div>
+      <div><%= render "shared/event_home", events: @events %></div>
     </div>
 </div>
 
