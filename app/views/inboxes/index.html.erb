@@ -6,39 +6,37 @@
 
 
 <div class="container">
-  <div class="new-inbox offset-3">
-     <%= link_to "Create a new inbox", new_inbox_path %>
-  </div>
+  <div class="col">
+    <div class="inbox-button offset-1">
+      <%= link_to "Start a new conversation", new_inbox_path %>
+    </div>
 
-<% @inboxes.each do |inbox| %>
-  <div class="inbox-container">
-      <div class="inbox-sender">
-      <a> From :  <%= inbox.participants.first.user.first_name %>
-        <%# if inbox.participants.user.photo.attached?%>
-           <%#cl_image_tag inbox.participants.user.photo.key %>
-          <%# end %>
-      </a>
+  <% @inboxes.each do |inbox| %>
+    <div class="inbox-container">
+      <div class="row" style="margin-left: 5px;">
+        <div class="inbox-title">
+          <h2> Subject: <%= inbox.topic %></h2>
+        </div>
       </div>
-    <div class="inbox-body">
-      <div class="inbox-title">
-        <h1> <%= inbox.topic %></h1>
-
+      <div class="row" style="margin-left: 5px;">
+        <div class="inbox-participants">
+          <p> <strong>Participants</strong><% inbox.participants.first(3).each do |participant|  %>
+            <%= participant.user.first_name %> |
+          <% end %></p>
+        </div>
       </div>
-      <div class="inbox-participants">
-        <p> Participants <% inbox.participants.each do |participant|  %>
-          <%= participant.user.first_name %>
-          <%= participant.user == current_user ? "(you)" : "" %>
-        <% end %></p>
+      <div class="row" style="margin-left: 5px;">
+      <div class="inbox-date">
+        <a> Sent on <%= inbox.created_at.strftime("%b %e") %> </a>
       </div>
-      <div class="inbox-message">
-        <p><%= link_to "See all messages", inbox_path(inbox) %>  </p>
-        <%= inbox.messages.present? ? inbox.messages.last.content : " " %>
+      </div>
+      <div class="row" style="margin-left: 5px;">
+      <div class="inbox-recap">
+        <a><%= link_to "See conversation", inbox_path(inbox) %>  </a>
       </div>
     </div>
-    <div class="inbox-date">
-      <a> On : <%= inbox.created_at.strftime("%b %e") %> </a>
     </div>
+  <% end %>
   </div>
-<% end %>
 </div>
 
