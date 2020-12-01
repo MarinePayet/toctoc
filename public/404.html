@@ -2,198 +2,85 @@
 <html>
 <head>
 
-<style>
-
-.service-card-with-user {
-  display:flex;
-  margin-bottom: 20px;
-}
-
-.event-card-avatars {
-  margin-right: 10px;
-  width: 68px;
-}
-.service-card-avatars-user {
-  margin-top: 27px;
-}
-.service-card-labels {
-  display:flex;
-  margin-bottom: 5px;
-}
-.label-base {
-  border-style: solid;
-  border-width: thin;
-  border-radius: 50px;
-}
-.label-service-type {
-  border-color: #389393;
-  color: #389393;
-  width: 64px;
-  text-align: center;
-  margin-bottom: 13px;
-  font-size: 13px;
-  padding: 0px;
-  border-width: thin;
-  border-style: solid;
-  border-radius: 50px;
-  margin-left: 10px;
-}
-
-.label-price {
-  border-color: grey;
-  color: grey;
-  width: 65px;
-  text-align: center;
-  font-size: 13px;
-  margin-left: 5px;
-  margin-bottom: 13px;
-}
-
-.service-card-body {
-  border-radius: 5px;
-  box-shadow: -1px 1px 7px 0px #00000024;
-  background-color:white;
-}
-.service-card-body-elements {
-  width: 270.75px;
-}
-
-.service-card-body-elements h2 {
-  font-size: 20px;
-  background-color: #389393;
-  padding: 10px;
-  border-radius: 5px 5px 0px 0px;
-  color: white;
-}
-
-.service-card-body-elements-header h2 {
-  font-size: 20px;
-  background-color: #389393;
-  padding: 10px;
-  border-radius: 5px 5px 0px 0px;
-  color: white;
-}
-
-.service-card-body-elements p {
-  font-size: 14px;
-  padding: 5px;
-  line-height: 18px;
-}
-
-.service-card-body-elements-header h2 {
-  font-size: 20px;
-  background-color: #389393;
-  padding: 10px;
-  border-radius: 5px 5px 0px 0px;
-  color: white;
-}
-.service-card-body-elements-header {
-  background-color: #389393;
-  padding: 10px;
-  color:white;
-  border-radius: 5px 5px 0 0;
-}
-
-.service-card-body-elements-header h2 {
-  font-size: 20px;
-  margin: 0px;
-  padding: 0;
-}
-
-.service-card-body-elements-header p {
-  margin-bottom: 0;
-  padding: 0;
-}
-.service-card-body-elements-body p {
-  padding: 10px 10px 0px 10px;
-}
-
-</style>
-
-<p><strong>Service card with user info:</strong></p>
-  <div class="service-card-with-user">
-    <div class="event-card-avatars">
-      <div class="service-card-avatars-user">
-      </div>
-    </div>
-    <div>
-      <div class="service-card-body">
-        <div class="service-card-body-elements">
-          <div class="service-card-body-elements-header">
-            <h2>The page you were looking for doesn't exist (404)</h2>
-            <p>You may have mistyped the address or the page may have moved.</p>
-          </div>
-          <div class="service-card-body-elements-body">
-            <p>If you are the application owner check the logs for more information.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-</div>
-
-
-
   <title>The page you were looking for doesn't exist (404)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
-  .rails-default-error-page {
+  .rails-default-error {
     background-color: #EFEFEF;
-    color: #2E2F30;
+    color: white;
     text-align: center;
     font-family: arial, sans-serif;
+    font-size: 13px;
     margin: 0;
   }
 
-  .rails-default-error-page div.dialog {
+  .rails-default-error div.dialog {
     width: 95%;
     max-width: 33em;
     margin: 4em auto 0;
   }
 
-  .rails-default-error-page div.dialog > div {
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
+  .rails-default-error div.dialog > div {
+    border: 1px solid #389393;
+    border-right-color: #389393;
+    border-left-color: #389393;
+    border-bottom-color: #389393;
+    border-top: #389393 solid 4px;
     border-top-left-radius: 9px;
     border-top-right-radius: 9px;
-    background-color: white;
+    background-color: #389393;
     padding: 7px 12% 0;
     box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
   }
 
-  .rails-default-error-page h1 {
-    font-size: 100%;
-    color: #730E15;
+  .rails-default-error h2 {
+    font-size:20px;
+    color: white;
     line-height: 1.5em;
   }
 
-  .rails-default-error-page div.dialog > p {
+  .rails-default-error div.dialog > p {
     margin: 0 0 1em;
     padding: 1em;
     background-color: #F7F7F7;
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #999;
+    border: 1px solid #389393;
+    border-right-color: #389393;
+    border-left-color: #389393;
+    border-bottom-color: #389393;
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px;
     border-top-color: #DADADA;
     color: #666;
     box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
   }
+
+  .btn-radius {
+  padding: 15px 23px;
+  border-radius: 50px;
+  }
+
+  .btn-green {
+    color: white;
+    background-color: #389393;
+  }
+
+  a {
+    font-size: 16px;
+  }
   </style>
 </head>
 
-<body class="rails-default-error-page">
+<body class="rails-default-error">
   <!-- This file lives in public/404.html -->
   <div class="dialog">
     <div>
-      <h1>The page you were looking for doesn't exist.</h1>
+      <h2>The page you were looking for doesn't exist.</h2>
       <p>You may have mistyped the address or the page may have moved.</p>
     </div>
     <p>If you are the application owner check the logs for more information.</p>
   </div>
+  <br>
+  <br>
+  <a href="/" class="btn-green btn-radius">Back to home page</a>
 </body>
 </html>

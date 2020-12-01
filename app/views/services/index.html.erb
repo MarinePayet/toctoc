@@ -13,7 +13,9 @@ service = params[:service] == "true"
 </div>
 
 <div class="body-container">
+  <br>
 <div><%= render "shared/searchbar" %> </div>
+<br>
 <div class= "filter-container">
   <div class="filter-container-content">
     <div class="list-inline">
@@ -23,6 +25,7 @@ service = params[:service] == "true"
     </div>
   </div>
 </div>
+<br>
   <% @services.each do |service| %>
 
     <div class="service-card-with-user mb-3">
