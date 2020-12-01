@@ -65,7 +65,11 @@ lost_founds = params[:lost_founds] == "true"
         <div class="post-card-bottom d-flex">
           <span data-controller="like" class="post-likes">
               <span data-target="like.count"><%= post.get_likes.size %></span>
-                <div><%= link_to "", like_post_path(post), class:"fas fa-thumbs-up", data: {action:"click->like#post"}, method: :put, remote: :true %></div>
+              <% if current_user.voted_for? post %>
+                <%= link_to "", like_post_path(post), class:"fas fa-thumbs-up liked", data: {action:"click->like#post"}, method: :put, remote: :true %>
+              <% else %>
+                <%= link_to "", like_post_path(post), class:"fas fa-thumbs-up", data: {action:"click->like#post"}, method: :put, remote: :true %>
+              <% end %>
           </span>
           <p><%= post.comments.size %></p><div><%= link_to "", post_path(post), class:"fas fa-comment card-bottom-icon"%></div>
 

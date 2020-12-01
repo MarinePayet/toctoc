@@ -1,6 +1,11 @@
 .fa-thumbs-up{
-  color: #000D83;
+  color: grey;
   font-size: 22px;
+}
+
+.fa-thumbs-up:hover {
+  color:grey;
+  text-decoration: none;
 }
 
 .post-card-bottom p{
@@ -35,6 +40,11 @@
   text-decoration: none;
   padding: 0px 7px;
   color: #389393;
+
+.fa-comment:hover {
+  color:#000D83;
+  text-decoration: none;
+
 }
 
 .fa-comment{
@@ -47,10 +57,13 @@
   color: white;
   justify-content: flex-end;
   padding: 10px 10px;
+
 }
 
-// .alert-notification {
-//   position: absolute;
-//   top: 18px;
-//   right: 50px;
-// }
+.liked {
+  color: #000D83;
+}
+
+.liked:hover {
+  color: #000D83;
+}

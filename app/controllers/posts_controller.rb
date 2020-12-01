@@ -4,22 +4,22 @@ skip_before_action :verify_authenticity_token, only: :like
 
 
   def index
-      @posts = Post.none
-      if params[:sos] == "true"
-        @posts = @posts.or(Post.where(:category=> "SOS"))
-      end
-      if params[:fyi] == "true"
-        @posts = @posts.or(Post.where(:category=> "FYI"))
-      end
-      if params[:tips] == "true"
-        @posts = @posts.or(Post.where(:category=> "Tips"))
-      end
-      if params[:issues] == "true"
-        @posts = @posts.or(Post.where(:category=> "Issues"))
-      end
-      if params[:lost_founds] == "true"
-        @posts = @posts.or(Post.where(:category=> "Lost & Founds"))
-      end
+    @posts = Post.none
+    if params[:sos] == "true"
+      @posts = @posts.or(Post.where(:category=> "SOS"))
+    end
+    if params[:fyi] == "true"
+      @posts = @posts.or(Post.where(:category=> "FYI"))
+    end
+    if params[:tips] == "true"
+      @posts = @posts.or(Post.where(:category=> "Tips"))
+    end
+    if params[:issues] == "true"
+      @posts = @posts.or(Post.where(:category=> "Issues"))
+    end
+    if params[:lost_founds] == "true"
+      @posts = @posts.or(Post.where(:category=> "Lost & Founds"))
+    end
 
      @posts = Post.all if @posts.empty?
      @posts = policy_scope(@posts).order(created_at: :desc)
@@ -50,11 +50,13 @@ skip_before_action :verify_authenticity_token, only: :like
     @post = Post.find(params[:id])
     authorize @post
     if current_user.voted_for? @post
+      status = 'unliked'
       @post.unliked_by current_user
     else
+      status = 'liked'
       @post.liked_by current_user
     end
-    render json: {count: @post.get_likes.size}
+    render json: {count: @post.get_likes.size, status: status}
   end
 
   private

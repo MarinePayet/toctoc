@@ -8,7 +8,7 @@
   <%= f.input :topic %>
   <%= f.input :participants, as: :check_boxes, collection: User.all.map { |user| [user.first_name, user.id ]} %>
   <%= f.input :message %>
-  <%= f.submit %>
+  <%= f.button :submit %>
 <% end %>
 </div>
 

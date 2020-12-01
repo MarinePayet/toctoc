@@ -10,7 +10,7 @@
     <%= f.input :participants, as: :check_boxes, collection: User.where(id: params[:user_id]).map { |user| [user.first_name, user.id, checked: true ] } %>
   </div>
   <%= f.input :message, as: :text %>
-  <%= f.submit %>
+  <%= f.button :submit %>
 <% end %>
 </div>
 
