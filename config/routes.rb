@@ -5,11 +5,12 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :index]
   resources :events, only: [:new, :create, :index]
   resources :services, only: [:show, :index]
-  resources :posts, only: [:index, :new, :create] do
+  resources :posts, only: [:index, :show, :new, :create] do
     member do
       put "like", to: "posts#like"
     end
-  end
+    resources :comments, only: :create
+    end
   resources :inboxes, only: [:index, :new, :create, :show] do
     resources :messages, only: [:index, :new, :create, :show]
     resources :participants, only: [:new, :create]

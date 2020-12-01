@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_many :events
   has_many :posts
   has_many :messages
-  has_many :comments
+  has_many :comments, dependent: :destroy
   has_one_attached :photo
 
 

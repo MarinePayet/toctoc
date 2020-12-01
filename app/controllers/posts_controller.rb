@@ -25,6 +25,12 @@ skip_before_action :verify_authenticity_token, only: :like
      @posts = policy_scope(@posts).order(created_at: :desc)
   end
 
+  def show
+    @post = Post.find(params[:id])
+    @comment = Comment.new
+    authorize @post
+  end
+
   def new
     @post = Post.new
     authorize @post
