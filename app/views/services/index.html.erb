@@ -58,7 +58,9 @@ service = params[:service] == "true"
                 <p class= "label-base label-not-available">not available</p>
               <% end %>
               <div>
-                <%= link_to "contact", new_direct_message_path(query: params[:query], user_id: @user.id)  %>
+                <%= link_to new_direct_message_path(query: params[:query], user_id: @user.id) do %>
+                   <i class="fas fa-comments fa-comments-user"></i>
+                <% end %>
               </div>
             </div>
           </div>
