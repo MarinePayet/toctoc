@@ -1,44 +1,59 @@
-<div class="body-container">
-  <div class="post-card">
-    <div class="post-card-header">
-      <div class="post-card-header-avatar">
-        <img src="https://images.unsplash.com/photo-1479936343636-73cdc5aae0c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80" alt="image" class="avatar-large">
-      </div>
-      <div class="post-card-header-title">
-        <h3><%= @post.title %></h3>
-        <p> By <%= @post.user.first_name %>, posted on <%= @post.created_at.strftime("%b %e at %H:%M") %></p>
-      </div>
+<div class="link-back-to">
+    <%= link_to posts_path do %>
+    <div class="back-to-page d-flex">
+      <i class="fas fa-chevron-left fas-post"></i>
+      <h5>See all posts</h5>
     </div>
-    <div class="post-card-body">
-      <p><%= @post.content %></p>
-    </div>
-    <div class="post-card-bottom">
-      <span data-controller="like" class="d-flex">
-          <span data-target="like.count"><%= @post.get_likes.size %></span>
-            <div><%= link_to "Like", like_post_path(@post), data: {action:"click->like#post"}, method: :put, remote: :true %></div>
-      </span>
-      <p>18</p><i class="fas fa-comment card-bottom-icon"></i>
-      <p class= "label-base label-post-type"> <%= @post.category%></p>
-    </div>
+    <% end %>
   </div>
 
+<div class="body-container">
+<div class="post-card post-card-comment">
+  <div class="post-card-header">
+    <div class="post-card-header-avatar">
+      <img src="https://images.unsplash.com/photo-1479936343636-73cdc5aae0c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80" alt="image" class="avatar-large">
+    </div>
+    <div class="post-card-header-title">
+      <h3><%= @post.title %></h3>
+      <p> By <%= @post.user.first_name %>, posted on <%= @post.created_at.strftime("%b %e at %H:%M") %></p>
+    </div>
+  </div>
+  <div class="post-card-body">
+    <p><%= @post.content %></p>
+  </div>
+  <div class="post-card-bottom d-flex">
+    <span data-controller="like" class="post-likes">
+        <span data-target="like.count"><%= @post.get_likes.size %></span>
+          <div><%= link_to "", like_post_path(@post), class:"fas fa-thumbs-up", data: {action:"click->like#post"}, method: :put, remote: :true %></div>
+    </span>
+    <p><%= @post.comments.size %></p><div><%= link_to "", post_path(@post), class:"fas fa-comment card-bottom-icon"%></div>
+    <p class= "label-base label-post-type"> <%= @post.category%></p>
+  </div>
+</div>
+<div class="comment-container">
   <% if @post.comments.blank? %>
-    Be the first to leave a comment
+    <p class="no-comment">Be the first to leave a comment!</p>
   <% else %>
-    <% @post.comments.each do |comment| %>
-      <p><%= comment.content %></p>
+    <% @post.comments.order(created_at: :desc).each do |comment| %>
+    <div class="comment-card">
+      <%= image_tag comment.user.photo, class:"avatar"%>
+      <div class="comment-card-body">
+        <p class="comment-user-name"><%= comment.user.first_name %> <%= comment.user.last_name %></p>
+        <p class="comment-date"><%= comment.created_at.strftime("%b %e at %H:%M") %></p>
+        <p class="comment-content"><%= comment.content %></p>
+      </div>
+    </div>
+
     <% end %>
   <% end %>
-
-    <%= simple_form_for([ @post, @comment ], :html => { :class => 'form-inline' }) do |f| %>
-    <%= f.text_field :content, as: :text, placeholder: "Your comment", label: false, :style => "width:270px;" %>
-    <%= f.button :submit, "Post", class: "btn-radius btn-green ml-1" %>
-  <% end %>
 </div>
-
-
-
-
+</div>
+  <div class="fixed-comment-bar">
+      <%= simple_form_for([ @post, @comment ], :html => { :class => 'form-inline no-shadow no-border justify-content-center' }) do |f| %>
+      <%= f.text_field :content, as: :text, placeholder: "Your comment...", label: false, :style => "width:270px;", class: "comment-input-bar" %>
+      <%= f.button :submit, "Post", class: "btn-radius btn-white ml-1" %>
+    <% end %>
+  </div>
 
 
 

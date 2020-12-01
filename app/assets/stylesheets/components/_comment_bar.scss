@@ -1,0 +1,34 @@
+.fixed-comment-bar {
+  position: fixed;
+  width: 100%;
+  top: 649px;
+  background-color:#95c1c2;
+  padding-bottom: 36px;
+  padding-top: 6px;
+}
+
+.fixed-comment-bar .btn-radius {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.no-shadow {
+  box-shadow:none !important;
+}
+
+.no-border {
+  border-style:none !important;
+}
+
+.justify-content-center {
+  justify-content: center !important;
+}
+
+.comment-input-bar {
+  width: 270px;
+  border-radius: 14px;
+  border-style: solid;
+  border-width: thin;
+  padding: 5px;
+}
+
