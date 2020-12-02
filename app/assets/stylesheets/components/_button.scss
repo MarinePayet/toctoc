@@ -1,3 +1,13 @@
+.row-service{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.btn-radius-service {
+  border-radius: 50px;
+}
+
 .btn-radius {
   padding: 15px 23px;
   border-radius: 50px;
@@ -19,6 +29,13 @@
 .btn-white {
   color: #389393;
   background-color:white;
+}
+
+.btn-white-service {
+  color: #389393;
+  background-color:white;
+  width: 106px;
+  height: 42px;
 }
 
 .btn-white:hover {
