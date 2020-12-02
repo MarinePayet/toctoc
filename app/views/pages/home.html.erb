@@ -12,9 +12,9 @@
 <div class="body-container">
     <div class="mt-3 mb-3"><%= render "shared/searchbar" %> </div>
     <div>
-      <h2 class="text-center mt-4 home-title"> Lastest posts 💬 </h2>
+      <h2 class="mt-4 home-title"> Recent posts 💬 </h2>
       <div><%= render "shared/post", posts: @posts %></div>
-      <div class="text-center mt-4">  <%= link_to "See all posts", posts_path, class:"btn-green btn-radius" %> </div>
+      <div class="text-center mt-4">  <%= link_to "See all posts", posts_path, class:"btn-green btn-radius btn-block" %> </div>
     </div>
   <br>
     <div>
@@ -27,9 +27,9 @@
         <% end %>
       <% end %>
       <% if i = 0 %>
-        <div class="text-center mt-3"><%= link_to "See passed events", events_path, class:"btn-green btn-radius" %> </div>
+        <div class="text-center mt-3"><%= link_to "See passed events", events_path, class:"btn-green btn-radius btn-block" %> </div>
       <% else %>
-        <div class="text-center mt-3"><%= link_to "See all events", events_path, class:"btn-green btn-radius" %> </div>
+        <div class="text-center mt-3"><%= link_to "See all events", events_path, class:"btn-green btn-radius btn-block" %> </div>
       <% end %>
       </div>
     </div>

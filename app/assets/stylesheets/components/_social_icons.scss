@@ -11,18 +11,13 @@
 }
 
 .fa-thumbs-up{
-  color: grey;
-  font-size: 22px;
+  color: #303030;
+  font-size: 20px;
 }
 
 .fa-thumbs-up:hover {
-  color:grey;
-  text-decoration: none;
-}
-
-.post-card-bottom p{
-  color: #000D83;
-  margin-bottom: 12px;
+  color: #303030;
+  text-decoration:none;
 }
 
 .post-card-bottom{
@@ -54,15 +49,15 @@
   color: #389393;
 }
 
-.fa-comment:hover {
-  color:#000D83;
-  text-decoration: none;
-
+.fa-comment{
+  color: #303030;
+  font-size: 20px;
 }
 
-.fa-comment{
-  color: #000D83;
-  font-size: 22px;
+.fa-comment:hover {
+  color: #303030;
+  text-decoration: none;
+
 }
 
 .fa-info{
@@ -71,12 +66,4 @@
   justify-content: flex-end;
   padding: 10px 10px;
 
-}
-
-.liked {
-  color: #000D83;
-}
-
-.liked:hover {
-  color: #000D83;
 }
