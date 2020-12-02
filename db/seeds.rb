@@ -24,6 +24,7 @@ puts "destroying user"
 User.destroy_all
 
 
+
 # puts "start user"
 
 # users = []
