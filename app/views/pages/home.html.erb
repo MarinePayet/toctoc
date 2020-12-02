@@ -20,17 +20,6 @@
     <div>
       <h2 class="text-center mt-4 mb-2 home-title"> Upcoming events 📅</h2>
       <div><%= render "shared/event_home", events: @events %>
-      <% @events.each do |event|  %>
-        <% @i = 0 %>
-        <% if Date.today < event.starting_at %>
-          <% @i +=1 %>
-        <% end %>
-      <% end %>
-      <% if i = 0 %>
-        <div class="text-center mt-3"><%= link_to "See passed events", events_path, class:"btn-green btn-radius btn-block" %> </div>
-      <% else %>
-        <div class="text-center mt-3"><%= link_to "See all events", events_path, class:"btn-green btn-radius btn-block" %> </div>
-      <% end %>
       </div>
     </div>
     </div>

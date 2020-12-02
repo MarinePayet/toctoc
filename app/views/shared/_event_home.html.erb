@@ -1,5 +1,5 @@
+<% @i = 0 %>
 <% @events.each do |event|  %>
-      <% @i = 0 %>
       <%  if Date.today < event.starting_at %>
         <div class="event-card-text mb-4 <%= 'card-opacity' if Date.today > event.starting_at  %>">
           <div class="event-card-text-header">
@@ -25,7 +25,6 @@
               </div>
             </div>
           </div>
-
       <div class="event-card-text-body color-white">
         <p><%= event.description %> </p>
       </div>
@@ -42,12 +41,14 @@
             <i class="fas fa-clock card-bottom-icon event-card-bottom-icon color-white"></i><p class="hour"><%= event.starting_at.strftime("%H:%M") %></p>
           </div>
         </div>
-         <% @i += 1 %>
       </div>
+        </div>
+         <% @i += 1 %>
       <% end %>
     <% end %>
     <% if @i == 0 %>
-      <p class="text-center">No upcoming event yet!</p>
-    <% end %>
-
-    </div>
+        <p class="text-center">No upcoming event yet!</p>
+        <div class="text-center mt-3"><%= link_to "See passed events", events_path, class:"btn-green btn-radius btn-block" %> </div>
+      <% else %>
+        <div class="text-center mt-3"><%= link_to "See all events", events_path, class:"btn-green btn-radius btn-block" %> </div>
+      <% end %>
