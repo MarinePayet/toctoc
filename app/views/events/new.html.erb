@@ -1,13 +1,12 @@
 
 <div class="app-header">
-  <h1 class="header-icon" > 📅 </h1>
-  <h1>New event</h1>
+  <%= render "shared/header" %>
+  <h1 class="header-icon" >📅</h1>
+    <h2 class="text-center pt-0 test2">New event</h2>
 </div>
+
 <div class="body-container">
-
-
-  <div >
-
+  <div>
     <%= simple_form_for @event do |f| %>
       <%= f.input :title, label: "Event name : ",placeholder: "(max 250 caracters)", input_html: { maxlength: 50 }, require: true %>
       <%= f.input :description, label: "Event description :", placeholder: "(max 250 caracters)"  %>
@@ -16,12 +15,10 @@
       <%= f.input :ending_at, label: 'Ending', as: :string, input_html: {class: "datepicker d-none"} %>
       <%= f.input :photo, as: :file, input_html: { class: 'd-none hidden', id: 'photo-input'}, label_html: { class: 'upload-photo'}, label: '📷 Upload a photo'  %>
       <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
-      <%= f.button :submit, "Create", class: "btn-radius btn-green mb-10" %>
+      <%= f.button :submit, "Create", class: "btn-radius btn-green btn-block" %>
     <% end %>
-
   </div>
-    <div class="footer"></div>
-
+  <div class="footer"></div>
 </div>
  
 

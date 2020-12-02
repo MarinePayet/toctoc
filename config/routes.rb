@@ -3,7 +3,11 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   resources :users, only: [:show, :index]
-  resources :events, only: [:new, :create, :index]
+  resources :events, only: [:new, :create, :index] do
+    member do
+      put "like", to: "events#like"
+    end
+  end
   resources :services, only: [:show, :index]
   resources :posts, only: [:index, :show, :new, :create] do
     member do

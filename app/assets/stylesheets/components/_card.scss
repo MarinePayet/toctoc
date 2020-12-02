@@ -121,12 +121,6 @@
   margin-right: 6px;
 }
 
-.card-bottom-icon {
-  color: grey;
-  font-size: 18px;
-  padding-bottom: 0px;
-}
-
 .social-icons {
   display:flex;
   width:42%;
@@ -135,12 +129,62 @@
 
 .info-icons {
   display:flex;
-  width:50%;
-  justify-content:right;
+  border-style: solid;
+  border-width: thin;
+  border-radius: 12px;
+  border-color: #b1d2d2;
+  padding: 5px;
+  margin-top: 11px;
+  width:fit-content;
 }
 
 .event-card {
-  display:flex;
+  margin: 20px 0px;
+}
+
+.event-body {
+  background-color: white;
+  padding: 10px;
+  border-radius: 0 0 5px 5px;
+}
+
+.event-date {
+  background-color: #3993936b;
+  border-style: solid;
+  border-width: thin;
+  border-color: #39939387;
+  padding: 6px 11px;
+  border-radius: 4px;
+}
+
+.event-date .month {
+  margin-bottom: 0px;
+  text-align: center;
+}
+
+.event-date .day {
+  margin-bottom: 0px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.event-text {
+  padding-left: 16px;
+}
+
+.event-text h3 {
+  margin-bottom: 0px;
+  font-size: 22px;
+}
+
+.event-text .event-description {
+  margin-bottom: 0px;
+  font-weight: 600;
+}
+
+.event-text .event-user {
+  margin-bottom: 0px;
+  font-weight: 300;
 }
 
 .event-card-avatars {
@@ -234,13 +278,16 @@
   justify-content: left;
   align-items: baseline;
   border-radius: 0 0 5px 5px;
+  margin-top: 15px;
+  margin-left: 10px;
 }
 
 .event-card-bottom p {
-  color:#000D83;
-  margin-left: 10px;
+  color:black;
+  font-size: 13px;
+  margin-bottom: 0px;
+  margin-left: 6px;
   margin-right: 6px;
-  margin-bottom: 5px;
 }
 
 
@@ -261,30 +308,30 @@
 .event-card-text-bottom p {
   color:black;
   margin-right: 6px;
-  margin-bottom: 5px;
-}
-
-.event-card-bottom .info-icons {
-  width:302px;
-  justify-content: space-around;
+  margin-bottom: 0px;
 }
 
 .event-card-bottom .fas {
-  color:#000D83;
-  font-size: 15px;
+  color:black;
+  font-size: 20px;
+}
+
+.event-card-bottom .fa-comment {
+  margin-left: 15px;
 }
 
 .event-image {
-  background-image: url(https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80);
   height: 200px;
-  background-size: cover;
+  width:100%;
   border-radius: 5px 5px 0 0;
 }
 
 .event-card-bottom-icon {
   margin-left: 10px;
   margin-right: 6px;
-  color: #000D83;
+  font-size: 18px;
+  padding-bottom: 0px;
+  color:#b1d2d2;
 }
 
 .profile-card {
@@ -345,8 +392,8 @@
 }
 
 .profile-info-card-text-intro .fas {
-  font-size: 27px;
-  color: #000D83;
+  font-size: 35px;
+  color: black;
   margin-top: 6px;
 }
 

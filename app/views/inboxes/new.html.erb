@@ -1,14 +1,15 @@
 <div class="app-header">
-  <h1 class="header-illustration"> <%= image_tag "https://res.cloudinary.com/dk85eoleo/image/upload/c_scale,w_150/v1606907598/mailing-list_xrd53l.png", alt: "alttext"%> </h1>
-  <h2 class= "text-center pt-0 test2">New inbox</h2>
+  <%= render "shared/header" %>
+  <h1 class="page-illu"> <%= image_tag "https://res.cloudinary.com/dk85eoleo/image/upload/c_scale,w_150/v1606907598/mailing-list_xrd53l.png", alt: "alttext"%> </h1>
+  <h2 class="text-center pt-0 test2">New message</h2>
 </div>
-<div class="container">
 
+<div class="container">
 <%= simple_form_for(@inbox) do |f| %>
   <%= f.input :topic %>
   <%= f.input :participants, as: :check_boxes, collection: User.all.map { |user| [user.first_name, user.id ]} %>
-  <%= f.input :message %>
-  <%= f.button :submit %>
+  <%= f.input :message, as: :text, :input_html => {:rows => 5}%>
+  <%= f.button :submit, "Send", class: "btn-radius btn-green btn-block" %>
 <% end %>
 </div>
 
