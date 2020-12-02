@@ -16,6 +16,8 @@ puts "destroying inbox"
 Inbox.destroy_all
 puts "destroying services"
 Service.destroy_all
+puts "destroying comments"
+Comment.destroy_all
 puts "destroying posts"
 Post.destroy_all
 puts "destroying user"
