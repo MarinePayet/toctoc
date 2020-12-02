@@ -144,8 +144,7 @@
 }
 
 .event-card-avatars {
-  margin-right: 10px;
-  width: 68px;
+  margin-right: 5px;
 }
 
 .event-card-avatars-date {
@@ -368,6 +367,7 @@
 .service-card-body-elements {
   width: 281.75px;
 }
+
 .service-card-body-elements-user {
   width: 344px;
 }
@@ -403,11 +403,11 @@
 .service-card-labels {
   display:flex;
   margin-bottom: 5px;
+  justify-content: space-evenly;
 }
 
 .service-card-with-user {
   display:flex;
-  margin-bottom: 20px;
 }
 
 .service-card-avatars-user {
@@ -418,6 +418,7 @@
   background-color: #389393;
   padding: 10px;
   color:white;
+  display: flex;
   border-radius: 5px 5px 0 0;
 }
 
