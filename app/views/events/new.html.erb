@@ -14,7 +14,7 @@
       <%= f.input :location, label: "Where is it ?", placeholder: " patio, my flat, 1st flor..." %>
       <%= f.input :starting_at, label: 'Starting', as: :string, input_html: {class: "datepicker d-none"} %>
       <%= f.input :ending_at, label: 'Ending', as: :string, input_html: {class: "datepicker d-none"} %>
-      <%= f.input :photo, as: :file, label: 'Add a photo', input_html: { class: 'd-none', id: 'photo-input'}, label_html: { class: 'upload-photo'}, label: '📷 Upload a photo'  %>
+      <%= f.input :photo, as: :file, input_html: { class: 'd-none hidden', id: 'photo-input'}, label_html: { class: 'upload-photo'}, label: '📷 Upload a photo'  %>
       <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
       <%= f.button :submit, "Create", class: "btn-radius btn-green mb-10" %>
     <% end %>
