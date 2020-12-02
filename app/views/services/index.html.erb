@@ -16,17 +16,22 @@ service = params[:service] == "true"
   <br>
 <div><%= render "shared/searchbar" %> </div>
 <br>
-<div class= "filter-container">
-  <div class="filter-container-content">
-    <div class="list-inline">
-      <div class="align-filter">
-        <a><%= link_to "Loan", services_path(filters.merge(loan: !loan)), class: "btn-radius #{ params[:loan] == "true" ? "btn-green" : "btn-white" }" %></a>
-        <a><%= link_to "Service", services_path(filters.merge(service: !service)), class: "btn-radius #{ params[:service] == "true" ? "btn-green" : "btn-white" }" %></a>
-        <a><%= link_to "Available", services_path(filters.merge(available: !available)), class: "btn-radius #{ params[:available] == "true" ? "btn-green" : "btn-white" }" %></a>
-      </div>
-    </div>
+
+
+
+  <div class="row-service mt-2 mb-2">
+
+      <%= link_to "Loan", services_path(filters.merge(loan: !loan)), class: "btn btn-radius-service #{ params[:loan] == "true" ? "btn-green" : "btn-white-service" }" %>
+
+      <%= link_to "Service", services_path(filters.merge(service: !service)), class: "btn btn-radius-service #{ params[:service] == "true" ? "btn-green" : "btn-white-service" }" %>
+
+      <%= link_to "Available", services_path(filters.merge(available: !available)), class: "btn btn-radius-service #{ params[:available] == "true" ? "btn-green" : "btn-white-service" }" %>
+
   </div>
-</div>
+
+
+
+
 <br>
   <% @services.each do |service| %>
 
