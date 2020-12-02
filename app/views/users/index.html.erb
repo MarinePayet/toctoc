@@ -6,18 +6,16 @@
 
 <div class= "body-container">
 <div class="searchbar ">
-  <div class="mt-4 mb-4">
-  <%= form_tag users_path, method: :get do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control-search string required search_query simple_form round-border",
-      placeholder: "Who are you looking for ?"
-    %>
+    <%= form_tag users_path, method: :get, class: "w-100" do %>
+  <div class="d-flex">
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control-search string required search_query simple_form round-border",
+        placeholder: "Who are you looking for ?"
+      %>
+      <%= submit_tag "Search", class: "btn btn-green btn-radius-search" %>
+      <% end %>
     </div>
-  <div>
-    <%= submit_tag "Search", class: "btn btn-green btn-radius-search" %>
-  </div>
-    <% end %>
 
 </div>
 
