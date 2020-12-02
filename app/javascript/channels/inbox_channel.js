@@ -22,7 +22,10 @@ const initInboxCable = () => {
         console.log(data.message);
         // alert.querySelector('#message').innerHTML = data
         // messagesContainer.innerHTML =  data;
-        messagesContainer.insertAdjacentHTML('beforeend', data);
+        const userId = messagesContainer.dataset.userId;
+        if (userId != data.author_id) {
+          messagesContainer.insertAdjacentHTML('beforeend', data);
+        }
       },
     });
   }

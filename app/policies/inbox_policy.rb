@@ -1,7 +1,7 @@
 class InboxPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.all
+      scope.joins(:participants).where(participants: {user_id: user.id})
     end
   end
 

@@ -11,7 +11,7 @@
   <h2 class= "text-center pt-0 test2"><%= @inbox.topic  %></h2>
 </div>
 
-<div class="container" id="messages-container">
+<div class="container" id="messages-container" data-user-id="<%= current_user.id %>">
   <% @inbox.messages.each do |message| %>
     <%= render partial: message_sender(message), locals: {message: message, current_user: current_user} %>
   <% end %>

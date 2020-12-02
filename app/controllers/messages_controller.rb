@@ -28,7 +28,10 @@ class MessagesController < ApplicationController
       @inbox.participants.map(&:user).each do |user|
         InboxChannel.broadcast_to(
           user,
-          render_to_string(partial: '/inboxes/message_partial/not_user', locals: { message: @message })
+          {
+            message: render_to_string(partial: '/inboxes/message_partial/not_user', locals: { message: @message }),
+            author_id: current_user.id
+          }
         )
       end
 
