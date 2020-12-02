@@ -38,6 +38,7 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   flatpickrCalendar();
   initInboxCable();
+  previewImageOnFileSelect();
 });
 
 import "controllers"
