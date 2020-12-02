@@ -28,11 +28,11 @@ class MessagesController < ApplicationController
       @inbox.participants.map(&:user).each do |user|
         InboxChannel.broadcast_to(
           user,
-          render_to_string(partial: '/inboxes/notification', locals: { message: @message })
+          render_to_string(partial: '/inboxes/message_partial/not_user', locals: { message: @message })
         )
       end
 
-      # redirect_to inbox_path(@inbox)
+      redirect_to inbox_path(@inbox, anchor: "message-#{@message.id}")
     else
       render "inbox/show"
     end
