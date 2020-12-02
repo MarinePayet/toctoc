@@ -14,7 +14,6 @@
 .background {
   background-color: #389393;
   color: white;
-  border-top-style: solid;
   display: flex;
   justify-content: space-around;
   padding-top: 10px;
@@ -68,6 +67,7 @@
 .nav-button {
   text-align: center;
   color: white;
+  z-index: 100;
 }
 
 .nav-button p {
