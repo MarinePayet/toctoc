@@ -1,0 +1,19 @@
+<div class="message-container current_user">
+    <div class="message-card">
+        <div class='message-body-user'>
+          <span><%= message.user.first_name %></span>
+          <small><%= message.created_at.strftime("at %k:%M on the %m/%e") %></small>
+          <p><%= message.content %></p>
+        </div>
+
+
+        <div class="avatar-message-user">
+          <% if message.user.photo.attached? %>
+            <%= image_tag message.user.photo, class:"avatar"%>
+          <% else %>
+            <%= image_tag "avatar-standard.png", class:"avatar" %>
+          <% end %>
+        </div>
+
+    </div>
+  </div>
