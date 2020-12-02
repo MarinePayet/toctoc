@@ -36,18 +36,20 @@ service = params[:service] == "true"
   <% @services.each do |service| %>
 
     <div class="service-card-with-user mb-3">
-      <div class="event-card-avatars">
-        <div class="service-card-avatars-user">
-          <%= image_tag service.user.photo, class:"avatar-large" %>
-        </div>
-      </div>
-      <div>
+      <div style="display:block; width:100%;">
         <div class="service-card-body">
           <div>
             <div class="service-card-body-elements-header">
-              <h2><%= service.name %></h2>
-              <% @user = User.find(service.user_id) %>
-              <p><%= @user.first_name %> <%= @user.last_name %></p>
+              <div class="event-card-avatars">
+                <div>
+                  <%= image_tag service.user.photo, class:"avatar-large" %>
+                </div>
+              </div>
+              <div>
+                <h2><%= service.name %></h2>
+                <% @user = User.find(service.user_id) %>
+                <p><%= @user.first_name %> <%= @user.last_name %></p>
+              </div>
             </div>
             <div class="service-card-body-elements-body">
               <p><%= service.description %> </p>
