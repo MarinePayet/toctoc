@@ -6,6 +6,8 @@ require 'open-uri'
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+puts "destroying comments"
+Comment.destroy_all
 puts "destroying event"
 Event.destroy_all
 puts "destroying messages"
@@ -16,8 +18,6 @@ puts "destroying inbox"
 Inbox.destroy_all
 puts "destroying services"
 Service.destroy_all
-puts "destroying comments"
-Comment.destroy_all
 puts "destroying posts"
 Post.destroy_all
 puts "destroying user"
