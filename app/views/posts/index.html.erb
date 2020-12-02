@@ -52,28 +52,30 @@ lost_founds = params[:lost_founds] == "true"
       <div class="post-card">
         <div class="post-card-header">
           <div class="post-card-header-avatar">
-            <img src="https://images.unsplash.com/photo-1479936343636-73cdc5aae0c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80" alt="image" class="avatar-large">
+            <%= image_tag post.user.photo, class:"avatar-large" %>
           </div>
           <div class="post-card-header-title">
-            <h3><%= post.title %></h3>
-            <p> By <%= post.user.first_name %>, posted on <%= post.created_at.strftime("%b %e at %H:%M") %></p>
+              <p class="post-user-name"><%= post.user.first_name %></p>
+              <p class="post-date"><%= post.created_at.strftime("%b %e - %H:%M") %></p>
           </div>
         </div>
         <div class="post-card-body">
-          <p><%= post.content %></p>
+          <p class="post-title"><%= post.title %></p>
+          <p class="post-content"><%= post.content %></p>
         </div>
-        <div class="post-card-bottom d-flex">
+        <div class="post-card-bottom d-flex justify-content-between">
+          <div class="d-flex align-items-center">
           <span data-controller="like" class="post-likes">
-              <span data-target="like.count"><%= post.get_likes.size %></span>
               <% if current_user.voted_for? post %>
-                <%= link_to "", like_post_path(post), class:"fas fa-thumbs-up liked", data: {action:"click->like#post"}, method: :put, remote: :true %>
-              <% else %>
                 <%= link_to "", like_post_path(post), class:"fas fa-thumbs-up", data: {action:"click->like#post"}, method: :put, remote: :true %>
+              <% else %>
+                <%= link_to "", like_post_path(post), class:"far fa-thumbs-up", data: {action:"click->like#post"}, method: :put, remote: :true %>
               <% end %>
+              <span data-target="like.count" class="post-results"><%= post.get_likes.size %></span>
           </span>
-          <p><%= post.comments.size %></p><div><%= link_to "", post_path(post), class:"fas fa-comment card-bottom-icon"%></div>
-
-
+          <div class="d-flex ml-3"></div>
+          <div><%= link_to "", post_path(post), class:"fas fa-comment card-bottom-icon"%></div><p class="post-results"><%= post.comments.size %></p>
+          </div>
           <p class= "label-base label-post-type"> <%= post.category%></p>
         </div>
       </div>
