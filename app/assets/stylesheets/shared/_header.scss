@@ -1,8 +1,10 @@
 .app-header {
   color: white;
-  height: 276px;
+  height: 288px;
   background-image : url(https://res.cloudinary.com/dk85eoleo/image/upload/v1606400493/Wave_kwwvi9.png);
-  margin-bottom: 24px;
+  margin-bottom: 11px;
+  background-position: right;
+  background-size: 115%;
 }
 
 .app-header h1 {
@@ -11,8 +13,12 @@
 }
 
 .app-header h2 {
-  font-size: 30px;
+  font-size: 28px;
   text-align:center;
+}
+
+.app-header .fas {
+  font-size: 22px;
 }
 
 .header-icon {
@@ -33,5 +39,4 @@
 .header-illustration{
   padding-top: 40px;
 }
-
 

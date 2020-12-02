@@ -1,14 +1,20 @@
 .avatar {
   width: 40px;
+  height: 40px;
+  object-fit: cover;
   border-radius: 50%;
 }
 
 .avatar-large {
-  width: 72px;
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
   border-radius: 50%;
 }
 .avatar-bordered {
   width: 40px;
+  height: 40px;
+  object-fit: cover;
   border-radius: 50%;
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
   border: white 1px solid;
@@ -22,10 +28,14 @@
 
 .avatar-extra-large {
   width: 81px;
+  height: 81px;
+  object-fit: cover;
   border-radius: 50%;
 }
 
 .avatar-xxl {
   width: 165px;
+  height: 165px;
+  object-fit: cover;
   border-radius: 50%;
 }

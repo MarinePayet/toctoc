@@ -14,9 +14,11 @@ export default class extends Controller {
     }).then(response => response.json())
       .then(data => {
         if (data.status === 'unliked') {
-          event.target.classList.remove('liked')
+          event.target.classList.remove('fas')
+          event.target.classList.add('far')
         } else {
-          event.target.classList.add('liked')
+          event.target.classList.remove('far')
+          event.target.classList.add('fas')
         }
         this.countTarget.innerText = data.count;
   });
