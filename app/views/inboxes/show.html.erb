@@ -1,4 +1,11 @@
  <div class="app-header">
+    <div class="row">
+      <div class="arrow-back">
+      <%= link_to inboxes_path do %>
+        <i class="fas fa-chevron-left"></i>
+      <% end %>
+      </div>
+    </div>
   <%= render "shared/header" %>
   <h1 class="header-icon" > 📝 </h1>
   <h2 class= "text-center pt-0 test2"><%= @inbox.topic  %></h2>
@@ -6,25 +13,6 @@
 
 <div class="container">
   <% @inbox.messages.each do |message| %>
-  <!-- <div class="message-container <#%= 'current_user' if message.user == current_user %> ">
-    <div class="message-card">
-      <div class="inbox-message">
-        <i class="author">
-          <div class="avatar_message">
-        <#% if message.user.photo.attached? %>
-        <#%= image_tag message.user.photo, class:"avatar"%>
-        <#% else %>
-          <#%= image_tag "avatar-standard.png", class:"avatar" %>
-        <#% end %>
-        </div>
-        <span><%= message.user.first_name %></span>
-        <small><#%= message.created_at.strftime("at %k:%M on the %m/%e") %></small>
-        </i>
-        <p><%= message.content %></p>
-      </div>
-    </div>
-  </div> -->
-
     <%= render partial: message_sender(message), locals: {message: message, current_user: current_user} %>
   <% end %>
 
