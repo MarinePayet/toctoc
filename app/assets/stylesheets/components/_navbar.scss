@@ -12,14 +12,14 @@
 }
 
 .background {
-  background-color: #389393;
-  color: white;
+  background-color: white;
+  color: grey;
   display: flex;
   justify-content: space-around;
   padding-top: 10px;
   padding-bottom: 10px;
   font-size: 25px;
-  border-top-style:solid;
+  box-shadow: 0px -1px 30px 4px rgba(0, 0, 0,0.3);
 }
 
 .corner-left {
@@ -39,35 +39,35 @@
 .plus-sign {
   text-align: center;
   color: white;
-  font-size: 56px;
-  margin-bottom: -67px;
-  position:relative;
+  font-size: 45px;
+  margin-bottom: -52px;
+  position: relative;
 
   &:before {
     content: "";
     position: absolute;
-    height: 95px;
-    width: 95px;
-    background: white;
+    height: 65px;
+    width: 65px;
     z-index: -1;
     border-radius: 50%;
-    top: -3px;
+    top: 0px;
     left: 50%;
     transform: translateX(-50%);
-}
+    box-shadow: 0px -1px 30px 4px rgba(0, 0, 0,0.3);
+  }
 }
 
 .fa-plus-circle {
-  background-color: #389393;
+  background-color: white;
   border-radius: 50%;
   border-style: solid;
-  border-color: #389393;
-  border-width: 17px;
+  border-color: white;
+  border-width: 10px;
 }
 
 .nav-button {
   text-align: center;
-  color: white;
+  color: grey;
   z-index: 100;
 }
 
@@ -76,7 +76,7 @@
 }
 
 .deco-non-navbar{
-  color: white;
+  color: grey;
   text-decoration: none;
 }
 
@@ -121,6 +121,6 @@
 
 .active-nav {
   a {
-    color:#000D83 !important;
+    color: #399393 !important;
   }
 }
