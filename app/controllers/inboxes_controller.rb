@@ -16,6 +16,7 @@ class InboxesController < ApplicationController
 
   def create
     @inbox = Inbox.new(inbox_params)
+    @inbox.user = current_user
     authorize @inbox
     @inbox.save
     participants_id = params[:inbox][:participants].reject { |c| c.empty? }

@@ -2,6 +2,7 @@ class ProfilesController < ApplicationController
   def me
     @posts = current_user.posts
     @services = current_user.services
+    @inboxes = current_user.inboxes
     authorize :profile, :me?
   end
 
