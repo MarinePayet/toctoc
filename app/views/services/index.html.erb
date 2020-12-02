@@ -19,9 +19,11 @@ service = params[:service] == "true"
 <div class= "filter-container">
   <div class="filter-container-content">
     <div class="list-inline">
-      <a><%= link_to "Loan", services_path(filters.merge(loan: !loan)), class: "btn-radius #{ params[:loan] == "true" ? "btn-green" : "btn-white" }" %></a>
-      <a><%= link_to "Service", services_path(filters.merge(service: !service)), class: "btn-radius #{ params[:service] == "true" ? "btn-green" : "btn-white" }" %></a>
-      <a><%= link_to "Available", services_path(filters.merge(available: !available)), class: "btn-radius #{ params[:available] == "true" ? "btn-green" : "btn-white" }" %></a>
+      <div class="align-filter">
+        <a><%= link_to "Loan", services_path(filters.merge(loan: !loan)), class: "btn-radius #{ params[:loan] == "true" ? "btn-green" : "btn-white" }" %></a>
+        <a><%= link_to "Service", services_path(filters.merge(service: !service)), class: "btn-radius #{ params[:service] == "true" ? "btn-green" : "btn-white" }" %></a>
+        <a><%= link_to "Available", services_path(filters.merge(available: !available)), class: "btn-radius #{ params[:available] == "true" ? "btn-green" : "btn-white" }" %></a>
+      </div>
     </div>
   </div>
 </div>

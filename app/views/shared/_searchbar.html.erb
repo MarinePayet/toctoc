@@ -1,17 +1,14 @@
-<div class="searchbar ">
-  <div>
-    <%= form_tag services_path, method: :get do %>
+<div class="searchbar">
+  <%= form_tag services_path, method: :get, class: "w-100" do %>
+    <div class="d-flex">
       <%= text_field_tag :query,
         params[:query],
         class: " form-control-search string required search_query simple_form round-border",
         placeholder: "What are you looking for ?"
       %>
-  </div>
-  <div>
-    <%= submit_tag "Search", class: "btn btn-green btn-radius-search " %>
-  </div>
-    <% end %>
-
+      <%= submit_tag "Search", class: "btn btn-green btn-radius-search " %>
+    </div>
+  <% end %>
 </div>
 
 
