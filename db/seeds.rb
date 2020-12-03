@@ -8,20 +8,20 @@ require 'open-uri'
 #   Character.create(name: 'Luke', movie: movies.first)
 puts "destroying comments"
 Comment.destroy_all
-puts "destroying event"
-Event.destroy_all
+# puts "destroying event"
+# Event.destroy_all
 puts "destroying messages"
 Message.destroy_all
 puts "destroying participants"
 Participant.destroy_all
 puts "destroying inbox"
 Inbox.destroy_all
-puts "destroying services"
-Service.destroy_all
-puts "destroying posts"
-Post.destroy_all
-puts "destroying user"
-User.destroy_all
+# puts "destroying services"
+# Service.destroy_all
+# puts "destroying posts"
+# Post.destroy_all
+# puts "destroying user"
+# User.destroy_all
 
 
 
@@ -30,7 +30,7 @@ User.destroy_all
 # users = []
 
 # 10.times do
-#   @user_new = User.create!(
+#   user_new = User.create!(
 #     email: Faker::Internet.email,
 #     first_name: Faker::Name.first_name,
 #     last_name: Faker::Name.last_name,
@@ -51,22 +51,31 @@ User.destroy_all
 # puts "user finish"
 
 # puts "start events"
-# 10.times do
-#   start_date = DateTime.parse(Faker::Time.backward(days: 7, format: :short))
-#   end_date = (start_date + rand(1..5).days).beginning_of_day
+#   start_date = DateTime.parse(Faker::Time.backward(days: 30, format: :short))
 #   @event_new = Event.create!(
 #     starting_at: start_date,
-#     ending_at: end_date + rand(0..23).hours + rand(0..59).minutes,
+#     ending_at: start_date + rand(0..5).hours + rand(0..59).minutes,
 #     location: Event::LOCATIONS.sample,
-#     title: Event::TITLES.sample,
-#     description: Faker::Movie.quote,
+#     title: "Garage Sale",
+#     description: "Big cleanout of my appt, selling many things",
 #     user: users.sample,
 #     )
-#   # file = URI.open("https://source.unsplash.com/collection/1649209/300x300")
-#   # @event_new.photo.attach(io: file, filename: "some-image.jpg", content_type: 'image/jpg')
-#   # @event_new.save
-# end
-# puts "end events"
+#     file = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Yard_Sale_Northern_CA_2005.JPG/800px-Yard_Sale_Northern_CA_2005.JPG")
+#     @event_new.photo.attach(io: file, filename: "garage-.jpg", content_type: 'image/jpg')
+#     @event_new.save
+
+  # 1.times do
+  # start_date = DateTime.parse(Faker::Time.backward(days: 30, format: :short))
+  # @event_new = Event.create!(
+  #   starting_at: start_date,
+  #   ending_at: start_date + rand(0..5).hours + rand(0..59).minutes,
+  #   location: Event::LOCATIONS.sample,
+  #   title: Event::TITLES.sample,
+  #   description: Faker::Movie.quote,
+  #   user: users.sample,
+  #   )
+
+puts "end events"
 
 # puts "start inboxes"
 
@@ -103,7 +112,7 @@ User.destroy_all
 
 # puts "end messages"
 
-# puts "start services "
+puts "start services "
 
 # 10.times do
 #   service_new = Service.create!(
@@ -116,6 +125,53 @@ User.destroy_all
 #   )
 # end
 
+chiara = User.find(285)
+
+ Service.create!(
+  available: false,
+  name: "Ladder",
+  description: "I have a ladder that I can lend",
+  price: 0,
+  user: User.where.not(id: chiara.id).all.sample,
+  typology: "Loan"
+  )
+
+ Service.create!(
+  available: true,
+  name: "Ladder",
+  description: "I can lend my ladder",
+  price: 0,
+  user: User.where.not(id: chiara.id).all.sample,
+  typology: "Loan"
+  )
+
+ Service.create!(
+  available: false,
+  name: "Ladder",
+  description: "Use my ladder whenever you want",
+  price: 0,
+  user: User.where.not(id: chiara.id).all.sample,
+  typology: "Loan"
+  )
+
+  Service.create!(
+  available: true,
+  name: "Ladder",
+  description: "One of my many tools",
+  price: 0,
+  user: User.where.not(id: chiara.id).all.sample,
+  typology: "Loan"
+  )
+
+
+  Service.create!(
+  available: true,
+  name: "Ladder",
+  description: "You can rent my super ladder",
+  price: 10,
+  user: User.where.not(id: chiara.id).all.sample,
+  typology: "Service"
+  )
 # puts "end services"
 
 # puts "start posts"

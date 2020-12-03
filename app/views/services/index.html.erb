@@ -35,7 +35,9 @@ service = params[:service] == 'true'
             <div class="service-card-body-elements-header">
               <div class="event-card-avatars">
                 <div>
-                  <%= image_tag service.user.photo, class:"avatar-large" %>
+                  <% if service.user.photo.attached? %>
+                    <%= image_tag service.user.photo, class:"avatar-large"  %>
+                  <% end %>
                 </div>
               </div>
               <div>
