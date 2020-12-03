@@ -44,7 +44,7 @@
                 <p><%= user.stairs %>nd floor</p>
               <% elsif user.stairs == 3 %>
                 <p><%= user.stairs %>rd floor</p>
-              <% elsif user.stairs.to_i > 4 %>
+              <% elsif user.stairs.to_i >= 4 %>
                 <p><%= user.stairs %>th floor</p>
               <% else %>
                 <p><em> Unknow </em></p>
