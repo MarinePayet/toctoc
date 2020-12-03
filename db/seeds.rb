@@ -125,6 +125,7 @@ puts "start services "
 #   )
 # end
 
+
 chiara = User.find(285)
  Service.create!(
   available: false,
@@ -238,7 +239,6 @@ chiara = User.find(285)
   user: User.where.not(id: chiara.id).all.sample,
   typology: "Service"
   )
-
   Service.create!(
   available: true,
   name: "Math lessons",
@@ -247,7 +247,6 @@ chiara = User.find(285)
   user: User.where.not(id: chiara.id).all.sample,
   typology: "Service"
   )
-
   Service.create!(
   available: true,
   name: "Cat feeding",
@@ -256,7 +255,6 @@ chiara = User.find(285)
   user: User.where.not(id: chiara.id).all.sample,
   typology: "Service"
   )
-
   Service.create!(
   available: true,
   name: "Grocery Shopping",
@@ -265,7 +263,6 @@ chiara = User.find(285)
   user: User.where.not(id: chiara.id).all.sample,
   typology: "Service"
   )
-
   Service.create!(
   available: true,
   name: "Grocery Shopping",
@@ -274,6 +271,7 @@ chiara = User.find(285)
   user: User.where.not(id: chiara.id).all.sample,
   typology: "Service"
   )
+
 
 # puts "end services"
 
