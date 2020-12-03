@@ -126,7 +126,7 @@ puts "start services "
 # end
 
 
-chiara = User.find(285)
+chiara = User.find(139)
  Service.create!(
   available: false,
   name: "Ladder",
@@ -140,7 +140,7 @@ chiara = User.find(285)
   name: "Ladder",
   description: "I can lend my ladder",
   price: 0,
-  user: User.where.not(id: chiara.id).all.sample,
+  user_id: 135,
   typology: "Loan"
   )
  Service.create!(
@@ -148,7 +148,7 @@ chiara = User.find(285)
   name: "Ladder",
   description: "Use my ladder whenever you want",
   price: 0,
-  user: User.where.not(id: chiara.id).all.sample,
+  user_id: 134,
   typology: "Loan"
   )
   Service.create!(
@@ -156,7 +156,7 @@ chiara = User.find(285)
   name: "Ladder",
   description: "One of my many tools",
   price: 0,
-  user: User.where.not(id: chiara.id).all.sample,
+  user_id: 132,
   typology: "Loan"
   )
   Service.create!(
@@ -164,7 +164,7 @@ chiara = User.find(285)
   name: "Ladder",
   description: "You can rent my super ladder",
   price: 10,
-  user: User.where.not(id: chiara.id).all.sample,
+  user_id: 138,
   typology: "Service"
   )
  Service.create!(
@@ -172,7 +172,7 @@ chiara = User.find(285)
   name: "Plant care",
   description: "I can take care of plants",
   price: 13,
-  user: User.where.not(id: chiara.id).all.sample,
+  user_id: 134,
   typology: "Service"
   )
   Service.create!(
@@ -180,7 +180,7 @@ chiara = User.find(285)
   name: "Plant care",
   description: "I can water plant during your vacations",
   price: 0,
-  user: User.where.not(id: chiara.id).all.sample,
+  user_id: 132 ,
   typology: "Service"
   )
   Service.create!(
@@ -188,7 +188,7 @@ chiara = User.find(285)
   name: "Plant care",
   description: "I can take care of your plants",
   price: 15,
-  user: User.where.not(id: chiara.id).all.sample,
+  user_id: 129,
   typology: "Service"
   )
   Service.create!(
@@ -196,7 +196,7 @@ chiara = User.find(285)
   name: "Plant care",
   description: "I am plant magician",
   price: 25,
-  user: User.where.not(id: chiara.id).all.sample,
+  user_id: 125,
   typology: "Service"
   )
   Service.create!(
@@ -204,7 +204,7 @@ chiara = User.find(285)
   name: "Package reception",
   description: "I work at home so don't hesitate if you need me to get your package",
   price: 0,
-  user: User.where.not(id: chiara.id).all.sample,
+  user_id: 130,
   typology: "Service"
   )
   Service.create!(
@@ -212,7 +212,7 @@ chiara = User.find(285)
   name: "Package reception",
   description: "I can receive your packages since I am at home all week ",
   price: 0,
-  user: User.where.not(id: chiara.id).all.sample,
+  user_id: 128,
   typology: "Service"
   )
   Service.create!(
@@ -220,7 +220,7 @@ chiara = User.find(285)
   name: "Package reception",
   description: "I never leave my appartment ",
   price: 10,
-  user: User.where.not(id: chiara.id).all.sample,
+  user_id: 129 ,
   typology: "Service"
   )
   Service.create!(
@@ -228,7 +228,7 @@ chiara = User.find(285)
   name: "House cleaning",
   description: "I am a good cleaner and I need money ",
   price: 20,
-  user: User.where.not(id: chiara.id).all.sample,
+  user_id: 131,
   typology: "Service"
   )
   Service.create!(
@@ -236,14 +236,14 @@ chiara = User.find(285)
   name: "Piano lessons",
   description: "I am a passionate musician and I give lessons ",
   price: 40,
-  user: User.where.not(id: chiara.id).all.sample,
+  user_id: 126,
   typology: "Service"
   )
   Service.create!(
   available: true,
   name: "Math lessons",
   description: "I am a math prodigy and I give lessons to your kids ",
-  price: 40,
+  price: 141,
   user: User.where.not(id: chiara.id).all.sample,
   typology: "Service"
   )
@@ -252,7 +252,7 @@ chiara = User.find(285)
   name: "Cat feeding",
   description: "I love cats if you need someone to feed and cuddle them",
   price: 0,
-  user: User.where.not(id: chiara.id).all.sample,
+  user_id: 134,
   typology: "Service"
   )
   Service.create!(
@@ -260,7 +260,7 @@ chiara = User.find(285)
   name: "Grocery Shopping",
   description: "I can help you carry your groceries",
   price: 0,
-  user: User.where.not(id: chiara.id).all.sample,
+  user_id: 123,
   typology: "Service"
   )
   Service.create!(
@@ -268,7 +268,7 @@ chiara = User.find(285)
   name: "Grocery Shopping",
   description: "I can go to the supermarket and do your grocery shopping",
   price: 10,
-  user: User.where.not(id: chiara.id).all.sample,
+  user_id: 136,
   typology: "Service"
   )
 
