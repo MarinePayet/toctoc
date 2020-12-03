@@ -271,6 +271,24 @@ chiara = User.find(285)
   typology: "Service"
   )
 
+  Service.create!(
+  available: true,
+  name: "Grocery Shopping",
+  description: "I can help you carry your groceries",
+  price: 0,
+  user: User.where.not(id: chiara.id).all.sample,
+  typology: "Service"
+  )
+
+  Service.create!(
+  available: true,
+  name: "Grocery Shopping",
+  description: "I can go to the supermarket and do your grocery shopping",
+  price: 10,
+  user: User.where.not(id: chiara.id).all.sample,
+  typology: "Service"
+  )
+
 # puts "end services"
 
 # puts "start posts"
