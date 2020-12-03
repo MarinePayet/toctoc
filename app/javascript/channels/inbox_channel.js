@@ -12,8 +12,10 @@ const initInboxCable = () => {
 
     consumer.subscriptions.create({ channel: "InboxChannel", id: id }, {
       received(data) {
-        document.querySelector('#notif_icon').classList.add("active")
-        count.classList.add('active')
+        if (id != data.author_id) {
+          document.querySelector('#notif_icon').classList.add("active")
+          count.classList.add('active')
+        }
         if (count.innerText === "") {
           count.innerText = '1'
         } else {

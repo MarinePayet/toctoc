@@ -5,8 +5,6 @@
           <small><%= message.created_at.strftime("at %k:%M on the %m/%e") %></small>
           <p class ="dm-content"><%= message.content %></p>
         </div>
-
-
         <div class="avatar-message-user">
           <% if message.user.photo.attached? %>
             <%= image_tag message.user.photo, class:"avatar"%>
@@ -14,6 +12,5 @@
             <%= image_tag "avatar-standard.png", class:"avatar" %>
           <% end %>
         </div>
-
     </div>
   </div>

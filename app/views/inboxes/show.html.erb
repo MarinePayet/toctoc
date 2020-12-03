@@ -16,7 +16,7 @@
 </div>
 
 <div class="container" id="messages-container" data-user-id="<%= current_user.id %>">
-  <% @inbox.messages.each do |message| %>
+  <% @inbox.messages.order(created_at: :asc).each do |message| %>
     <%= render partial: message_sender(message), locals: {message: message, current_user: current_user} %>
   <% end %>
 

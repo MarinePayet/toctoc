@@ -333,16 +333,13 @@
 }
 
 .profile-card {
-  background-color:white;
-  border-radius: 5px;
-  box-shadow: -1px 1px 7px 0px #00000024;
-  width: 107px;
+  width: 115px;
 }
 
 .profile-card-elements {
   text-align: center;
   padding-top: 17px;
-  padding-bottom: 17px;
+  padding-bottom: -2px;
 
 }
 
@@ -351,12 +348,13 @@
   font-weight: 600;
   margin-bottom: 0;
   margin-top: 16px;
-  color: #000D83;
+  color: black;
 }
 
 .profile-card-elements p {
   font-size: 13px;
   margin-bottom: 0;
+  color:#399393d6;
 }
 
 .profile-card-elements .small-font {
