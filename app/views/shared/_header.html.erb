@@ -29,9 +29,9 @@
         <%= link_to profile_path, class:"deco-non-navbar" do %>
           <div>
             <% if current_user.photo.attached? %>
-              <%= image_tag current_user.photo, class:"avatar pt-1" %>
+              <%= image_tag current_user.photo, class:"avatar" %>
             <% else %>
-              <%= image_tag "avatar-standard.png", class:"avatar pt-1" %>
+              <%= image_tag "avatar-standard.png", class:"avatar" %>
             <% end %>
           </div>
         <% end %>
