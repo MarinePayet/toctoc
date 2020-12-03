@@ -34,25 +34,25 @@
         <p><em><%=  @user.catch_phrase %></em></p>
       </div>
 
+      <div class="profile-info-card-text-details">
+        <% if @user.job %>
+          <p>💼: <%= @user.job %> </p>
+        <% else %>
+          <p>💼: <em>unknow</em> </p>
+        <% end %>
 
-    <div class="profile-info-card-text-details">
-      <% if @user.job %>
-        <p>💼: <%= @user.job %> </p>
-      <% else %>
-        <p>💼: <em>unknow</em> </p>
-      <% end %>
+        <% if @user.hobbies %>
+          <p>❤️: <%= @user.hobbies %></p>
+        <% else %>
+          <p>❤️: <em>unknow</em> </p>
+        <% end %>
 
-      <% if @user.hobbies %>
-        <p>❤️: <%= @user.hobbies %></p>
-      <% else %>
-        <p>❤️: <em>unknow</em> </p>
-      <% end %>
-
-      <% if @user.phone_number %>
-        <p>☎️: <%= @user.phone_number %> </p>
-      <% else %>
-        <p>☎️: <em>Dm me</em> </p>
-      <% end %>
+        <% if @user.phone_number %>
+          <p>☎️: <%= @user.phone_number %> </p>
+        <% else %>
+          <p>☎️: <em>DM me</em> </p>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
