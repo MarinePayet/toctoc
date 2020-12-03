@@ -45,9 +45,9 @@
         <% end %>
 
         <% if @user.phone_number %>
-          <p>☎️: @user.phone_number </p>
+          <p>☎️: <%= @user.phone_number %> </p>
         <% else %>
-          <p>☎️: <em>Dm me</em> </p>
+          <p>☎️: <em>DM me</em> </p>
         <% end %>
       </div>
     </div>
