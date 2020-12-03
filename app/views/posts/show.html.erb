@@ -1,11 +1,24 @@
-<div class="link-back-to">
-    <%= link_to :back do %>
-    <div class="back-to-page d-flex">
-      <i class="fas fa-chevron-left fas-post"></i>
-      <h5>Back</h5>
+
+<div class="app-header">
+   <%= render "shared/header" %>
+  <div class="d-flex">
+    <div class="link-back-to fleche">
+      <%= link_to :back do %>
+      <div class="back-to-page d-flex">
+        <i class="fas fa-chevron-left fas-post"></i>
+      </div>
+      <% end %>
     </div>
-    <% end %>
+    <div class="message-show-illu">
+      <%= render "shared/header" %>
+      <h1 class="header-icon" >💬</h1>
+      <h2 class="text-center pt-0 test2">Post</h2>
+    </div>
   </div>
+</div>
+
+
+</div>
 
 <div class="body-container">
 <div class="post-card post-card-comment">

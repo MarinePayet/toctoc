@@ -1,8 +1,9 @@
 <div class="app-header">
   <%= render "shared/header" %>
-  <h1 class="header-icon pt-0" > <%= image_tag "https://res.cloudinary.com/dk85eoleo/image/upload/c_scale,w_150/v1606734186/Stuck_at_Home_-_Searching_uwcxkm.png", alt: "alttext" %> </h1>
-  <h2 class="text-center pt-0 test2">All Neighbours</h2>
+  <h1 class="page-illu"> <%= cl_image_tag "https://res.cloudinary.com/dk85eoleo/image/upload/c_scale,w_150/v1606734186/Stuck_at_Home_-_Searching_uwcxkm.png", alt: "alttext" %> </h1>
+    <h2 class="text-center pt-0 test2">All Neighbours</h2>
 </div>
+
 
 <div class= "body-container">
 <div class="searchbar ">
@@ -11,7 +12,7 @@
       <%= text_field_tag :query,
         params[:query],
         class: "form-control-search string required search_query simple_form round-border",
-        placeholder: "Who are you looking for ?"
+        placeholder: "Search by name, floor, ..."
       %>
       <%= submit_tag "Search", class: "btn btn-green btn-radius-search" %>
       <% end %>

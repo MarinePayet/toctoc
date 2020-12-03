@@ -6,8 +6,8 @@ export default class extends Controller {
   post(event) {
     event.preventDefault();
     event.stopPropagation();
-
     const link = event.currentTarget;
+
     fetch(link.href, {
       method: "put"
     }).then(response => response.json())

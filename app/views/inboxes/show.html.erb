@@ -1,25 +1,29 @@
  <div class="app-header">
-    <div class="row">
-      <div class="arrow-back">
+  <div class="d-flex">
+    <div class="link-back-to fleche">
       <%= link_to inboxes_path do %>
-        <i class="fas fa-chevron-left"></i>
-      <% end %>
+      <div class="back-to-page d-flex">
+        <i class="fas fa-chevron-left fas-post"></i>
       </div>
+      <% end %>
     </div>
-  <%= render "shared/header" %>
-  <h1 class="header-icon" > 📝 </h1>
-  <h2 class= "text-center pt-0 test2"><%= @inbox.topic  %></h2>
+    <div class="message-show-illu">
+      <%= render "shared/header" %>
+      <h1 class="header-icon" >📝</h1>
+      <h2 class="text-center pt-0 test2"><%= @inbox.topic  %></h2>
+    </div>
+  </div>
 </div>
 
 <div class="container" id="messages-container" data-user-id="<%= current_user.id %>">
   <% @inbox.messages.each do |message| %>
     <%= render partial: message_sender(message), locals: {message: message, current_user: current_user} %>
   <% end %>
-</div>
 
   <div class="new-message">
     <%= simple_form_for [ @inbox, Message.new ], remote: true do |f| %>
-      <%= f.input :content %>
-      <%= f.button :submit %>
+      <%= f.input :content, as: :text, :input_html => {:rows => 5} %>
+      <%= f.button :submit, "Send", class: "btn-radius btn-green btn-block" %>
     <% end %>
   </div>
+</div>
