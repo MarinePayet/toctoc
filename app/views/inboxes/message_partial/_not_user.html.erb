@@ -1,7 +1,7 @@
 <div class="message-container">
   <div class="message-card">
         <div class="message-body">
-          <p class="dm-sender"><%= message.user.first_name %></ps>
+          <p class="dm-sender"><%= message.user.first_name %></p>
           <small><%= message.created_at.strftime("at %k:%M on the %m/%e") %></small>
           <p class ="dm-content"><%= message.content %></p>
         </div>
