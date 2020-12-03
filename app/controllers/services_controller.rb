@@ -21,7 +21,7 @@ class ServicesController < ApplicationController
       @services = @services.where(:available=> true)
     end
 
-    @services = policy_scope(@services).order(created_at: :desc)
+    @services = policy_scope(@services)
 
 
   end

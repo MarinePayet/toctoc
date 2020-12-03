@@ -189,3 +189,30 @@ chiara = User.find(285)
 # puts "end posts"
 
 
+Post.create!(
+  title: " Find keys in the lobby ",
+  content: " I found red keys with a NYC keyring in the lobby. Dm me ! ",
+  category: "Lost & Founds",
+  user_id: 136
+)
+
+Post.create!(
+  title: " Restaurant Opening the January 20th",
+  content: " You should try the futur restaurant of my best friend, just around the corner ! ",
+  category: " Tips ",
+  user_id: 138
+)
+
+Post.create!(
+  title: " Front door broken ! ",
+  content: " Be carefull the front door is broken. Somebody will come to fix it next week. ",
+  category: " Issues ",
+  user_id: 129
+)
+
+Post.create!(
+  title: "Let's thank them !",
+  content: " Meeting at 8 p.m. to applaud the hospital staff",
+  category: "SOS",
+  user_id: 123
+)
