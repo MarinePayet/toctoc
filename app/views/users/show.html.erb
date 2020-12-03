@@ -72,8 +72,6 @@
           <div>
             <div class="service-card-body-elements-header">
                 <h2><%= service.name %></h2>
-                <% @user = User.find(service.user_id) %>
-                <p><%= @user.first_name %> <%= @user.last_name %></p>
             </div>
             <div class="service-card-body-elements-body">
               <p><%= service.description %> </p>
