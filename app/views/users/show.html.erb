@@ -1,16 +1,19 @@
 <div class="app-header">
   <div classe="flexbox-user">
+
     <div class="link-back-to fleche">
       <%= link_to users_path do %>
         <div class="back-to-page d-flex">
           <i class="fas fa-chevron-left fas-post"></i>
         </div>
       <% end %>
+
     </div>
     <div>
       <%= render "shared/header" %>
     </div>
   </div>
+
 </div>
 
 <div class="body-container">
@@ -31,29 +34,31 @@
         <p><em><%=  @user.catch_phrase %></em></p>
       </div>
 
-      <div class="profile-info-card-text-details">
-        <% if @user.job %>
-          <p>💼: <%= @user.job %> </p>
-        <% else %>
-          <p>💼: <em>unknow</em> </p>
-        <% end %>
 
-        <% if @user.hobbies %>
-          <p>❤️: <%= @user.hobbies %></p>
-        <% else %>
-          <p>❤️: <em>unknow</em> </p>
-        <% end %>
+    <div class="profile-info-card-text-details">
+      <% if @user.job %>
+        <p>💼: <%= @user.job %> </p>
+      <% else %>
+        <p>💼: <em>unknow</em> </p>
+      <% end %>
 
-        <% if @user.phone_number %>
-          <p>☎️: @user.phone_number </p>
-        <% else %>
-          <p>☎️: <em>Dm me</em> </p>
-        <% end %>
-      </div>
+      <% if @user.hobbies %>
+        <p>❤️: <%= @user.hobbies %></p>
+      <% else %>
+        <p>❤️: <em>unknow</em> </p>
+      <% end %>
+
+      <% if @user.phone_number %>
+        <p>☎️: @user.phone_number </p>
+      <% else %>
+        <p>☎️: <em>Dm me</em> </p>
+      <% end %>
     </div>
   </div>
+</div>
 
 <br>
+
 
   <h4 class="mb-3 user-show">Services</h4>
   <% if @user.services.blank? %>
@@ -61,35 +66,39 @@
   <% else %>
     <% @user.services.each do |service| %>
       <div class="service-card-with-user mb-3">
+      <div style="display:block; width:100%;">
         <div class="service-card-body">
-          <div class="service-card-body-elements-user ">
+          <div>
             <div class="service-card-body-elements-header">
-              <h2><%= service.name %></h2>
+                <h2><%= service.name %></h2>
+                <% @user = User.find(service.user_id) %>
+                <p><%= @user.first_name %> <%= @user.last_name %></p>
             </div>
             <div class="service-card-body-elements-body">
               <p><%= service.description %> </p>
             </div>
-            <div class="service-card-labels-user">
-              <p class= "label-service-type-user"><%= service.typology %></p>
+            <div class="service-card-labels">
+              <p class= "label-service-type"><%= service.typology %></p>
               <% if service.price %>
-                <p class= "label-base label-price-user"><%=service.price%>€</p>
+                <p class= "label-base label-price"><%=service.price%>€</p>
               <% else %>
-                <p class= "label-base label-price-user">Free</p>
+                <p class= "label-base label-price">Free</p>
               <% end %>
               <% if service.available %>
-                <p class= "label-base label-available-user" >available now</p>
+                <p class= "label-base label-available">available now</p>
               <% else %>
-                <p class= "label-base label-not-available-user">not available</p>
+                <p class= "label-base label-not-available">not available</p>
               <% end %>
-              <p>
+              <div>
                 <%= link_to new_direct_message_path(query: params[:query], user_id: @user.id) do %>
                    <i class="fas fa-comments fa-comments-user"></i>
                 <% end %>
-              </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
     <% end %>
   <% end %>
 
@@ -102,31 +111,32 @@
   <% else %>
     <% @user.posts.each do |post| %>
       <div class="post-card">
-          <div class="post-card-header">
-            <div class="post-card-header-avatar">
-              <%= image_tag post.user.photo, class:"avatar-large" %>
-            </div>
-            <div class="post-card-header-title">
-                <p class="post-user-name"><%= post.user.first_name %></p>
-                <p class="post-date"><%= post.created_at.strftime("%b %e - %H:%M") %></p>
-            </div>
+        <div class="post-card-header">
+          <div class="post-card-header-avatar">
+            <%= image_tag post.user.photo, class:"avatar-large" %>
           </div>
-          <div class="post-card-body">
-            <p class="post-title"><%= post.title %></p>
-            <p class="post-content"><%= post.content %></p>
+          <div class="post-card-header-title">
+            <p class="post-user-name"><%= post.user.first_name %></p>
+            <p class="post-date"><%= post.created_at.strftime("%b %e - %H:%M") %></p>
           </div>
+        </div>
+        <div class="post-card-body">
+          <p class="post-title"><%= post.title %></p>
+          <p class="post-content"><%= post.content %></p>
+        </div>
           <div class="post-card-bottom d-flex justify-content-between">
             <div class="d-flex align-items-center">
-            <span data-controller="like" class="post-likes">
+              <span data-controller="like" class="post-likes">
                 <% if current_user.voted_for? post %>
                   <%= link_to "", like_post_path(post), class:"fas fa-thumbs-up", data: {action:"click->like#post"}, method: :put, remote: :true %>
                 <% else %>
                   <%= link_to "", like_post_path(post), class:"far fa-thumbs-up", data: {action:"click->like#post"}, method: :put, remote: :true %>
                 <% end %>
                 <span data-target="like.count" class="post-results"><%= post.get_likes.size %></span>
-            </span>
+              </span>
             <div class="d-flex ml-3"></div>
-            <div><%= link_to "", post_path(post), class:"fas fa-comment card-bottom-icon"%></div><p class="post-results"><%= post.comments.size %></p>
+            <div><%= link_to "", post_path(post), class:"fas fa-comment card-bottom-icon"%></div>
+            <p class="post-results"><%= post.comments.size %></p>
             </div>
             <p class= "label-base label-post-type"> <%= post.category%></p>
           </div>
@@ -134,12 +144,7 @@
     <% end %>
   <% end %>
 
-
-
-
-
   <h4 class="mb-3 user-show">Events</h4>
-
   <% if @user.events.blank? %>
     <p> nothing to show </p>
   <% else %>
@@ -180,6 +185,7 @@
           </div>
         </div>
       </div>
+
       <div class="d-flex event-card-bottom">
         <i class="fas fa-thumbs-up"></i><p>11</p>
         <i class="fas fa-comment card-bottom-icon"></i><p>18</p>
