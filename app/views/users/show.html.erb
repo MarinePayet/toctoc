@@ -1,36 +1,39 @@
 <div class="app-header">
   <div classe="flexbox-user">
-    <div class="row">
-      <div class="arrow-back">
-        <%= link_to users_path do %>
-          <i class="fas fa-chevron-left"></i>
-        <% end %>
-      </div>
+
+    <div class="link-back-to fleche">
+      <%= link_to users_path do %>
+        <div class="back-to-page d-flex">
+          <i class="fas fa-chevron-left fas-post"></i>
+        </div>
+      <% end %>
+
     </div>
     <div>
       <%= render "shared/header" %>
     </div>
   </div>
-  <h2 class="text-center pt-0 test2 mt-15">Your Neighbour</h2>
+
 </div>
 
-
-<div class="profile-info-card">
-  <div class="profile-info-card-avatar-user">
-    <% if current_user.photo.attached? %>
-      <%= image_tag current_user.photo, class:"avatar-xxl profile-avatar-position-user"%>
-    <% else %>
-      <%= image_tag "avatar-standard.png", class:"avatar-xxl profile-avatar-position-user" %>
-    <% end %>
-  </div>
-<br>
-  <div class="profile-info-card-text">
-    <div class="profile-info-card-text-intro">
-      <strong><%= @user.first_name %> <%= @user.last_name %></strong>
-      <br>
-      <i class="fas fa-envelope"></i>
-      <p><em><%=  @user.catch_phrase %></em></p>
+<div class="body-container">
+  <div class="profile-info-card">
+    <div class="profile-info-card-avatar-user">
+      <% if current_user.photo.attached? %>
+        <%= image_tag current_user.photo, class:"avatar-xxl profile-avatar-position-user"%>
+      <% else %>
+        <%= image_tag "avatar-standard.png", class:"avatar-xxl profile-avatar-position-user" %>
+      <% end %>
     </div>
+<br>
+    <div class="profile-info-card-text">
+      <div class="profile-info-card-text-intro">
+        <strong><%= @user.first_name %> <%= @user.last_name %></strong>
+        <br>
+        <i class="fas fa-comments"></i>
+        <p><em><%=  @user.catch_phrase %></em></p>
+      </div>
+
 
     <div class="profile-info-card-text-details">
       <% if @user.job %>
@@ -56,9 +59,7 @@
 
 <br>
 
-<div class="body-container">
 
-<div class="ml-3">
   <h4 class="mb-3 user-show">Services</h4>
   <% if @user.services.blank? %>
     <p> <em> nothing to show </em></p>
@@ -100,14 +101,13 @@
     </div>
     <% end %>
   <% end %>
-</div>
 
 
 
-<div class="ml-3">
+
   <h4 class="mb-3 user-show">Posts</h4>
   <% if @user.posts.blank? %>
-    <p> <em> nothing to show </em></p>
+    <p> <em> No posts! </em></p>
   <% else %>
     <% @user.posts.each do |post| %>
       <div class="post-card">
@@ -143,63 +143,58 @@
         </div>
     <% end %>
   <% end %>
-</div>
 
-
-<div class="ml-3">
   <h4 class="mb-3 user-show">Events</h4>
   <% if @user.events.blank? %>
     <p> nothing to show </p>
   <% else %>
     <% @user.events.each do |event| %>
-      <div class="event-card-text">
-        <div class="event-card-text-header">
-          <div class="event-card-text-header-title">
-            <h3><%= event.title %></h3>
-          </div>
-
-          <div class="event-card-avatars">
-            <div class="event-card-avatars-date">
-              <p class="month"><%= event.starting_at.strftime("%b.") %></p>
-              <% if event.starting_at.strftime("%d") == "01" %>
-                <p class="day"><%= event.starting_at.strftime("%dst") %></p>
-              <% elsif event.starting_at.strftime("%d") == "02"  %>
-                <p class="day"><%= event.starting_at.strftime("%dnd") %></p>
-              <% elsif event.starting_at.strftime("%d") == "03"  %>
-                <p class="day"><%= event.starting_at.strftime("%drd") %></p>
-              <% else %>
-                <p class="day"><%= event.starting_at.strftime("%dth") %></p>
-              <% end %>
-            </div>
-          </div>
+    <div class="event-card">
+    <div>
+      <% if event.photo.attached? %>
+        <%= image_tag event.photo, class:"event-image"%>
+      <% else %>
+        <%= image_tag "save_the_date.png", class:"event-image" %>
+      <% end %>
+    </div>
+    <div class="event-body">
+      <div class="d-flex align-items-start">
+        <div class="event-date">
+          <p class="month"><%= event.starting_at.strftime("%b.") %></p>
+          <% if event.starting_at.strftime("%d") == "01" %>
+            <p class="day"><%= event.starting_at.strftime("%dst") %></p>
+          <% elsif event.starting_at.strftime("%d") == "02"  %>
+            <p class="day"><%= event.starting_at.strftime("%dnd") %></p>
+          <% elsif event.starting_at.strftime("%d") == "03"  %>
+            <p class="day"><%= event.starting_at.strftime("%drd") %></p>
+          <% else %>
+            <p class="day"><%= event.starting_at.strftime("%dth") %></p>
+          <% end %>
         </div>
-
-        <div class="event-card-text-body">
-          <p><%= event.description %></p>
-        </div>
-
-        <div class="post-card-bottom">
-          <div class="social-icons">
-            <p>11</p><i class="fas fa-thumbs-up card-bottom-icon"></i>
-            <p>18</p><i class="fas fa-comment card-bottom-icon"></i>
-          </div>
-
+        <div class="event-text">
+          <h3> <%= event.title %> </h3>
+          <p class="event-description"><%= event.description %> </p>
+          <p class="event-user">by <%= event.user.first_name %> <%= event.user.last_name %> </p>
           <div class="info-icons">
-            <div class="event-card-text-bottom">
-              <i class="fas fa-map-marker-alt card-bottom-icon event-card-bottom-icon "></i><p>My flat</p>
+            <div class="event-card-text-bottom location-width">
+              <i class="fas fa-map-marker-alt event-card-bottom-icon"></i><p class="location"><%= event.location %></p>
             </div>
-
-            <div class="event-card-text-bottom">
-              <i class="fas fa-clock card-bottom-icon event-card-bottom-icon"></i><p>5PM</p>
+            <div class="event-card-text-bottom hour-width">
+              <i class="fas fa-clock event-card-bottom-icon"></i><p class="hour"><%= event.starting_at.strftime("%H:%M") %></p>
             </div>
           </div>
         </div>
       </div>
-    <br>
-    <% end %>
+
+      <div class="d-flex event-card-bottom">
+        <i class="fas fa-thumbs-up"></i><p>11</p>
+        <i class="fas fa-comment card-bottom-icon"></i><p>18</p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
 <% end %>
 </div>
-
 </div>
-
 

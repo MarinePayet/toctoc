@@ -1,60 +1,57 @@
 <% @i = 0 %>
 <% @events.each do |event|  %>
-      <%  if Date.today < event.starting_at %>
-
-        <div class="event-image">
-        </div>
-        <div class="event-body">
-
-        </div>
-        <div class="event-card-text mb-4 <%= 'card-opacity' if Date.today > event.starting_at  %>">
-          <div class="event-card-text-header">
-            <div class="event-card-text-header-title">
-              <h3> <%= event.title %> </h3>
-              <p>By <%= event.user.first_name %> <%= event.user.last_name %> </p>
-              <%# if event.photo.attached? %>
-              <%#= cl_image_tag event.photo.key, height: 30, width: 40 , crop: :fill %>
-              <%# end %>
-            </div>
-            <div class="event-card-avatars">
-              <div class="event-card-avatars-date">
-                <p class="month"><%= event.starting_at.strftime("%b.") %></p>
-                <% if event.starting_at.strftime("%d") == "01" %>
-                  <p class="day"><%= event.starting_at.strftime("%dst") %></p>
-                <% elsif event.starting_at.strftime("%d") == "02"  %>
-                  <p class="day"><%= event.starting_at.strftime("%dnd") %></p>
-                <% elsif event.starting_at.strftime("%d") == "03"  %>
-                  <p class="day"><%= event.starting_at.strftime("%drd") %></p>
-                <% else %>
-                  <p class="day"><%= event.starting_at.strftime("%dth") %></p>
-                <% end %>
+  <%  if Date.today < event.starting_at %>
+    <div class="event-card">
+      <div>
+        <% if event.photo.attached? %>
+          <%= image_tag event.photo, class:"event-image"%>
+        <% else %>
+          <%= image_tag "save_the_date.png", class:"event-image" %>
+        <% end %>
+      </div>
+      <div class="event-body">
+        <div class="d-flex align-items-start">
+          <div class="event-date">
+            <p class="month"><%= event.starting_at.strftime("%b.") %></p>
+            <% if event.starting_at.strftime("%d") == "01" %>
+              <p class="day"><%= event.starting_at.strftime("%dst") %></p>
+            <% elsif event.starting_at.strftime("%d") == "02"  %>
+              <p class="day"><%= event.starting_at.strftime("%dnd") %></p>
+            <% elsif event.starting_at.strftime("%d") == "03"  %>
+              <p class="day"><%= event.starting_at.strftime("%drd") %></p>
+            <% else %>
+              <p class="day"><%= event.starting_at.strftime("%dth") %></p>
+            <% end %>
+          </div>
+          <div class="event-text">
+            <h3> <%= event.title %> </h3>
+            <p class="event-description"><%= event.description %> </p>
+            <p class="event-user">by <%= event.user.first_name %> <%= event.user.last_name %> </p>
+            <div class="info-icons">
+              <div class="event-card-text-bottom location-width">
+                <i class="fas fa-map-marker-alt event-card-bottom-icon"></i><p class="location"><%= event.location %></p>
+              </div>
+              <div class="event-card-text-bottom hour-width">
+                <i class="fas fa-clock event-card-bottom-icon"></i><p class="hour"><%= event.starting_at.strftime("%H:%M") %></p>
               </div>
             </div>
           </div>
-      <div class="event-card-text-body color-white">
-        <p><%= event.description %> </p>
-      </div>
-      <div class="event-card-bottom">
-        <div class="social-icons">
-          <p>11</p><i class="fas fa-thumbs-up card-bottom-icon"></i>
-          <p>18</p><i class="fas fa-comment card-bottom-icon"></i>
         </div>
-        <div class="info-icons">
-          <div class="event-card-text-bottom location-width">
-            <i class="fas fa-map-marker-alt card-bottom-icon event-card-bottom-icon color-white"></i><p class="location"><%= event.location %></p>
-          </div>
-          <div class="event-card-text-bottom hour-width">
-            <i class="fas fa-clock card-bottom-icon event-card-bottom-icon color-white"></i><p class="hour"><%= event.starting_at.strftime("%H:%M") %></p>
+        <div class="d-flex event-card-bottom">
+          <i class="fas fa-thumbs-up"></i><p>11</p>
+          <i class="fas fa-comment card-bottom-icon"></i><p>18</p>
           </div>
         </div>
-      </div>
-        </div>
-         <% @i += 1 %>
-      <% end %>
-    <% end %>
-    <% if @i == 0 %>
-        <p class="text-center">No upcoming event yet!</p>
-        <div class="text-center mt-3"><%= link_to "See passed events", events_path, class:"btn-green btn-radius btn-block" %> </div>
-      <% else %>
-        <div class="text-center mt-3"><%= link_to "See all events", events_path, class:"btn-green btn-radius btn-block" %> </div>
-      <% end %>
+    </div>
+    <% @i += 1 %>
+  <% end %>
+<% end %>
+<% if @i == 0 %>
+    <p class="text-center">No upcoming event yet!</p>
+    <div class="text-center mt-3"><%= link_to "See passed events", events_path, class:"btn-white btn-radius btn-block" %> </div>
+  <% else %>
+    <div class="text-center mt-3"><%= link_to "See all events", events_path, class:"btn-white btn-radius btn-block" %> </div>
+<% end %>
+
+
+

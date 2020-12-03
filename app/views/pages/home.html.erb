@@ -1,6 +1,6 @@
 <div class="app-header">
   <%= render "shared/header" %>
-  <h1> <%= cl_image_tag "https://res.cloudinary.com/dk85eoleo/image/upload/c_scale,w_250/v1606401573/Stuck_at_Home_-_Alone_Time_1_ekozdk.png", alt: "alttext" %> </h1>
+  <h1 class="page-illu"> <%= cl_image_tag "https://res.cloudinary.com/dk85eoleo/image/upload/c_scale,w_250/v1606401573/Stuck_at_Home_-_Alone_Time_1_ekozdk.png", alt: "alttext" %> </h1>
   <% if current_user.first_name %>
     <h2 class="text-center pt-0 test2">Welcome home <br> <%= current_user.first_name %> !</h2>
   <% else %>
@@ -14,7 +14,7 @@
     <div>
       <h2 class="mt-4 home-title"> Recent posts 💬 </h2>
       <div><%= render "shared/post", posts: @posts %></div>
-      <div class="text-center mt-4">  <%= link_to "See all posts", posts_path, class:"btn-green btn-radius btn-block" %> </div>
+      <div class="text-center mt-4">  <%= link_to "See all posts", posts_path, class:"btn-white btn-radius btn-block" %> </div>
 
   <br>
     <div>
