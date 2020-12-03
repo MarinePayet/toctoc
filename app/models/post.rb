@@ -3,5 +3,5 @@ class Post < ApplicationRecord
   has_many :comments
   acts_as_votable
 
-  CATEGORIES = ["SOS", "Tips", "FYI","Lost & Founds","Issues"]
+  CATEGORIES = ["SOS", "Tips", "FYI", "Lost & Founds", "Issues"]
 end

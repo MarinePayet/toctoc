@@ -125,8 +125,8 @@ puts "start services "
 #   )
 # end
 
-chiara = User.find(285)
 
+chiara = User.find(285)
  Service.create!(
   available: false,
   name: "Ladder",
@@ -135,7 +135,6 @@ chiara = User.find(285)
   user: User.where.not(id: chiara.id).all.sample,
   typology: "Loan"
   )
-
  Service.create!(
   available: true,
   name: "Ladder",
@@ -144,7 +143,6 @@ chiara = User.find(285)
   user: User.where.not(id: chiara.id).all.sample,
   typology: "Loan"
   )
-
  Service.create!(
   available: false,
   name: "Ladder",
@@ -153,7 +151,6 @@ chiara = User.find(285)
   user: User.where.not(id: chiara.id).all.sample,
   typology: "Loan"
   )
-
   Service.create!(
   available: true,
   name: "Ladder",
@@ -162,7 +159,6 @@ chiara = User.find(285)
   user: User.where.not(id: chiara.id).all.sample,
   typology: "Loan"
   )
-
   Service.create!(
   available: true,
   name: "Ladder",
@@ -171,7 +167,6 @@ chiara = User.find(285)
   user: User.where.not(id: chiara.id).all.sample,
   typology: "Service"
   )
-
  Service.create!(
   available: false,
   name: "Plant care",
@@ -180,7 +175,6 @@ chiara = User.find(285)
   user: User.where.not(id: chiara.id).all.sample,
   typology: "Service"
   )
-
   Service.create!(
   available: true,
   name: "Plant care",
@@ -189,7 +183,6 @@ chiara = User.find(285)
   user: User.where.not(id: chiara.id).all.sample,
   typology: "Service"
   )
-
   Service.create!(
   available: true,
   name: "Plant care",
@@ -198,7 +191,6 @@ chiara = User.find(285)
   user: User.where.not(id: chiara.id).all.sample,
   typology: "Service"
   )
-
   Service.create!(
   available: true,
   name: "Plant care",
@@ -207,7 +199,6 @@ chiara = User.find(285)
   user: User.where.not(id: chiara.id).all.sample,
   typology: "Service"
   )
-
   Service.create!(
   available: true,
   name: "Package reception",
@@ -216,7 +207,6 @@ chiara = User.find(285)
   user: User.where.not(id: chiara.id).all.sample,
   typology: "Service"
   )
-
   Service.create!(
   available: true,
   name: "Package reception",
@@ -225,7 +215,6 @@ chiara = User.find(285)
   user: User.where.not(id: chiara.id).all.sample,
   typology: "Service"
   )
-
   Service.create!(
   available: false,
   name: "Package reception",
@@ -234,7 +223,6 @@ chiara = User.find(285)
   user: User.where.not(id: chiara.id).all.sample,
   typology: "Service"
   )
-
   Service.create!(
   available: true,
   name: "House cleaning",
@@ -243,7 +231,6 @@ chiara = User.find(285)
   user: User.where.not(id: chiara.id).all.sample,
   typology: "Service"
   )
-
   Service.create!(
   available: false,
   name: "Piano lessons",
@@ -252,7 +239,6 @@ chiara = User.find(285)
   user: User.where.not(id: chiara.id).all.sample,
   typology: "Service"
   )
-
   Service.create!(
   available: true,
   name: "Math lessons",
@@ -261,7 +247,6 @@ chiara = User.find(285)
   user: User.where.not(id: chiara.id).all.sample,
   typology: "Service"
   )
-
   Service.create!(
   available: true,
   name: "Cat feeding",
@@ -270,7 +255,6 @@ chiara = User.find(285)
   user: User.where.not(id: chiara.id).all.sample,
   typology: "Service"
   )
-
   Service.create!(
   available: true,
   name: "Grocery Shopping",
@@ -279,7 +263,6 @@ chiara = User.find(285)
   user: User.where.not(id: chiara.id).all.sample,
   typology: "Service"
   )
-
   Service.create!(
   available: true,
   name: "Grocery Shopping",
@@ -288,6 +271,7 @@ chiara = User.find(285)
   user: User.where.not(id: chiara.id).all.sample,
   typology: "Service"
   )
+
 
 # puts "end services"
 
@@ -306,3 +290,30 @@ chiara = User.find(285)
 # puts "end posts"
 
 
+Post.create!(
+  title: " Find keys in the lobby ",
+  content: " I found red keys with a NYC keyring in the lobby. Dm me ! ",
+  category: "Lost & Founds",
+  user_id: 136
+)
+
+Post.create!(
+  title: " Restaurant Opening the January 20th",
+  content: " You should try the futur restaurant of my best friend, just around the corner ! ",
+  category: " Tips ",
+  user_id: 138
+)
+
+Post.create!(
+  title: " Front door broken ! ",
+  content: " Be carefull the front door is broken. Somebody will come to fix it next week. ",
+  category: " Issues ",
+  user_id: 129
+)
+
+Post.create!(
+  title: "Let's thank them !",
+  content: " Meeting at 8 p.m. to applaud the hospital staff",
+  category: "SOS",
+  user_id: 123
+)
