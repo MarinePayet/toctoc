@@ -100,13 +100,20 @@
   position: relative;
 }
 
-.message-body{
+.message-body .dm-sender {
   margin-left: 65px;
 }
 
 .message-body small {
   font-size: 13px;
   font-weight: 300;
+  margin-left: 65px
+}
+
+.message-body .dm-content {
+  text-align: left;
+  margin-left: 19px;
+  width: 100%;
 }
 
 .dm-content {
@@ -115,7 +122,7 @@
   font-size: 16px;
 }
 
-.message-body-user{
+.message-body-user {
   margin-right: 65px;
 }
 
@@ -125,17 +132,22 @@
   font-weight: 300;
 }
 
+.message-body-user .dm-content {
+  text-align: left;
+  margin-left: 19px;
+  width: 100%;
+}
 
 .avatar-message-user {
   position: absolute;
-  top: 5px;
+  top: 10px;
   right: 10px;
 }
 
 .avatar-message{
   position: absolute;
   left: 10px;
-  top: 3px;
+  top: 10px;
 }
 
 .inbox-message{
@@ -157,6 +169,6 @@
 .dm-sender {
   font-size: 16px;
   font-weight: 600;
-  margin-top: 6px;
+  margin-top: 10px;
   margin-bottom: 0px;
 }
