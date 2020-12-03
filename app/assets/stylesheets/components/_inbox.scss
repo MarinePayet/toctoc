@@ -89,12 +89,10 @@
 .message-container.current_user{
   border-radius: 5px;
   box-shadow: -1px 1px 7px 0px #00000024;
-  border-style: solid;
-  border-width: thin;
   margin: 20px 5px;
   display: flex;
   color: white;
-  background-color: #389393;
+  background-color: #3993936b;
   justify-content: flex-end;
   text-align: right;
   position: relative;
@@ -113,7 +111,7 @@
 .message-body .dm-content {
   text-align: left;
   margin-left: 19px;
-  width: 100%;
+  width: 334px;
 }
 
 .dm-content {

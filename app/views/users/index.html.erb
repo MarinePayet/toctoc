@@ -22,9 +22,9 @@
 
   <br>
   <!-- <div class="container"> -->
-    <div id="flexbox-users" class="text-center">
+    <div id="flexbox-users" class="text-center justify-content-between">
       <% @users.each do |user|  %>
-        <div class="profile-card mb-2 mr-2">
+        <div class="profile-card mb-2">
           <div class="profile-card-elements">
             <%= link_to user_path(user), class:"deco-non" do %>
               <% if user.photo.attached? %>
@@ -33,9 +33,9 @@
                 <%= image_tag "avatar-standard.png", class:"avatar-large-user" %>
               <% end %>
               <% if user.first_name && user.last_name %>
-                <h2><%= user.first_name %> <%= user.last_name %></h2>
+                <h2><%= user.first_name %> <br> <%= user.last_name %></h2>
               <% else %>
-                <p><em> Unknow </em></p>
+                <p><em> Unknown </em></p>
               <% end %>
 
               <% if user.stairs == 1 %>
