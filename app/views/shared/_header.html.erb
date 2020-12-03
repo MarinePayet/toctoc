@@ -1,39 +1,39 @@
-<div class="flexbox pt-2 pr-1 fixed-top background-green">
-  <div class="row mr-3">
+  <div class="flexbox pt-2 pr-1 fixed-top background-green justify-content-between">
+    <%= image_tag "logo.png", alt: "alttext", class:"app-logo" %>
+    <div class=" d-flex mr-3">
+      <div>
+        <%= link_to root_path, class:"deco-non" do %>
+          <i class="fas fa-info"></i>
+        <% end %>
+      </div>
 
-    <div>
-      <%= link_to root_path, class:"deco-non" do %>
-        <i class="fas fa-info"></i>
-      <% end %>
+      <div>
+        <%= link_to services_path, class:"deco-non" do %>
+          <i class="fas fa-search"></i>
+        <% end %>
+      </div>
+
+      <div>
+        <%= link_to inboxes_path, class:"deco-non" do %>
+           <div class="alert-notification" data-user-id="<%= current_user.id if user_signed_in? %>">
+            <span id="notif_count"></span>
+            <i class="fas fa-comments" id="notif_icon"></i>
+            <div id="message"></div>
+        <% end %>
+          </div>
+      </div>
+
+      <div>
+        <%= link_to profile_path, class:"deco-non-navbar" do %>
+          <div>
+            <% if current_user.photo.attached? %>
+              <%= image_tag current_user.photo, class:"avatar pt-1" %>
+            <% else %>
+              <%= image_tag "avatar-standard.png", class:"avatar pt-1" %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+
     </div>
-
-    <div>
-      <%= link_to services_path, class:"deco-non" do %>
-        <i class="fas fa-search"></i>
-      <% end %>
-    </div>
-
-    <div>
-      <%= link_to inboxes_path, class:"deco-non" do %>
-         <div class="alert-notification" data-user-id="<%= current_user.id if user_signed_in? %>">
-          <span id="notif_count"></span>
-          <i class="fas fa-comments" id="notif_icon"></i>
-          <div id="message"></div>
-      <% end %>
-        </div>
-    </div>
-
-    <div>
-      <%= link_to profile_path, class:"deco-non-navbar" do %>
-        <div>
-          <% if current_user.photo.attached? %>
-            <%= image_tag current_user.photo, class:"avatar pt-1" %>
-          <% else %>
-            <%= image_tag "avatar-standard.png", class:"avatar pt-1" %>
-          <% end %>
-        </div>
-      <% end %>
-    </div>
-
   </div>
-</div>
