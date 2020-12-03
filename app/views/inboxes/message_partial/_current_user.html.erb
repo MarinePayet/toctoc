@@ -1,9 +1,9 @@
 <div class="message-container current_user" id="message-<%= message.id %>">
     <div class="message-card">
         <div class='message-body-user'>
-          <span><%= message.user.first_name %></span>
+          <p class="dm-sender">You</p>
           <small><%= message.created_at.strftime("at %k:%M on the %m/%e") %></small>
-          <p><%= message.content %></p>
+          <p class ="dm-content"><%= message.content %></p>
         </div>
 
 

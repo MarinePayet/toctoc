@@ -15,20 +15,33 @@
     <div class="inbox-container">
       <div class="row" style="margin-left: 5px;">
         <div class="inbox-title">
-          <h2> Subject: <%= inbox.topic %></h2>
-        </div>
-      </div>
-      <div class="row" style="margin-left: 5px;">
-        <div class="inbox-participants">
-          <p> <strong>Participants</strong><% inbox.participants.first(3).each do |participant|  %>
-            <%= participant.user.first_name %> |
-          <% end %></p>
+          <h2> Object: <%= inbox.topic %></h2>
         </div>
       </div>
       <div class="row" style="margin-left: 5px;">
       <div class="inbox-date">
-        <a> Sent on <%= inbox.created_at.strftime("%b %e") %> </a>
+        <a> Last message sent on <%= inbox.created_at.strftime("%b %e") %> </a>
       </div>
+      </div>
+      <div class="row" style="margin-left: 5px;">
+        <div class="inbox-participants d-flex">
+          <% inbox.participants.first(3).length %>
+          <% first= inbox.participants.first(3).length - 1 %>
+          <p> <strong>Participants:&nbsp;</strong><% inbox.participants.first(first).each do |participant|  %>
+            <% if participant.user.first_name == current_user.first_name %>
+               You, &nbsp;
+            <% else %>
+              <%=  participant.user.first_name %>, &nbsp;
+            <% end %>
+          <% end %></p>
+          <p>
+          <% if inbox.participants[first].user.first_name == current_user.first_name %>
+             You
+          <% else %>
+             <%= inbox.participants[first].user.first_name%>
+          <% end %>
+          </p>
+        </div>
       </div>
       <div class="row" style="margin-left: 5px;">
       <div class="inbox-recap">

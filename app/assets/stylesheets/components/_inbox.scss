@@ -19,17 +19,20 @@
   height: 16px;
 }
 
-.inbox-participants p {
-  font-weight: light;
-  margin-top: 10px;
+.inbox-participants {
+  margin-top: 5px;
   margin-left: 10px;
-  margin-bottom: 2px;
   margin-right: 5px;
 }
 
-.inbox-date{
+.inbox-participants p {
   font-weight: light;
-  font-size: 15px;
+  margin-bottom: 2px;
+}
+
+.inbox-date{
+  font-weight: 300;
+  font-size: 14px;
   align-items: left;
   margin-left: 10px;
   margin-top: 2px;
@@ -101,11 +104,29 @@
   margin-left: 65px;
 }
 
+.message-body small {
+  font-size: 13px;
+  font-weight: 300;
+}
+
+.dm-content {
+  margin-top: 17px;
+  margin-bottom: -1px;
+  font-size: 16px;
+}
+
 .message-body-user{
   margin-right: 65px;
 }
 
-.avatar-message-user{
+
+.message-body-user small {
+  font-size: 13px;
+  font-weight: 300;
+}
+
+
+.avatar-message-user {
   position: absolute;
   top: 5px;
   right: 10px;
@@ -133,5 +154,9 @@
   margin-bottom: 14px;
 }
 
-
-
+.dm-sender {
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 6px;
+  margin-bottom: 0px;
+}
