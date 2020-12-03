@@ -28,9 +28,9 @@
           <div class="profile-card-elements">
             <%= link_to user_path(user), class:"deco-non" do %>
               <% if user.photo.attached? %>
-                <%= image_tag user.photo, class:"avatar-large" %>
+                <%= image_tag user.photo, class:"avatar-large-user" %>
               <% else %>
-                <%= image_tag "avatar-standard.png", class:"avatar-large" %>
+                <%= image_tag "avatar-standard.png", class:"avatar-large-user" %>
               <% end %>
               <% if user.first_name && user.last_name %>
                 <h2><%= user.first_name %> <%= user.last_name %></h2>
