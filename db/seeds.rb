@@ -126,7 +126,6 @@ puts "start services "
 # end
 
 chiara = User.find(285)
-
  Service.create!(
   available: false,
   name: "Ladder",
@@ -135,7 +134,6 @@ chiara = User.find(285)
   user: User.where.not(id: chiara.id).all.sample,
   typology: "Loan"
   )
-
  Service.create!(
   available: true,
   name: "Ladder",
@@ -144,7 +142,6 @@ chiara = User.find(285)
   user: User.where.not(id: chiara.id).all.sample,
   typology: "Loan"
   )
-
  Service.create!(
   available: false,
   name: "Ladder",
@@ -153,7 +150,6 @@ chiara = User.find(285)
   user: User.where.not(id: chiara.id).all.sample,
   typology: "Loan"
   )
-
   Service.create!(
   available: true,
   name: "Ladder",
@@ -162,8 +158,6 @@ chiara = User.find(285)
   user: User.where.not(id: chiara.id).all.sample,
   typology: "Loan"
   )
-
-
   Service.create!(
   available: true,
   name: "Ladder",
@@ -172,6 +166,115 @@ chiara = User.find(285)
   user: User.where.not(id: chiara.id).all.sample,
   typology: "Service"
   )
+ Service.create!(
+  available: false,
+  name: "Plant care",
+  description: "I can take care of plants",
+  price: 13,
+  user: User.where.not(id: chiara.id).all.sample,
+  typology: "Service"
+  )
+  Service.create!(
+  available: true,
+  name: "Plant care",
+  description: "I can water plant during your vacations",
+  price: 0,
+  user: User.where.not(id: chiara.id).all.sample,
+  typology: "Service"
+  )
+  Service.create!(
+  available: true,
+  name: "Plant care",
+  description: "I can take care of your plants",
+  price: 15,
+  user: User.where.not(id: chiara.id).all.sample,
+  typology: "Service"
+  )
+  Service.create!(
+  available: true,
+  name: "Plant care",
+  description: "I am plant magician",
+  price: 25,
+  user: User.where.not(id: chiara.id).all.sample,
+  typology: "Service"
+  )
+  Service.create!(
+  available: true,
+  name: "Package reception",
+  description: "I work at home so don't hesitate if you need me to get your package",
+  price: 0,
+  user: User.where.not(id: chiara.id).all.sample,
+  typology: "Service"
+  )
+  Service.create!(
+  available: true,
+  name: "Package reception",
+  description: "I can receive your packages since I am at home all week ",
+  price: 0,
+  user: User.where.not(id: chiara.id).all.sample,
+  typology: "Service"
+  )
+  Service.create!(
+  available: false,
+  name: "Package reception",
+  description: "I never leave my appartment ",
+  price: 10,
+  user: User.where.not(id: chiara.id).all.sample,
+  typology: "Service"
+  )
+  Service.create!(
+  available: true,
+  name: "House cleaning",
+  description: "I am a good cleaner and I need money ",
+  price: 20,
+  user: User.where.not(id: chiara.id).all.sample,
+  typology: "Service"
+  )
+  Service.create!(
+  available: false,
+  name: "Piano lessons",
+  description: "I am a passionate musician and I give lessons ",
+  price: 40,
+  user: User.where.not(id: chiara.id).all.sample,
+  typology: "Service"
+  )
+
+  Service.create!(
+  available: true,
+  name: "Math lessons",
+  description: "I am a math prodigy and I give lessons to your kids ",
+  price: 40,
+  user: User.where.not(id: chiara.id).all.sample,
+  typology: "Service"
+  )
+
+  Service.create!(
+  available: true,
+  name: "Cat feeding",
+  description: "I love cats if you need someone to feed and cuddle them",
+  price: 0,
+  user: User.where.not(id: chiara.id).all.sample,
+  typology: "Service"
+  )
+
+  Service.create!(
+  available: true,
+  name: "Grocery Shopping",
+  description: "I can help you carry your groceries",
+  price: 0,
+  user: User.where.not(id: chiara.id).all.sample,
+  typology: "Service"
+  )
+
+  Service.create!(
+  available: true,
+  name: "Grocery Shopping",
+  description: "I can go to the supermarket and do your grocery shopping",
+  price: 10,
+  user: User.where.not(id: chiara.id).all.sample,
+  typology: "Service"
+  )
+
 # puts "end services"
 
 # puts "start posts"
