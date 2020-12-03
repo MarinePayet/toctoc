@@ -19,9 +19,9 @@ service = params[:service] == 'true'
 
   <div class="row-service mt-2 mb-2">
 
-    <%= link_to "Loan", services_path(filters.merge(loan: !loan)), class: "btn btn-radius-service #{loan ? "btn-green" : "btn-white-service" }" %>
-    <%= link_to "Service", services_path(filters.merge(service: !service)), class: "btn btn-radius-service #{service ? "btn-green" : "btn-white-service" }" %>
-    <%= link_to "Available", services_path(filters.merge(available: !available)), class: "btn btn-radius-service #{available ? "btn-green" : "btn-white-service" }" %>
+    <%= link_to "Loan", services_path(filters.merge(loan: !loan)), class: "btn btn-radius-service #{loan ? "btn-green-service" : "btn-white-service" }" %>
+    <%= link_to "Service", services_path(filters.merge(service: !service)), class: "btn btn-radius-service #{service ? "btn-green-service" : "btn-white-service" }" %>
+    <%= link_to "Available", services_path(filters.merge(available: !available)), class: "btn btn-radius-service #{available ? "btn-green-service" : "btn-white-service" }" %>
 
   </div>
 
