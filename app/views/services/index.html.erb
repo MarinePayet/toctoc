@@ -1,8 +1,8 @@
 <%
-filters = params.permit(:available, :loan, :service)
-available = params[:available] == "true"
-loan = params[:loan] == "true"
-service = params[:service] == "true"
+filters = params.permit(:available, :loan, :service, :query)
+available = params[:available] == 'true'
+loan = params[:loan] == 'true'
+service = params[:service] == 'true'
 %>
 
 <div class="app-header">
@@ -19,9 +19,9 @@ service = params[:service] == "true"
 
   <div class="row-service mt-2 mb-2">
 
-    <%= link_to "Loan", services_path(filters.merge(loan: !loan)), class: "btn btn-radius-service #{ params[:loan] == "true" ? "btn-green" : "btn-white-service" }" %>
-    <%= link_to "Service", services_path(filters.merge(service: !service)), class: "btn btn-radius-service #{ params[:service] == "true" ? "btn-green" : "btn-white-service" }" %>
-    <%= link_to "Available", services_path(filters.merge(available: !available)), class: "btn btn-radius-service #{ params[:available] == "true" ? "btn-green" : "btn-white-service" }" %>
+    <%= link_to "Loan", services_path(filters.merge(loan: !loan)), class: "btn btn-radius-service #{loan ? "btn-green" : "btn-white-service" }" %>
+    <%= link_to "Service", services_path(filters.merge(service: !service)), class: "btn btn-radius-service #{service ? "btn-green" : "btn-white-service" }" %>
+    <%= link_to "Available", services_path(filters.merge(available: !available)), class: "btn btn-radius-service #{available ? "btn-green" : "btn-white-service" }" %>
 
   </div>
 

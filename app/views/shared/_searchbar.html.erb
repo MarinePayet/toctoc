@@ -1,5 +1,14 @@
 <div class="searchbar">
   <%= form_tag services_path, method: :get, class: "w-100" do %>
+    <% if params[:available] == 'true' %>
+      <%= hidden_field_tag :available, true %>
+    <% end %>
+    <% if params[:loan] == 'true' %>
+      <%= hidden_field_tag :loan, true %>
+    <% end %>
+    <% if params[:service] == 'true' %>
+      <%= hidden_field_tag :service, true %>
+    <% end %>
     <div class="d-flex">
       <%= text_field_tag :query,
         params[:query],
