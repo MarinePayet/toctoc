@@ -432,14 +432,6 @@
   color: white;
 }
 
-.service-card-body-elements-header h2 {
-  font-size: 20px;
-  background-color: #389393;
-  padding: 10px;
-  border-radius: 5px 5px 0px 0px;
-  color: white;
-}
-
 .service-card-body-elements p {
   font-size: 14px;
   padding: 12px 10px;
@@ -467,9 +459,8 @@
 }
 
 .service-card-body-elements-header {
-  background-color: #389393;
+  background-color: #3993936b;
   padding: 10px;
-  color:white;
   display: flex;
   border-radius: 5px 5px 0 0;
 }
@@ -478,6 +469,8 @@
   font-size: 20px;
   margin: 0px;
   padding: 0;
+  border-radius: 5px 5px 0px 0px;
+  color: black;
 }
 
 .service-card-body-elements-header p {
@@ -548,7 +541,9 @@
   margin-top: 12px;
 }
 
-
+.service-card-body .fa-comments-user {
+  color:black
+}
 
 
 
