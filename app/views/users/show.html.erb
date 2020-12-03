@@ -30,7 +30,9 @@
       <div class="profile-info-card-text-intro">
         <strong><%= @user.first_name %> <%= @user.last_name %></strong>
         <br>
-        <i class="fas fa-comments"></i>
+        <%= link_to new_direct_message_path(query: params[:query], user_id: @user.id) do %>
+            <i class="fas fa-comments"></i>
+        <% end %>
         <p><em><%=  @user.catch_phrase %></em></p>
       </div>
 

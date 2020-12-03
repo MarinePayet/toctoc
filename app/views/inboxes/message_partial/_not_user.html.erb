@@ -1,9 +1,9 @@
 <div class="message-container">
   <div class="message-card">
         <div class="message-body">
-          <span><%= message.user.first_name %></span>
+          <p class="dm-sender"><%= message.user.first_name %></ps>
           <small><%= message.created_at.strftime("at %k:%M on the %m/%e") %></small>
-          <p><%= message.content %></p>
+          <p class ="dm-content"><%= message.content %></p>
         </div>
         <div class="avatar-message">
           <% if message.user.photo.attached? %>
