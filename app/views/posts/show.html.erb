@@ -3,7 +3,7 @@
    <%= render "shared/header" %>
   <div class="d-flex">
     <div class="link-back-to fleche">
-      <%= link_to :back do %>
+      <%= link_to request.referer.present? ? request.referer : user_path(@post.user) do %>
       <div class="back-to-page d-flex">
         <i class="fas fa-chevron-left fas-post"></i>
       </div>
@@ -15,9 +15,6 @@
       <h2 class="text-center pt-0 test2">Post</h2>
     </div>
   </div>
-</div>
-
-
 </div>
 
 <div class="body-container">
