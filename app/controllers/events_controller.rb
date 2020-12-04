@@ -2,6 +2,8 @@ class EventsController < ApplicationController
 
   def index
     @events = policy_scope(Event).order(starting_at: :desc)
+    @passed_events = Event.where("starting_at < ?", Date.today).order(starting_at: :desc)
+    @upcoming_events = Event.where("starting_at > ?", Date.today).order(starting_at: :asc)
   end
 
   def new
