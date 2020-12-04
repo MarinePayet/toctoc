@@ -35,7 +35,7 @@
 }
 
 .btn-white-service {
-  color: #389393;
+  color: #389393 ;
   background-color:white;
   width: 127px;
   height: 42px;
@@ -45,7 +45,7 @@
 }
 
 .btn-green-service {
-  color:white ;
+  color:white !important;
   background-color:#389393;
   width: 127px;
   height: 42px;
@@ -56,13 +56,22 @@
   background-color:white;
 }
 
+.btn-white-service:hover {
+  color: #389393;
+  background-color:white;
+}
+
 .btn-green {
   color: white;
   background-color: #389393;
 }
 
 .btn-green:hover {
-  color: white;
+  color: white !important;
+  background-color: #389393;
+}
+.btn-green-service:hover {
+  color: white !important;
   background-color: #389393;
 }
 
