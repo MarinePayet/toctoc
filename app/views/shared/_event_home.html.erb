@@ -13,11 +13,11 @@
         <div class="d-flex align-items-start">
           <div class="event-date">
             <p class="month"><%= event.starting_at.strftime("%b.") %></p>
-            <% if event.starting_at.strftime("%d") == "01" %>
+            <% if event.starting_at.strftime("%d") == "01" || event.starting_at.strftime("%d") == "31" %>
               <p class="day"><%= event.starting_at.strftime("%dst") %></p>
-            <% elsif event.starting_at.strftime("%d") == "02"  %>
+            <% elsif event.starting_at.strftime("%d") == "02" || event.starting_at.strftime("%d") == "22" %>
               <p class="day"><%= event.starting_at.strftime("%dnd") %></p>
-            <% elsif event.starting_at.strftime("%d") == "03"  %>
+            <% elsif event.starting_at.strftime("%d") == "03" || event.starting_at.strftime("%d") == "23" %>
               <p class="day"><%= event.starting_at.strftime("%drd") %></p>
             <% else %>
               <p class="day"><%= event.starting_at.strftime("%dth") %></p>

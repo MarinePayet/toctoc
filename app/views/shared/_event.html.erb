@@ -1,6 +1,7 @@
 <div class="body-container">
-  <% events.each do |event| %>
-    <div class="event-card <%= 'card-opacity' if Date.today > event.starting_at  %>">
+  <h2 class="mt-4 mb-2 ml-1 home-title"> Upcoming events</h2>
+  <% @upcoming_events.each do |event| %>
+    <div class="event-card">
     <div>
       <% if event.photo.attached? %>
         <%= image_tag event.photo, class:"event-image"%>
@@ -12,11 +13,53 @@
       <div class="d-flex align-items-start">
         <div class="event-date">
           <p class="month"><%= event.starting_at.strftime("%b.") %></p>
-          <% if event.starting_at.strftime("%d") == "01" %>
+          <% if event.starting_at.strftime("%d") == "01" || event.starting_at.strftime("%d") == "31" %>
             <p class="day"><%= event.starting_at.strftime("%dst") %></p>
-          <% elsif event.starting_at.strftime("%d") == "02"  %>
+          <% elsif event.starting_at.strftime("%d") == "02" || event.starting_at.strftime("%d") == "22" %>
             <p class="day"><%= event.starting_at.strftime("%dnd") %></p>
-          <% elsif event.starting_at.strftime("%d") == "03"  %>
+          <% elsif event.starting_at.strftime("%d") == "03" || event.starting_at.strftime("%d") == "23" %>
+            <p class="day"><%= event.starting_at.strftime("%drd") %></p>
+          <% else %>
+            <p class="day"><%= event.starting_at.strftime("%dth") %></p>
+          <% end %>
+        </div>
+        <div class="event-text">
+          <h3> <%= event.title %> </h3>
+          <p class="event-description"><%= event.description %> </p>
+          <p class="event-user">by <%= event.user.first_name %> <%= event.user.last_name %> </p>
+          <div class="info-icons">
+            <div class="event-card-text-bottom location-width">
+              <i class="fas fa-map-marker-alt event-card-bottom-icon"></i><p class="location"><%= event.location %></p>
+            </div>
+            <div class="event-card-text-bottom hour-width">
+              <i class="fas fa-clock event-card-bottom-icon"></i><p class="hour"><%= event.starting_at.strftime("%H:%M") %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  <% end %>
+
+<h2 class="mt-5 mb-2 ml-1 home-title">Past events</h2>
+    <% @passed_events.each do |event| %>
+    <div class="event-card card-opacity">
+    <div>
+      <% if event.photo.attached? %>
+        <%= image_tag event.photo, class:"event-image"%>
+      <% else %>
+        <%= image_tag "save_the_date.png", class:"event-image" %>
+      <% end %>
+    </div>
+    <div class="event-body">
+      <div class="d-flex align-items-start">
+        <div class="event-date">
+          <p class="month"><%= event.starting_at.strftime("%b.") %></p>
+          <% if event.starting_at.strftime("%d") == "01" || event.starting_at.strftime("%d") == "31" %>
+            <p class="day"><%= event.starting_at.strftime("%dst") %></p>
+          <% elsif event.starting_at.strftime("%d") == "02" || event.starting_at.strftime("%d") == "22" %>
+            <p class="day"><%= event.starting_at.strftime("%dnd") %></p>
+          <% elsif event.starting_at.strftime("%d") == "03" || event.starting_at.strftime("%d") == "23" %>
             <p class="day"><%= event.starting_at.strftime("%drd") %></p>
           <% else %>
             <p class="day"><%= event.starting_at.strftime("%dth") %></p>
