@@ -1,11 +1,12 @@
 {
- "name": "Toctoc",
- "description": "Turn your building into a little community;",
- "display": "fullscreen",
- "icons": [
+  "background_color": "white",
+  "description": "Turn your building into a little community.",
+  "display": "fullscreen",
+  "name": "Toctoc",
+  "icons": [
     <% files = Dir.entries(Rails.root.join("app/assets/images/icons/")).select {|f| !File.directory? f} %>
     <% files.each_with_index do |file, index| %>
-    <% match = file.match(/.+-(?<size>\d{2,3}x\d{2,3}).png/) %>
+      <% match = file.match(/.+-(?<size>\d{2,3}x\d{2,3}).png/) %>
       {
         "src": "<%= image_path "icons/#{file}" %>",
         "sizes": "<%= match && match[:size] %>",
